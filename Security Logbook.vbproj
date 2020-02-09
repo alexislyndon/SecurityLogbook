@@ -92,6 +92,18 @@
       <DependentUpon>Dash.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Add_Vehicle.Designer.vb">
+      <DependentUpon>Add_Vehicle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Vehicle.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add_Visitor.Designer.vb">
+      <DependentUpon>Add_Visitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Visitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Dash.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,8 +129,38 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vehicles_History.Designer.vb">
+      <DependentUpon>Vehicles_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles_History.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View_Checked_in.Designer.vb">
+      <DependentUpon>View_Checked_in.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View_Checked_in.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View_Checked_in_Vehicles.Designer.vb">
+      <DependentUpon>View_Checked_in_Vehicles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View_Checked_in_Vehicles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visitors_History.Designer.vb">
+      <DependentUpon>Visitors_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visitors_History.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Add_Vehicle.resx">
+      <DependentUpon>Add_Vehicle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Visitor.resx">
+      <DependentUpon>Add_Visitor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +172,18 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles_History.resx">
+      <DependentUpon>Vehicles_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Checked_in.resx">
+      <DependentUpon>View_Checked_in.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Checked_in_Vehicles.resx">
+      <DependentUpon>View_Checked_in_Vehicles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitors_History.resx">
+      <DependentUpon>Visitors_History.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
