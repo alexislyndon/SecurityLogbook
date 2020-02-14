@@ -57,4 +57,10 @@
         View_Checked_in1.Visible = False
         View_Checked_in_Vehicles1.Visible = False
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label4.Text = Date.Now.ToString("dddd") & vbCrLf & vbCrLf & Date.Now.ToString("dd - MMM - yyyy")
+        'Label1.Text = Format(Now, "Long Date")
+        Label3.Text = Date.Now.ToString(" HH:mm:ss")
+    End Sub
 End Class

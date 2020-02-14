@@ -22,6 +22,7 @@ Partial Class Dash
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -33,12 +34,13 @@ Partial Class Dash
         Me.visitors_history_btn = New System.Windows.Forms.Button()
         Me.view_checkin_btn = New System.Windows.Forms.Button()
         Me.Add_visitor_btn = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Add_Visitor1 = New Security_Logbook.Add_Visitor()
-        Me.Add_Vehicle1 = New Security_Logbook.Add_Vehicle()
-        Me.Vehicles_History1 = New Security_Logbook.Vehicles_History()
-        Me.View_Checked_in1 = New Security_Logbook.View_Checked_in()
-        Me.View_Checked_in_Vehicles1 = New Security_Logbook.View_Checked_in_Vehicles()
         Me.Visitors_History1 = New Security_Logbook.Visitors_History()
+        Me.View_Checked_in_Vehicles1 = New Security_Logbook.View_Checked_in_Vehicles()
+        Me.View_Checked_in1 = New Security_Logbook.View_Checked_in()
+        Me.Vehicles_History1 = New Security_Logbook.Vehicles_History()
+        Me.Add_Vehicle1 = New Security_Logbook.Add_Vehicle()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -119,7 +121,7 @@ Partial Class Dash
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 31.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label3.Location = New System.Drawing.Point(0, 100)
+        Me.Label3.Location = New System.Drawing.Point(21, 100)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(198, 51)
@@ -174,6 +176,11 @@ Partial Class Dash
         Me.Add_visitor_btn.Text = "Add Visitor"
         Me.Add_visitor_btn.UseVisualStyleBackColor = False
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'Add_Visitor1
         '
         Me.Add_Visitor1.Location = New System.Drawing.Point(252, 0)
@@ -181,26 +188,12 @@ Partial Class Dash
         Me.Add_Visitor1.Size = New System.Drawing.Size(1109, 763)
         Me.Add_Visitor1.TabIndex = 5
         '
-        'Add_Vehicle1
+        'Visitors_History1
         '
-        Me.Add_Vehicle1.Location = New System.Drawing.Point(252, 0)
-        Me.Add_Vehicle1.Name = "Add_Vehicle1"
-        Me.Add_Vehicle1.Size = New System.Drawing.Size(1109, 763)
-        Me.Add_Vehicle1.TabIndex = 6
-        '
-        'Vehicles_History1
-        '
-        Me.Vehicles_History1.Location = New System.Drawing.Point(252, 0)
-        Me.Vehicles_History1.Name = "Vehicles_History1"
-        Me.Vehicles_History1.Size = New System.Drawing.Size(1109, 763)
-        Me.Vehicles_History1.TabIndex = 7
-        '
-        'View_Checked_in1
-        '
-        Me.View_Checked_in1.Location = New System.Drawing.Point(252, 0)
-        Me.View_Checked_in1.Name = "View_Checked_in1"
-        Me.View_Checked_in1.Size = New System.Drawing.Size(1109, 763)
-        Me.View_Checked_in1.TabIndex = 8
+        Me.Visitors_History1.Location = New System.Drawing.Point(252, 0)
+        Me.Visitors_History1.Name = "Visitors_History1"
+        Me.Visitors_History1.Size = New System.Drawing.Size(1109, 763)
+        Me.Visitors_History1.TabIndex = 10
         '
         'View_Checked_in_Vehicles1
         '
@@ -209,12 +202,26 @@ Partial Class Dash
         Me.View_Checked_in_Vehicles1.Size = New System.Drawing.Size(1109, 763)
         Me.View_Checked_in_Vehicles1.TabIndex = 9
         '
-        'Visitors_History1
+        'View_Checked_in1
         '
-        Me.Visitors_History1.Location = New System.Drawing.Point(252, 0)
-        Me.Visitors_History1.Name = "Visitors_History1"
-        Me.Visitors_History1.Size = New System.Drawing.Size(1109, 763)
-        Me.Visitors_History1.TabIndex = 10
+        Me.View_Checked_in1.Location = New System.Drawing.Point(252, 0)
+        Me.View_Checked_in1.Name = "View_Checked_in1"
+        Me.View_Checked_in1.Size = New System.Drawing.Size(1109, 763)
+        Me.View_Checked_in1.TabIndex = 8
+        '
+        'Vehicles_History1
+        '
+        Me.Vehicles_History1.Location = New System.Drawing.Point(252, 0)
+        Me.Vehicles_History1.Name = "Vehicles_History1"
+        Me.Vehicles_History1.Size = New System.Drawing.Size(1109, 763)
+        Me.Vehicles_History1.TabIndex = 7
+        '
+        'Add_Vehicle1
+        '
+        Me.Add_Vehicle1.Location = New System.Drawing.Point(252, 0)
+        Me.Add_Vehicle1.Name = "Add_Vehicle1"
+        Me.Add_Vehicle1.Size = New System.Drawing.Size(1109, 763)
+        Me.Add_Vehicle1.TabIndex = 6
         '
         'Dash
         '
@@ -261,4 +268,5 @@ Partial Class Dash
     Friend WithEvents View_Checked_in1 As View_Checked_in
     Friend WithEvents View_Checked_in_Vehicles1 As View_Checked_in_Vehicles
     Friend WithEvents Visitors_History1 As Visitors_History
+    Friend WithEvents Timer1 As Timer
 End Class

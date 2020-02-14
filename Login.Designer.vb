@@ -74,7 +74,7 @@ Partial Class Login
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(128, 20)
-        Me.TextBox1.TabIndex = 16
+        Me.TextBox1.TabIndex = 1
         Me.TextBox1.TabStop = False
         Me.TextBox1.Text = "Username"
         '
@@ -88,7 +88,7 @@ Partial Class Login
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(128, 20)
-        Me.TextBox2.TabIndex = 15
+        Me.TextBox2.TabIndex = 2
         Me.TextBox2.TabStop = False
         Me.TextBox2.Text = "Password"
         '
@@ -110,6 +110,7 @@ Partial Class Login
         '
         'Login
         '
+        Me.AcceptButton = Me.loginbtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
