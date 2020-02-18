@@ -46,7 +46,6 @@ Partial Class Add_Visitor
         Me.Last_NameTextBox = New System.Windows.Forms.TextBox()
         Me.Visitor_IDTextBox = New System.Windows.Forms.TextBox()
         Me.CheckIn = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.captureID = New System.Windows.Forms.Button()
         Me.portrait = New System.Windows.Forms.Button()
         Me.cam = New System.Windows.Forms.Button()
@@ -58,7 +57,6 @@ Partial Class Add_Visitor
         Last_NameLabel = New System.Windows.Forms.Label()
         Visitor_IDLabel = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DestinationLabel
@@ -320,14 +318,6 @@ Partial Class Add_Visitor
         Me.CheckIn.Text = "Check In"
         Me.CheckIn.UseVisualStyleBackColor = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(661, 169)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(424, 240)
-        Me.PictureBox1.TabIndex = 49
-        Me.PictureBox1.TabStop = False
-        '
         'captureID
         '
         Me.captureID.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
@@ -338,7 +328,7 @@ Partial Class Add_Visitor
         Me.captureID.Name = "captureID"
         Me.captureID.Size = New System.Drawing.Size(168, 54)
         Me.captureID.TabIndex = 27
-        Me.captureID.Text = "Check In"
+        Me.captureID.Text = "Capture ID"
         Me.captureID.UseVisualStyleBackColor = False
         '
         'portrait
@@ -351,7 +341,7 @@ Partial Class Add_Visitor
         Me.portrait.Name = "portrait"
         Me.portrait.Size = New System.Drawing.Size(168, 54)
         Me.portrait.TabIndex = 27
-        Me.portrait.Text = "Check In"
+        Me.portrait.Text = "Portrait"
         Me.portrait.UseVisualStyleBackColor = False
         '
         'cam
@@ -371,7 +361,6 @@ Partial Class Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label5)
@@ -402,7 +391,6 @@ Partial Class Add_Visitor
         Me.Size = New System.Drawing.Size(1109, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -425,7 +413,6 @@ Partial Class Add_Visitor
     Friend WithEvents Last_NameTextBox As TextBox
     Friend WithEvents Visitor_IDTextBox As TextBox
     Friend WithEvents CheckIn As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents captureID As Button
     Friend WithEvents portrait As Button
     Friend WithEvents cam As Button

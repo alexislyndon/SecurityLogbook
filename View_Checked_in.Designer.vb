@@ -28,7 +28,11 @@ Partial Class View_Checked_in
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
+        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.Panel2.SuspendLayout()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -97,6 +101,21 @@ Partial Class View_Checked_in
         Me.Button1.Text = "Check out"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
+        '
+        'VisitorsTableAdapter1
+        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -110,6 +129,7 @@ Partial Class View_Checked_in
         Me.Size = New System.Drawing.Size(1109, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,4 +141,7 @@ Partial Class View_Checked_in
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents DB1DataSet1 As DB1DataSet
+    Friend WithEvents TableAdapterManager1 As DB1DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents VisitorsTableAdapter1 As DB1DataSetTableAdapters.VisitorsTableAdapter
 End Class
