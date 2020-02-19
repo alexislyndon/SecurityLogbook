@@ -129,6 +129,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB1DataSet.vb">
+      <DependentUpon>DB1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="webcamcap.Designer.vb">
       <DependentUpon>webcamcap.vb</DependentUpon>
     </Compile>

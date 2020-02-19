@@ -4,15 +4,29 @@
     End Sub
 
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
-        If UsersTableAdapter.LoginQuery(TextBox1.Text, TextBox2.Text) = 1 Then
-            Dash.Show()
-            Me.Hide()
-        Else
-            Label3.Visible = True
-            Label2.Text = "Invalid Credentials."
-        End If 'comment out if block to bypass db
-        'Dash.Show
-        'Me.Hide()
+        Dim designation As String
+        designation = UsersTableAdapter.DesignationQuery(TextBox1.Text, TextBox2.Text)
+        'If UsersTableAdapter.LoginQuery(TextBox1.Text, TextBox2.Text) = 1 Then
+        '    Dash.Show()
+        '    Me.Hide()
+        'Else
+        '    Label3.Visible = True
+        '    Label2.Text = "Invalid Credentials."
+        'End If 'comment out if block to bypass db
+
+        If designation = "admin" Then
+            'append userid to session and logs
+            'show the admin panel
+        ElseIf designation = "main" Then
+            'append userid to session and logs
+            'show main gate panel
+        ElseIf designation = "back" Then
+            'append userid to session and logs
+            'show main gate panel
+        End If
+
+        Dash.Show()
+        Me.Hide()
     End Sub
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.GotFocus
