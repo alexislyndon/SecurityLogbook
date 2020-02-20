@@ -26,6 +26,7 @@ Partial Class Dash
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.vehicles_history_btn = New System.Windows.Forms.Button()
         Me.view_checkedin_btn = New System.Windows.Forms.Button()
         Me.add_vehicle_btn = New System.Windows.Forms.Button()
@@ -66,6 +67,7 @@ Partial Class Dash
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.vehicles_history_btn)
         Me.Panel1.Controls.Add(Me.view_checkedin_btn)
         Me.Panel1.Controls.Add(Me.add_vehicle_btn)
@@ -79,6 +81,18 @@ Partial Class Dash
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(252, 762)
         Me.Panel1.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(0, 709)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(252, 50)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Log out"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'vehicles_history_btn
         '
@@ -269,4 +283,5 @@ Partial Class Dash
     Friend WithEvents View_Checked_in_Vehicles1 As View_Checked_in_Vehicles
     Friend WithEvents Visitors_History1 As Visitors_History
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button1 As Button
 End Class

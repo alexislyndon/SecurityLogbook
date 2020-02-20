@@ -132,6 +132,12 @@
     <Compile Include="DB1DataSet.vb">
       <DependentUpon>DB1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ViewSelector.Designer.vb">
+      <DependentUpon>ViewSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="webcamcap.Designer.vb">
       <DependentUpon>webcamcap.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSelector.resx">
+      <DependentUpon>ViewSelector.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="webcamcap.resx">
       <DependentUpon>webcamcap.vb</DependentUpon>

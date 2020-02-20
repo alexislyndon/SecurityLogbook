@@ -6,6 +6,7 @@
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
         Dim designation As String
         designation = UsersTableAdapter.DesignationQuery(TextBox1.Text, TextBox2.Text)
+
         'If UsersTableAdapter.LoginQuery(TextBox1.Text, TextBox2.Text) = 1 Then
         '    Dash.Show()
         '    Me.Hide()
@@ -17,16 +18,22 @@
         If designation = "admin" Then
             'append userid to session and logs
             'show the admin panel
+            MsgBox("Please log in using a developer account.")
         ElseIf designation = "main" Then
             'append userid to session and logs
             'show main gate panel
+            MsgBox("Please log in using a developer account.")
         ElseIf designation = "back" Then
             'append userid to session and logs
             'show main gate panel
+            MsgBox("Please log in using a developer account.")
+        ElseIf designation = "coder" Then
+            ViewSelector.Show()
+            Me.Hide()
         End If
 
-        Dash.Show()
-        Me.Hide()
+        'Dash.Show()
+        'Me.Hide()
     End Sub
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.GotFocus
