@@ -132,16 +132,22 @@
     <Compile Include="DB1DataSet.vb">
       <DependentUpon>DB1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="capturePortrait.Designer.vb">
+      <DependentUpon>capturePortrait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="capturePortrait.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewSelector.Designer.vb">
       <DependentUpon>ViewSelector.vb</DependentUpon>
     </Compile>
     <Compile Include="ViewSelector.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="webcamcap.Designer.vb">
-      <DependentUpon>webcamcap.vb</DependentUpon>
+    <Compile Include="captureID.Designer.vb">
+      <DependentUpon>captureID.vb</DependentUpon>
     </Compile>
-    <Compile Include="webcamcap.vb">
+    <Compile Include="captureID.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.vb">
@@ -201,11 +207,14 @@
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="capturePortrait.resx">
+      <DependentUpon>capturePortrait.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewSelector.resx">
       <DependentUpon>ViewSelector.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="webcamcap.resx">
-      <DependentUpon>webcamcap.vb</DependentUpon>
+    <EmbeddedResource Include="captureID.resx">
+      <DependentUpon>captureID.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -273,6 +282,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="img\portrait.jpg" />
+    <None Include="img\blankid.jpg" />
     <Content Include="License-LGPL.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -3,4 +3,10 @@
 
     End Sub
 
+    Private Sub VisitorsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) 
+        Me.Validate()
+        Me.VisitorsBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.DB1DataSet)
+
+    End Sub
 End Class

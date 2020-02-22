@@ -2,12 +2,12 @@
 Imports Emgu.CV.UI
 Imports Emgu.CV.Structure
 
-Public Class webcamcap
+Public Class captureID
     Dim cap As New Capture() 'first line
 
     Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Capture.Click
         PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
-        PictureBox1.Image.Save("D:\axis.jpg")
+
         Timer1.Stop()
         'cap.Dispose()
     End Sub
@@ -16,8 +16,6 @@ Public Class webcamcap
         PictureBox1.Image = cap.QueryFrame.ToBitmap() 'Second line
         Label1.Text = Date.Now.ToString("ddMMMyyyyddd") & vbCrLf & Date.Now.ToString("HH:mm:ss")
         'Label1.Text = Date.Now.ToString("yyyy:MMM:dd:hh:mm:ss")
-
-
     End Sub
 
     Private Sub StartCapture(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Start.Click
@@ -28,5 +26,10 @@ Public Class webcamcap
         cap.FlipHorizontal = True
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 424) '424
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click
+        PictureBox1.Image.Save("D:\IDtemp.jpg")
+        Me.Hide()
     End Sub
 End Class

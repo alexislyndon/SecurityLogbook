@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class webcamcap
+Partial Class capturePortrait
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,8 +26,8 @@ Partial Class webcamcap
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Start = New System.Windows.Forms.Button()
         Me.Capture = New System.Windows.Forms.Button()
+        Me.Save = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -35,13 +35,13 @@ Partial Class webcamcap
         '
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(424, 240)
+        Me.PictureBox1.Size = New System.Drawing.Size(240, 240)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Start
         '
-        Me.Start.Location = New System.Drawing.Point(12, 273)
+        Me.Start.Location = New System.Drawing.Point(275, 12)
         Me.Start.Name = "Start"
         Me.Start.Size = New System.Drawing.Size(75, 23)
         Me.Start.TabIndex = 1
@@ -50,46 +50,41 @@ Partial Class webcamcap
         '
         'Capture
         '
-        Me.Capture.Location = New System.Drawing.Point(361, 273)
+        Me.Capture.Location = New System.Drawing.Point(275, 54)
         Me.Capture.Name = "Capture"
         Me.Capture.Size = New System.Drawing.Size(75, 23)
         Me.Capture.TabIndex = 2
         Me.Capture.Text = "Capture"
         Me.Capture.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'Save
         '
-        Me.Timer1.Interval = 10
+        Me.Save.Location = New System.Drawing.Point(275, 229)
+        Me.Save.Name = "Save"
+        Me.Save.Size = New System.Drawing.Size(75, 23)
+        Me.Save.TabIndex = 3
+        Me.Save.Text = "Save"
+        Me.Save.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(337, 224)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "datetime"
-        '
-        'webcamcap
+        'capturePortrait
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(451, 311)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(370, 266)
+        Me.Controls.Add(Me.Save)
         Me.Controls.Add(Me.Capture)
         Me.Controls.Add(Me.Start)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Name = "webcamcap"
-        Me.Text = "Form1"
+        Me.Name = "capturePortrait"
+        Me.Text = "Capture Portrait"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Start As Button
     Friend WithEvents Capture As Button
+    Friend WithEvents Save As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Label1 As Label
 End Class
