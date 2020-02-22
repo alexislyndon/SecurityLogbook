@@ -33,7 +33,7 @@ Partial Class ViewSelector
         Me.Button1.Location = New System.Drawing.Point(117, 67)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 1
         Me.Button1.Text = "Main"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -42,7 +42,7 @@ Partial Class ViewSelector
         Me.Button2.Location = New System.Drawing.Point(117, 115)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 0
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "Back"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -51,7 +51,7 @@ Partial Class ViewSelector
         Me.Button3.Location = New System.Drawing.Point(117, 156)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 0
+        Me.Button3.TabIndex = 3
         Me.Button3.Text = "Admin"
         Me.Button3.UseVisualStyleBackColor = True
         '

@@ -32,6 +32,7 @@ Partial Class Add_Visitor
         Dim Visitor_IDLabel As System.Windows.Forms.Label
         Dim sex As System.Windows.Forms.Label
         Dim lbl_surrendered As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.destinationbox = New System.Windows.Forms.ComboBox()
@@ -53,6 +54,9 @@ Partial Class Add_Visitor
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.v_id = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         DestinationLabel = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
         Phone_NumberLabel = New System.Windows.Forms.Label()
@@ -62,6 +66,7 @@ Partial Class Add_Visitor
         Visitor_IDLabel = New System.Windows.Forms.Label()
         sex = New System.Windows.Forms.Label()
         lbl_surrendered = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,6 +172,18 @@ Partial Class Add_Visitor
         lbl_surrendered.Size = New System.Drawing.Size(110, 20)
         lbl_surrendered.TabIndex = 29
         lbl_surrendered.Text = "ID Surrendred"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.ForeColor = System.Drawing.Color.DarkRed
+        Label1.Location = New System.Drawing.Point(-1, 79)
+        Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(26, 20)
+        Label1.TabIndex = 28
+        Label1.Text = "ID"
         '
         'Panel2
         '
@@ -360,10 +377,39 @@ Partial Class Add_Visitor
         Me.PictureBox1.TabIndex = 51
         Me.PictureBox1.TabStop = False
         '
+        'v_id
+        '
+        Me.v_id.AutoSize = True
+        Me.v_id.ForeColor = System.Drawing.Color.Red
+        Me.v_id.Location = New System.Drawing.Point(23, 83)
+        Me.v_id.Name = "v_id"
+        Me.v_id.Size = New System.Drawing.Size(13, 13)
+        Me.v_id.TabIndex = 55
+        Me.v_id.Text = "0"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(804, 83)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(43, 23)
+        Me.Button1.TabIndex = 56
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(757, 83)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(44, 20)
+        Me.TextBox1.TabIndex = 57
+        '
         'Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.v_id)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.capidbtn)
         Me.Controls.Add(Me.capportraitbtn)
@@ -386,6 +432,7 @@ Partial Class Add_Visitor
         Me.Controls.Add(sex)
         Me.Controls.Add(Last_NameLabel)
         Me.Controls.Add(Me.Last_NameTextBox)
+        Me.Controls.Add(Label1)
         Me.Controls.Add(Visitor_IDLabel)
         Me.Controls.Add(Me.CheckIn)
         Me.Controls.Add(Me.Panel2)
@@ -423,4 +470,7 @@ Partial Class Add_Visitor
     Friend WithEvents capportraitbtn As Button
     Friend WithEvents capidbtn As Button
     Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents v_id As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

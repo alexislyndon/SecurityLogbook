@@ -1,11 +1,27 @@
 ﻿Imports Emgu.CV
 Imports Emgu.CV.UI
 Imports Emgu.CV.Structure
+Imports System.IO
 
 Public Class captureID
+    Dim fileName = String.Format("D:\secu\MyFile_{0:yyyyMMddHHmmss}.txt", Date.Now)
+    Dim avobj As Add_Visitor
+    Dim rotated As Boolean = False
+    Public Sub New(av As Add_Visitor)
+        cap.FlipHorizontal = True
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 337) '337
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 212) '212
+        avobj = av
+        InitializeComponent()
+        Timer1.Start()
+    End Sub
     Dim cap As New Capture() 'first line
 
     Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Capture.Click
+        If Not rotated Then
+            rotate()
+        End If
+
         PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
 
         Timer1.Stop()
@@ -24,12 +40,22 @@ Public Class captureID
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cap.FlipHorizontal = True
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 424) '424
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 337) '424
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 212) '240 337, 212
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click
-        PictureBox1.Image.Save("D:\IDtemp.jpg")
-        Me.Hide()
+        Timer1.Stop()
+        If Not rotated Then
+            rotate()
+        End If
+        PictureBox1.Image.Save(fileName, Imaging.ImageFormat.Jpeg)
+        avobj.setidpic(PictureBox1.Image)
+        cap.Dispose()
+        Me.Dispose()
+    End Sub
+
+    Private Sub rotate()
+        PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
     End Sub
 End Class

@@ -32,8 +32,8 @@
             Me.Hide()
         End If
 
-        'Dash.Show()
-        'Me.Hide()
+        Dash.Show()
+        Me.Hide()
     End Sub
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.GotFocus
