@@ -27,11 +27,11 @@
         '    'show main gate panel
         '    MsgBox("Please log in using a developer account.")
         'ElseIf designation = "coder" Then
-        '    ViewSelector.Show()
+        ViewSelector.Show()
         '    Me.Hide()
         'End If
 
-        Dash.Show()
+        'Dash.Show()
         Me.Hide()
     End Sub
 

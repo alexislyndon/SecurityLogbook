@@ -13,4 +13,7 @@
         Me.VisitorsTableAdapter1.Fill(Me.DB1DataSet1.Visitors)
     End Sub
 
+    Private Sub VisitorsDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
+        Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
+    End Sub
 End Class
