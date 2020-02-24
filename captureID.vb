@@ -9,8 +9,8 @@ Public Class captureID
     Dim rotated As Boolean = False
     Public Sub New(av As Add_Visitor)
         cap.FlipHorizontal = True
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 337) '337
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 212) '212
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 320) '337
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '212
         avobj = av
         InitializeComponent()
         Timer1.Start()
@@ -21,9 +21,6 @@ Public Class captureID
         If Not rotated Then
             rotate()
         End If
-
-        PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
-
         Timer1.Stop()
         'cap.Dispose()
     End Sub
@@ -40,11 +37,11 @@ Public Class captureID
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cap.FlipHorizontal = True
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 337) '424
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 212) '240 337, 212
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 320) '424
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240 337, 212
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click 'SAAAAAAAAVE
         Timer1.Stop()
         If Not rotated Then
             rotate()
@@ -53,9 +50,13 @@ Public Class captureID
         avobj.setidpic(PictureBox1.Image)
         cap.Dispose()
         Me.Dispose()
+        avobj.hadcapid = True
     End Sub
 
     Private Sub rotate()
-        PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
+        If Not rotated Then
+            PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
+            rotated = True
+        End If
     End Sub
 End Class

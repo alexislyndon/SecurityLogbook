@@ -219,7 +219,7 @@ Partial Class Dash
         'View_Checked_in1
         '
         Me.View_Checked_in1.Location = New System.Drawing.Point(252, 0)
-        Me.View_Checked_in1.Name = "View_Checked_in1"
+        'Me.View_Checked_in1.Name = "View_Checked_in"
         Me.View_Checked_in1.Size = New System.Drawing.Size(1109, 763)
         Me.View_Checked_in1.TabIndex = 8
         '

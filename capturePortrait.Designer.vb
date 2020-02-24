@@ -35,13 +35,13 @@ Partial Class capturePortrait
         '
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(240, 240)
+        Me.PictureBox1.Size = New System.Drawing.Size(360, 360)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Start
         '
-        Me.Start.Location = New System.Drawing.Point(275, 12)
+        Me.Start.Location = New System.Drawing.Point(378, 12)
         Me.Start.Name = "Start"
         Me.Start.Size = New System.Drawing.Size(75, 23)
         Me.Start.TabIndex = 1
@@ -50,7 +50,7 @@ Partial Class capturePortrait
         '
         'Capture
         '
-        Me.Capture.Location = New System.Drawing.Point(275, 54)
+        Me.Capture.Location = New System.Drawing.Point(378, 41)
         Me.Capture.Name = "Capture"
         Me.Capture.Size = New System.Drawing.Size(75, 23)
         Me.Capture.TabIndex = 2
@@ -59,18 +59,21 @@ Partial Class capturePortrait
         '
         'Save
         '
-        Me.Save.Location = New System.Drawing.Point(275, 229)
+        Me.Save.Location = New System.Drawing.Point(378, 201)
         Me.Save.Name = "Save"
         Me.Save.Size = New System.Drawing.Size(75, 23)
         Me.Save.TabIndex = 3
         Me.Save.Text = "Save"
         Me.Save.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        '
         'capturePortrait
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(370, 266)
+        Me.ClientSize = New System.Drawing.Size(457, 382)
         Me.Controls.Add(Me.Save)
         Me.Controls.Add(Me.Capture)
         Me.Controls.Add(Me.Start)

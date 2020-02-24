@@ -34,11 +34,13 @@ Partial Class Login
         Me.DB1DataSet = New Security_Logbook.DB1DataSet()
         Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsersTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.usersTableAdapter()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.errorLbl = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -130,16 +132,16 @@ Partial Class Login
         '
         Me.UsersTableAdapter.ClearBeforeFill = True
         '
-        'Label2
+        'errorLbl
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(107, 335)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Invalid Credentials"
+        Me.errorLbl.AutoSize = True
+        Me.errorLbl.BackColor = System.Drawing.Color.Transparent
+        Me.errorLbl.ForeColor = System.Drawing.Color.White
+        Me.errorLbl.Location = New System.Drawing.Point(107, 335)
+        Me.errorLbl.Name = "errorLbl"
+        Me.errorLbl.Size = New System.Drawing.Size(93, 13)
+        Me.errorLbl.TabIndex = 0
+        Me.errorLbl.Text = "Invalid Credentials"
         '
         'Label3
         '
@@ -154,6 +156,10 @@ Partial Class Login
         Me.Label3.Text = "!"
         Me.Label3.Visible = False
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'Login
         '
         Me.AcceptButton = Me.loginbtn
@@ -163,7 +169,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(307, 409)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.errorLbl)
         Me.Controls.Add(Me.loginbtn)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.TextBox2)
@@ -180,6 +186,7 @@ Partial Class Login
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -194,6 +201,7 @@ Partial Class Login
     Friend WithEvents DB1DataSet As DB1DataSet
     Friend WithEvents UsersBindingSource As BindingSource
     Friend WithEvents UsersTableAdapter As DB1DataSetTableAdapters.usersTableAdapter
-    Friend WithEvents Label2 As Label
+    Friend WithEvents errorLbl As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

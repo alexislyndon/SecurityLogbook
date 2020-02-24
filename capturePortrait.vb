@@ -10,7 +10,7 @@ Public Class capturePortrait
     Dim rotated As Boolean = False
     Public Sub New(av As Add_Visitor)
         cap.FlipHorizontal = True
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 240) '424
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 320) '424
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240
         avobj = av
         InitializeComponent()
@@ -20,7 +20,9 @@ Public Class capturePortrait
     Dim addvisitorsObj As Add_Visitor
 
     Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Capture.Click
-        PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
+        If Not rotated Then
+            rotate()
+        End If
         Timer1.Stop()
         'cap.Dispose()
     End Sub
@@ -37,11 +39,11 @@ Public Class capturePortrait
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cap.FlipHorizontal = True
-        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 240) '424
+        cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 320) '424
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240
     End Sub
 
-    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click '
+    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click 'SAAAAAAAAAAAAAAAAAAAVE
         If Not rotated Then
             rotate()
         End If
@@ -49,8 +51,12 @@ Public Class capturePortrait
         avobj.setportraitpic(PictureBox1.Image)
         cap.Dispose()
         Me.Dispose()
+        avobj.hadcappor = True
     End Sub
     Private Sub rotate()
-        PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
+        If Not rotated Then
+            PictureBox1.Image.RotateFlip(RotateFlipType.RotateNoneFlipX)
+            rotated = True
+        End If
     End Sub
 End Class
