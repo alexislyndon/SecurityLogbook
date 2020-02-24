@@ -138,7 +138,12 @@
     <Compile Include="capturePortrait.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
+    <Compile Include="backForm.Designer.vb">
+      <DependentUpon>backForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="backForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewSelector.Designer.vb">
       <DependentUpon>ViewSelector.vb</DependentUpon>
     </Compile>
@@ -210,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="capturePortrait.resx">
       <DependentUpon>capturePortrait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backForm.resx">
+      <DependentUpon>backForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSelector.resx">
       <DependentUpon>ViewSelector.vb</DependentUpon>
