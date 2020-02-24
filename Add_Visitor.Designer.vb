@@ -381,7 +381,7 @@ Partial Class Add_Visitor
         '
         'ErrorProvider1
         '
-        Me.ErrorProvider1.BlinkRate = 1000
+        Me.ErrorProvider1.BlinkRate = 50
         Me.ErrorProvider1.ContainerControl = Me
         Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '

@@ -17,7 +17,7 @@ Public Class captureID
     End Sub
     Dim cap As New Capture() 'first line
 
-    Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Capture.Click
+    Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CaptureidCard.Click
         If Not rotated Then
             rotate()
         End If

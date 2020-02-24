@@ -19,7 +19,7 @@ Public Class capturePortrait
 
     Dim addvisitorsObj As Add_Visitor
 
-    Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Capture.Click
+    Private Sub capturepic(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapturePor.Click
         If Not rotated Then
             rotate()
         End If

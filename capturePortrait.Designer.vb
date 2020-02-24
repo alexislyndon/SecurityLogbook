@@ -25,7 +25,7 @@ Partial Class capturePortrait
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Start = New System.Windows.Forms.Button()
-        Me.Capture = New System.Windows.Forms.Button()
+        Me.CapturePor = New System.Windows.Forms.Button()
         Me.Save = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,14 +48,14 @@ Partial Class capturePortrait
         Me.Start.Text = "Start"
         Me.Start.UseVisualStyleBackColor = True
         '
-        'Capture
+        'CapturePor
         '
-        Me.Capture.Location = New System.Drawing.Point(378, 41)
-        Me.Capture.Name = "Capture"
-        Me.Capture.Size = New System.Drawing.Size(75, 23)
-        Me.Capture.TabIndex = 2
-        Me.Capture.Text = "Capture"
-        Me.Capture.UseVisualStyleBackColor = True
+        Me.CapturePor.Location = New System.Drawing.Point(378, 41)
+        Me.CapturePor.Name = "CapturePor"
+        Me.CapturePor.Size = New System.Drawing.Size(75, 23)
+        Me.CapturePor.TabIndex = 2
+        Me.CapturePor.Text = "Capture"
+        Me.CapturePor.UseVisualStyleBackColor = True
         '
         'Save
         '
@@ -75,7 +75,7 @@ Partial Class capturePortrait
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 382)
         Me.Controls.Add(Me.Save)
-        Me.Controls.Add(Me.Capture)
+        Me.Controls.Add(Me.CapturePor)
         Me.Controls.Add(Me.Start)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "capturePortrait"
@@ -87,7 +87,7 @@ Partial Class capturePortrait
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Start As Button
-    Friend WithEvents Capture As Button
+    Friend WithEvents CapturePor As Button
     Friend WithEvents Save As Button
     Friend WithEvents Timer1 As Timer
 End Class

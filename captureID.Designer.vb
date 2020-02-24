@@ -24,7 +24,7 @@ Partial Class captureID
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Start = New System.Windows.Forms.Button()
-        Me.Capture = New System.Windows.Forms.Button()
+        Me.CaptureidCard = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Save = New System.Windows.Forms.Button()
@@ -41,14 +41,14 @@ Partial Class captureID
         Me.Start.Text = "Start"
         Me.Start.UseVisualStyleBackColor = True
         '
-        'Capture
+        'CaptureidCard
         '
-        Me.Capture.Location = New System.Drawing.Point(364, 305)
-        Me.Capture.Name = "Capture"
-        Me.Capture.Size = New System.Drawing.Size(75, 23)
-        Me.Capture.TabIndex = 2
-        Me.Capture.Text = "Capture"
-        Me.Capture.UseVisualStyleBackColor = True
+        Me.CaptureidCard.Location = New System.Drawing.Point(364, 305)
+        Me.CaptureidCard.Name = "CaptureidCard"
+        Me.CaptureidCard.Size = New System.Drawing.Size(75, 23)
+        Me.CaptureidCard.TabIndex = 2
+        Me.CaptureidCard.Text = "Capture"
+        Me.CaptureidCard.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -87,11 +87,11 @@ Partial Class captureID
         Me.ClientSize = New System.Drawing.Size(451, 330)
         Me.Controls.Add(Me.Save)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Capture)
+        Me.Controls.Add(Me.CaptureidCard)
         Me.Controls.Add(Me.Start)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "captureID"
-        Me.Text = "Form1"
+        Me.Text = "Take a photo of the ID Card"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -100,7 +100,7 @@ Partial Class captureID
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Start As Button
-    Friend WithEvents Capture As Button
+    Friend WithEvents CaptureidCard As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents Save As Button

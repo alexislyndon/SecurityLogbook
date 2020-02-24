@@ -222,7 +222,7 @@ Partial Class View_Checked_in
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Panel2)
-        Me.Name = "View_Checked_in"
+        'Me.Name = "View_Checked_in"
         Me.Size = New System.Drawing.Size(1129, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
