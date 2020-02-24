@@ -62,8 +62,8 @@ Module Module1
         Next
         'obj.PictureBox1.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
         IO.Path.Combine(path, "\img\portrait.jpg")
-        obj.PictureBox1.Image = Image.FromFile(IO.Path.Combine(path, "img\portrait.jpg"))
-        obj.PictureBox2.Image = Image.FromFile(IO.Path.Combine(path, "img\blankid.jpg"))
+        obj.PictureBox1.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+        obj.PictureBox2.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
 
     End Sub
 End Module
