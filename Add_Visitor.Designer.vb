@@ -144,7 +144,7 @@ Partial Class Add_Visitor
         '
         Visitor_IDLabel.AutoSize = True
         Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Visitor_IDLabel.Location = New System.Drawing.Point(718, 156)
+        Visitor_IDLabel.Location = New System.Drawing.Point(401, 173)
         Visitor_IDLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Visitor_IDLabel.Name = "Visitor_IDLabel"
         Visitor_IDLabel.Size = New System.Drawing.Size(129, 20)
@@ -191,7 +191,7 @@ Partial Class Add_Visitor
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(-4, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1109, 77)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 77)
         Me.Panel2.TabIndex = 13
         '
         'Label6
@@ -292,12 +292,12 @@ Partial Class Add_Visitor
         '
         'idbadge
         '
-        Me.idbadge.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idbadge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.idbadge.FormattingEnabled = True
         Me.idbadge.Items.AddRange(New Object() {"A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3", "B4", "B5"})
-        Me.idbadge.Location = New System.Drawing.Point(775, 179)
+        Me.idbadge.Location = New System.Drawing.Point(405, 192)
         Me.idbadge.Name = "idbadge"
-        Me.idbadge.Size = New System.Drawing.Size(72, 32)
+        Me.idbadge.Size = New System.Drawing.Size(156, 28)
         Me.idbadge.TabIndex = 49
         '
         'ComboBox2
@@ -361,7 +361,7 @@ Partial Class Add_Visitor
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Security_Logbook.My.Resources.Resources.blankid
-        Me.PictureBox2.Location = New System.Drawing.Point(756, 335)
+        Me.PictureBox2.Location = New System.Drawing.Point(756, 385)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(337, 212)
         Me.PictureBox2.TabIndex = 51
