@@ -144,6 +144,12 @@
     <Compile Include="backForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PopView.Designer.vb">
+      <DependentUpon>PopView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="ViewSelector.Designer.vb">
       <DependentUpon>ViewSelector.vb</DependentUpon>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="backForm.resx">
       <DependentUpon>backForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopView.resx">
+      <DependentUpon>PopView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSelector.resx">
       <DependentUpon>ViewSelector.vb</DependentUpon>

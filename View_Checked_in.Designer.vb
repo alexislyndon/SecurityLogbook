@@ -29,10 +29,6 @@ Partial Class View_Checked_in
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
-        Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
-        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,10 +40,14 @@ Partial Class View_Checked_in
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
+        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.Panel2.SuspendLayout()
-        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -116,28 +116,6 @@ Partial Class View_Checked_in
         Me.Button1.Text = "Check out"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'DB1DataSet1
-        '
-        Me.DB1DataSet1.DataSetName = "DB1DataSet"
-        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager1.usersTableAdapter = Nothing
-        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
-        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
-        '
-        'VisitorsTableAdapter1
-        '
-        Me.VisitorsTableAdapter1.ClearBeforeFill = True
-        '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
-        '
         'VisitorsDataGridView
         '
         Me.VisitorsDataGridView.AutoGenerateColumns = False
@@ -145,7 +123,10 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
         Me.VisitorsDataGridView.Location = New System.Drawing.Point(45, 225)
+        Me.VisitorsDataGridView.MultiSelect = False
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
+        Me.VisitorsDataGridView.ReadOnly = True
+        Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1048, 286)
         Me.VisitorsDataGridView.TabIndex = 21
         '
@@ -154,6 +135,7 @@ Partial Class View_Checked_in
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "visit_ID"
         Me.DataGridViewTextBoxColumn1.HeaderText = "visit_ID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'DataGridViewTextBoxColumn19
         '
@@ -218,6 +200,28 @@ Partial Class View_Checked_in
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.ReadOnly = True
         '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
+        '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.usersTableAdapter = Nothing
+        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
+        '
+        'VisitorsTableAdapter1
+        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,9 +236,9 @@ Partial Class View_Checked_in
         Me.Size = New System.Drawing.Size(1129, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

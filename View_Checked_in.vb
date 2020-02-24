@@ -7,6 +7,7 @@
     End Sub
 
     Private Sub View_Checked_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        VisitorsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DB1DataSet1.Visitors.Clear()
         DB1DataSet1.EnforceConstraints = False
         'Me.VisitorsTableAdapter1.Fill(Me.DB1DataSet1.Visitors)
@@ -15,5 +16,8 @@
 
     Private Sub VisitorsDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
         Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
+        Dim pv As New PopView(id)
+        pv.Show()
     End Sub
+
 End Class
