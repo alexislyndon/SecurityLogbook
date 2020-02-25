@@ -44,6 +44,7 @@ Partial Class View_Checked_in
         Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.Refreshbtn = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -222,10 +223,20 @@ Partial Class View_Checked_in
         '
         Me.VisitorsTableAdapter1.ClearBeforeFill = True
         '
+        'Refreshbtn
+        '
+        Me.Refreshbtn.Location = New System.Drawing.Point(45, 517)
+        Me.Refreshbtn.Name = "Refreshbtn"
+        Me.Refreshbtn.Size = New System.Drawing.Size(75, 23)
+        Me.Refreshbtn.TabIndex = 22
+        Me.Refreshbtn.Text = "Refresh"
+        Me.Refreshbtn.UseVisualStyleBackColor = True
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Refreshbtn)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
@@ -268,4 +279,5 @@ Partial Class View_Checked_in
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents Refreshbtn As Button
 End Class

@@ -719,23 +719,14 @@ Partial Public Class DB1DataSet
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnvisit_ID}, true))
             Me.columnvisit_ID.AllowDBNull = false
             Me.columnvisit_ID.Unique = true
-            Me.columnfirstname.AllowDBNull = false
             Me.columnfirstname.MaxLength = 50
             Me.columnmiddlename.MaxLength = 50
-            Me.columnsurname.AllowDBNull = false
             Me.columnsurname.MaxLength = 50
             Me.columnsex.MaxLength = 50
-            Me.columnentry.AllowDBNull = false
             Me.columnentry.MaxLength = 50
-            Me.columnexit.AllowDBNull = false
             Me.columnexit.MaxLength = 50
-            Me.columndestination.AllowDBNull = false
             Me.columndestination.MaxLength = 50
-            Me.columnpurpose.AllowDBNull = false
             Me.columnpurpose.MaxLength = 50
-            Me.columntime_in.AllowDBNull = false
-            Me.columntime_out.AllowDBNull = false
-            Me.columnbadge_number.AllowDBNull = false
             Me.columnbadge_number.MaxLength = 10
             Me.columnID_surrendered.MaxLength = 10
             Me.columnphone.MaxLength = 50
@@ -1581,7 +1572,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property firstname() As String
             Get
-                Return CType(Me(Me.tableVisitors.firstnameColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.firstnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'firstname' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.firstnameColumn) = value
@@ -1607,7 +1602,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property surname() As String
             Get
-                Return CType(Me(Me.tableVisitors.surnameColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.surnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'surname' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.surnameColumn) = value
@@ -1633,7 +1632,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property entry() As String
             Get
-                Return CType(Me(Me.tableVisitors.entryColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.entryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'entry' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.entryColumn) = value
@@ -1644,7 +1647,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property _exit() As String
             Get
-                Return CType(Me(Me.tableVisitors.exitColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.exitColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'exit' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.exitColumn) = value
@@ -1655,7 +1662,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property destination() As String
             Get
-                Return CType(Me(Me.tableVisitors.destinationColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.destinationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'destination' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.destinationColumn) = value
@@ -1666,7 +1677,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property purpose() As String
             Get
-                Return CType(Me(Me.tableVisitors.purposeColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.purposeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'purpose' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.purposeColumn) = value
@@ -1677,7 +1692,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property time_in() As Date
             Get
-                Return CType(Me(Me.tableVisitors.time_inColumn),Date)
+                Try 
+                    Return CType(Me(Me.tableVisitors.time_inColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'time_in' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.time_inColumn) = value
@@ -1688,7 +1707,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property time_out() As Date
             Get
-                Return CType(Me(Me.tableVisitors.time_outColumn),Date)
+                Try 
+                    Return CType(Me(Me.tableVisitors.time_outColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'time_out' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.time_outColumn) = value
@@ -1699,7 +1722,11 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property badge_number() As String
             Get
-                Return CType(Me(Me.tableVisitors.badge_numberColumn),String)
+                Try 
+                    Return CType(Me(Me.tableVisitors.badge_numberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'badge_number' in table 'Visitors' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableVisitors.badge_numberColumn) = value
@@ -1798,6 +1825,18 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsfirstnameNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.firstnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetfirstnameNull()
+            Me(Me.tableVisitors.firstnameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsmiddlenameNull() As Boolean
             Return Me.IsNull(Me.tableVisitors.middlenameColumn)
         End Function
@@ -1810,6 +1849,18 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IssurnameNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.surnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetsurnameNull()
+            Me(Me.tableVisitors.surnameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IssexNull() As Boolean
             Return Me.IsNull(Me.tableVisitors.sexColumn)
         End Function
@@ -1818,6 +1869,90 @@ Partial Public Class DB1DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetsexNull()
             Me(Me.tableVisitors.sexColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsentryNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.entryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetentryNull()
+            Me(Me.tableVisitors.entryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Is_exitNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.exitColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Set_exitNull()
+            Me(Me.tableVisitors.exitColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsdestinationNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.destinationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetdestinationNull()
+            Me(Me.tableVisitors.destinationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspurposeNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.purposeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpurposeNull()
+            Me(Me.tableVisitors.purposeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Istime_inNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.time_inColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Settime_inNull()
+            Me(Me.tableVisitors.time_inColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Istime_outNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.time_outColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Settime_outNull()
+            Me(Me.tableVisitors.time_outColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isbadge_numberNull() As Boolean
+            Return Me.IsNull(Me.tableVisitors.badge_numberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setbadge_numberNull()
+            Me(Me.tableVisitors.badge_numberColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2423,35 +2558,46 @@ Namespace DB1DataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Visitors] WHERE (([visit_ID] = @Original_visit_ID) AND ([firstname] "& _ 
-                "= @Original_firstname) AND ((@IsNull_middlename = 1 AND [middlename] IS NULL) OR"& _ 
-                " ([middlename] = @Original_middlename)) AND ([surname] = @Original_surname) AND "& _ 
-                "([sex] = @Original_sex) AND ([entry] = @Original_entry) AND ((@IsNull_exit = 1 A"& _ 
-                "ND [exit] IS NULL) OR ([exit] = @Original_exit)) AND ([destination] = @Original_"& _ 
-                "destination) AND ((@IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @O"& _ 
-                "riginal_purpose)) AND ([time_in] = @Original_time_in) AND ((@IsNull_time_out = 1"& _ 
-                " AND [time_out] IS NULL) OR ([time_out] = @Original_time_out)) AND ([badge_numbe"& _ 
-                "r] = @Original_badge_number) AND ((@IsNull_ID_surrendered = 1 AND [ID_surrendere"& _ 
-                "d] IS NULL) OR ([ID_surrendered] = @Original_ID_surrendered)) AND ((@IsNull_phon"& _ 
-                "e = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_userid "& _ 
-                "= 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([FullName] = @O"& _ 
-                "riginal_FullName))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Visitors] WHERE (([visit_ID] = @Original_visit_ID) AND ((@IsNull_fir"& _ 
+                "stname = 1 AND [firstname] IS NULL) OR ([firstname] = @Original_firstname)) AND "& _ 
+                "((@IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_"& _ 
+                "middlename)) AND ((@IsNull_surname = 1 AND [surname] IS NULL) OR ([surname] = @O"& _ 
+                "riginal_surname)) AND ((@IsNull_sex = 1 AND [sex] IS NULL) OR ([sex] = @Original"& _ 
+                "_sex)) AND ((@IsNull_entry = 1 AND [entry] IS NULL) OR ([entry] = @Original_entr"& _ 
+                "y)) AND ((@IsNull_exit = 1 AND [exit] IS NULL) OR ([exit] = @Original_exit)) AND"& _ 
+                " ((@IsNull_destination = 1 AND [destination] IS NULL) OR ([destination] = @Origi"& _ 
+                "nal_destination)) AND ((@IsNull_purpose = 1 AND [purpose] IS NULL) OR ([purpose]"& _ 
+                " = @Original_purpose)) AND ((@IsNull_time_in = 1 AND [time_in] IS NULL) OR ([tim"& _ 
+                "e_in] = @Original_time_in)) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) O"& _ 
+                "R ([time_out] = @Original_time_out)) AND ((@IsNull_badge_number = 1 AND [badge_n"& _ 
+                "umber] IS NULL) OR ([badge_number] = @Original_badge_number)) AND ((@IsNull_ID_s"& _ 
+                "urrendered = 1 AND [ID_surrendered] IS NULL) OR ([ID_surrendered] = @Original_ID"& _ 
+                "_surrendered)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Origi"& _ 
+                "nal_phone)) AND ((@IsNull_userid = 1 AND [userid] IS NULL) OR ([userid] = @Origi"& _ 
+                "nal_userid)) AND ([FullName] = @Original_FullName))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visit_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_firstname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_middlename", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_middlename", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_surname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "surname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_surname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "surname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_entry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_exit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_exit", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_purpose", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_time_in", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_time_out", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_badge_number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_badge_number", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ID_surrendered", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_surrendered", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -2494,21 +2640,26 @@ Namespace DB1DataSetTableAdapters
                 " @destination, [purpose] = @purpose, [time_in] = @time_in, [time_out] = @time_ou"& _ 
                 "t, [badge_number] = @badge_number, [portrait] = @portrait, [id_pic] = @id_pic, ["& _ 
                 "ID_surrendered] = @ID_surrendered, [phone] = @phone, [userid] = @userid WHERE (("& _ 
-                "[visit_ID] = @Original_visit_ID) AND ([firstname] = @Original_firstname) AND ((@"& _ 
-                "IsNull_middlename = 1 AND [middlename] IS NULL) OR ([middlename] = @Original_mid"& _ 
-                "dlename)) AND ([surname] = @Original_surname) AND ([sex] = @Original_sex) AND (["& _ 
-                "entry] = @Original_entry) AND ((@IsNull_exit = 1 AND [exit] IS NULL) OR ([exit] "& _ 
-                "= @Original_exit)) AND ([destination] = @Original_destination) AND ((@IsNull_pur"& _ 
-                "pose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ([time_i"& _ 
-                "n] = @Original_time_in) AND ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR (["& _ 
-                "time_out] = @Original_time_out)) AND ([badge_number] = @Original_badge_number) A"& _ 
-                "ND ((@IsNull_ID_surrendered = 1 AND [ID_surrendered] IS NULL) OR ([ID_surrendere"& _ 
-                "d] = @Original_ID_surrendered)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR "& _ 
-                "([phone] = @Original_phone)) AND ((@IsNull_userid = 1 AND [userid] IS NULL) OR ("& _ 
-                "[userid] = @Original_userid)) AND ([FullName] = @Original_FullName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT vi"& _ 
-                "sit_ID, firstname, middlename, surname, sex, entry, [exit], destination, purpose"& _ 
-                ", time_in, time_out, badge_number, portrait, id_pic, ID_surrendered, phone, user"& _ 
-                "id, FullName FROM Visitors WHERE (visit_ID = @visit_ID)"
+                "[visit_ID] = @Original_visit_ID) AND ((@IsNull_firstname = 1 AND [firstname] IS "& _ 
+                "NULL) OR ([firstname] = @Original_firstname)) AND ((@IsNull_middlename = 1 AND ["& _ 
+                "middlename] IS NULL) OR ([middlename] = @Original_middlename)) AND ((@IsNull_sur"& _ 
+                "name = 1 AND [surname] IS NULL) OR ([surname] = @Original_surname)) AND ((@IsNul"& _ 
+                "l_sex = 1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ((@IsNull_entry = 1"& _ 
+                " AND [entry] IS NULL) OR ([entry] = @Original_entry)) AND ((@IsNull_exit = 1 AND"& _ 
+                " [exit] IS NULL) OR ([exit] = @Original_exit)) AND ((@IsNull_destination = 1 AND"& _ 
+                " [destination] IS NULL) OR ([destination] = @Original_destination)) AND ((@IsNul"& _ 
+                "l_purpose = 1 AND [purpose] IS NULL) OR ([purpose] = @Original_purpose)) AND ((@"& _ 
+                "IsNull_time_in = 1 AND [time_in] IS NULL) OR ([time_in] = @Original_time_in)) AN"& _ 
+                "D ((@IsNull_time_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Original_time"& _ 
+                "_out)) AND ((@IsNull_badge_number = 1 AND [badge_number] IS NULL) OR ([badge_num"& _ 
+                "ber] = @Original_badge_number)) AND ((@IsNull_ID_surrendered = 1 AND [ID_surrend"& _ 
+                "ered] IS NULL) OR ([ID_surrendered] = @Original_ID_surrendered)) AND ((@IsNull_p"& _ 
+                "hone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_user"& _ 
+                "id = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([FullName] ="& _ 
+                " @Original_FullName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT visit_ID, firstname, middlename, surname, sex, en"& _ 
+                "try, [exit], destination, purpose, time_in, time_out, badge_number, portrait, id"& _ 
+                "_pic, ID_surrendered, phone, userid, FullName FROM Visitors WHERE (visit_ID = @v"& _ 
+                "isit_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@middlename", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2527,20 +2678,27 @@ Namespace DB1DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visit_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_firstname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_firstname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_middlename", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_middlename", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_surname", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "surname", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_surname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "surname", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_sex", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sex", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_entry", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_entry", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_exit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_exit", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "exit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destination", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destination", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_purpose", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_purpose", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_time_in", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_time_out", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_badge_number", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_badge_number", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ID_surrendered", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID_surrendered", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -2562,12 +2720,12 @@ Namespace DB1DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT visit_ID, firstname, middlename, surname, sex, entry, [exit], destination,"& _ 
-                " purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrendered, pho"& _ 
-                "ne, userid, FullName FROM Visitors"
+            Me._commandCollection(0).CommandText = "SELECT        visit_ID, firstname, middlename, surname, sex, entry, [exit], desti"& _ 
+                "nation, purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrender"& _ 
+                "ed, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -2590,21 +2748,39 @@ Namespace DB1DataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        MAX(visit_ID) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"
+            Me._commandCollection(2).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                time_out = GETDATE(), [exit] = 'm'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
+                "RE        (visit_ID = @visit_ID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT        visit_ID, firstname, middlename, surname, sex, entry, [exit], desti"& _ 
                 "nation, purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrender"& _ 
-                "ed, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (visit_ID = "& _ 
-                "@visit_ID)"
+                "ed, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ([exit] IS N"& _ 
+                "ULL)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT portrait, userid, FullName FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(4).CommandText = "SELECT        MAX(visit_ID) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                time_out = NULL, [exit] = NULL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
+                "      (visit_ID = @visit_ID)"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "SELECT FullName, ID_surrendered, badge_number, destination, entry, [exit], firstn"& _ 
+                "ame, id_pic, middlename, phone, portrait, purpose, sex, surname, time_in, time_o"& _ 
+                "ut, userid, visit_ID FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "SELECT portrait, userid, FullName FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2629,6 +2805,44 @@ Namespace DB1DataSetTableAdapters
             Dim dataTable As DB1DataSet.VisitorsDataTable = New DB1DataSet.VisitorsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillCheckedIn(ByVal dataTable As DB1DataSet.VisitorsDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataCheckedIn() As DB1DataSet.VisitorsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Dim dataTable As DB1DataSet.VisitorsDataTable = New DB1DataSet.VisitorsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function View(ByVal dataTable As DB1DataSet.VisitorsDataTable, ByVal visit_ID As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2673,7 +2887,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_exit As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
-                    ByVal Original_time_in As Date,  _
+                    ByVal Original_time_in As Global.System.Nullable(Of Date),  _
                     ByVal Original_time_out As Global.System.Nullable(Of Date),  _
                     ByVal Original_badge_number As String,  _
                     ByVal Original_ID_surrendered As String,  _
@@ -2682,89 +2896,107 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_FullName As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_visit_ID,Integer)
             If (Original_firstname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_firstname")
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_firstname,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_firstname,String)
             End If
             If (Original_middlename Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_middlename,String)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_middlename,String)
             End If
             If (Original_surname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_surname")
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_surname,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_surname,String)
             End If
             If (Original_sex Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_sex")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_sex,String)
-            End If
-            If (Original_entry Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_entry")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_entry,String)
-            End If
-            If (Original_exit Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_exit,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_sex,String)
+            End If
+            If (Original_entry Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_entry,String)
+            End If
+            If (Original_exit Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_exit,String)
             End If
             If (Original_destination Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_destination")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_destination,String)
-            End If
-            If (Original_purpose Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_purpose,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_time_in,Date)
-            If (Original_time_out.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_time_out.Value,Date)
-            Else
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_destination,String)
+            End If
+            If (Original_purpose Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_purpose,String)
+            End If
+            If (Original_time_in.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_time_in.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_time_out.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_time_out.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_badge_number Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_badge_number")
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_badge_number,String)
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_badge_number,String)
             End If
             If (Original_ID_surrendered Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(Original_ID_surrendered,String)
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_ID_surrendered,String)
             End If
             If (Original_phone Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(Original_phone,String)
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_phone,String)
             End If
             If (Original_userid.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(Original_userid.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_userid.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
             End If
             If (Original_FullName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_FullName")
             Else
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_FullName,String)
+                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(Original_FullName,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2794,7 +3026,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal _exit As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
-                    ByVal time_in As Date,  _
+                    ByVal time_in As Global.System.Nullable(Of Date),  _
                     ByVal time_out As Global.System.Nullable(Of Date),  _
                     ByVal badge_number As String,  _
                     ByVal portrait() As Byte,  _
@@ -2803,7 +3035,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal phone As String,  _
                     ByVal userid As Global.System.Nullable(Of Integer)) As Integer
             If (firstname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("firstname")
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(firstname,String)
             End If
@@ -2813,17 +3045,17 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(middlename,String)
             End If
             If (surname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("surname")
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(surname,String)
             End If
             If (sex Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("sex")
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(sex,String)
             End If
             If (entry Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("entry")
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(entry,String)
             End If
@@ -2833,7 +3065,7 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(5).Value = CType(_exit,String)
             End If
             If (destination Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("destination")
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(destination,String)
             End If
@@ -2842,14 +3074,18 @@ Namespace DB1DataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(purpose,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(8).Value = CType(time_in,Date)
+            If (time_in.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(time_in.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
             If (time_out.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(9).Value = CType(time_out.Value,Date)
             Else
                 Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (badge_number Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("badge_number")
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(10).Value = CType(badge_number,String)
             End If
@@ -2906,7 +3142,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal _exit As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
-                    ByVal time_in As Date,  _
+                    ByVal time_in As Global.System.Nullable(Of Date),  _
                     ByVal time_out As Global.System.Nullable(Of Date),  _
                     ByVal badge_number As String,  _
                     ByVal portrait() As Byte,  _
@@ -2923,7 +3159,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_exit As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
-                    ByVal Original_time_in As Date,  _
+                    ByVal Original_time_in As Global.System.Nullable(Of Date),  _
                     ByVal Original_time_out As Global.System.Nullable(Of Date),  _
                     ByVal Original_badge_number As String,  _
                     ByVal Original_ID_surrendered As String,  _
@@ -2932,7 +3168,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_FullName As String,  _
                     ByVal visit_ID As Integer) As Integer
             If (firstname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("firstname")
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(firstname,String)
             End If
@@ -2942,17 +3178,17 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(middlename,String)
             End If
             If (surname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("surname")
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(surname,String)
             End If
             If (sex Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("sex")
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(sex,String)
             End If
             If (entry Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("entry")
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(entry,String)
             End If
@@ -2962,7 +3198,7 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(5).Value = CType(_exit,String)
             End If
             If (destination Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("destination")
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(destination,String)
             End If
@@ -2971,14 +3207,18 @@ Namespace DB1DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(purpose,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(time_in,Date)
+            If (time_in.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(time_in.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
             If (time_out.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = CType(time_out.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (badge_number Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("badge_number")
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(badge_number,String)
             End If
@@ -3009,91 +3249,109 @@ Namespace DB1DataSetTableAdapters
             End If
             Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_visit_ID,Integer)
             If (Original_firstname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_firstname")
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_firstname,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_firstname,String)
             End If
             If (Original_middlename Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_middlename,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_middlename,String)
             End If
             If (Original_surname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_surname")
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_surname,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_surname,String)
             End If
             If (Original_sex Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_sex")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_sex,String)
-            End If
-            If (Original_entry Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_entry")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_entry,String)
-            End If
-            If (Original_exit Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_exit,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_sex,String)
+            End If
+            If (Original_entry Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_entry,String)
+            End If
+            If (Original_exit Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_exit,String)
             End If
             If (Original_destination Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_destination")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_destination,String)
-            End If
-            If (Original_purpose Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_purpose,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_time_in,Date)
-            If (Original_time_out.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_time_out.Value,Date)
-            Else
                 Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_destination,String)
+            End If
+            If (Original_purpose Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_purpose,String)
+            End If
+            If (Original_time_in.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_time_in.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_time_out.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_time_out.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
             End If
             If (Original_badge_number Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_badge_number")
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_badge_number,String)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_badge_number,String)
             End If
             If (Original_ID_surrendered Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_ID_surrendered,String)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_ID_surrendered,String)
             End If
             If (Original_phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_phone,String)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_phone,String)
             End If
             If (Original_userid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_userid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_userid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
             End If
             If (Original_FullName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_FullName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_FullName,String)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_FullName,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(39).Value = CType(visit_ID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(46).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3122,7 +3380,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal _exit As String,  _
                     ByVal destination As String,  _
                     ByVal purpose As String,  _
-                    ByVal time_in As Date,  _
+                    ByVal time_in As Global.System.Nullable(Of Date),  _
                     ByVal time_out As Global.System.Nullable(Of Date),  _
                     ByVal badge_number As String,  _
                     ByVal portrait() As Byte,  _
@@ -3139,7 +3397,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_exit As String,  _
                     ByVal Original_destination As String,  _
                     ByVal Original_purpose As String,  _
-                    ByVal Original_time_in As Date,  _
+                    ByVal Original_time_in As Global.System.Nullable(Of Date),  _
                     ByVal Original_time_out As Global.System.Nullable(Of Date),  _
                     ByVal Original_badge_number As String,  _
                     ByVal Original_ID_surrendered As String,  _
@@ -3156,7 +3414,7 @@ Namespace DB1DataSetTableAdapters
         Public Overloads Overridable Function CheckIn(ByVal firstname As String, ByVal middlename As String, ByVal surname As String, ByVal sex As String, ByVal entry As String, ByVal destination As String, ByVal purpose As String, ByVal badge_number As String, ByVal portrait() As Byte, ByVal id_pic() As Byte, ByVal ID_surrendered As String, ByVal phone As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             If (firstname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("firstname")
+                command.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(0).Value = CType(firstname,String)
             End If
@@ -3166,22 +3424,22 @@ Namespace DB1DataSetTableAdapters
                 command.Parameters(1).Value = CType(middlename,String)
             End If
             If (surname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("surname")
+                command.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(2).Value = CType(surname,String)
             End If
             If (sex Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("sex")
+                command.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(3).Value = CType(sex,String)
             End If
             If (entry Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("entry")
+                command.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(4).Value = CType(entry,String)
             End If
             If (destination Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("destination")
+                command.Parameters(5).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(5).Value = CType(destination,String)
             End If
@@ -3191,7 +3449,7 @@ Namespace DB1DataSetTableAdapters
                 command.Parameters(6).Value = CType(purpose,String)
             End If
             If (badge_number Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("badge_number")
+                command.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(7).Value = CType(badge_number,String)
             End If
@@ -3233,9 +3491,32 @@ Namespace DB1DataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function CHECKOUT(ByVal visit_ID As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(visit_ID,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function MaxID() As Global.System.Nullable(Of Integer)
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3259,36 +3540,32 @@ Namespace DB1DataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function View(ByVal visit_ID As Integer) As Object
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UndoCheckOUT(ByVal visit_ID As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             command.Parameters(0).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
                 command.Connection.Open
             End If
-            Dim returnValue As Object
+            Dim returnValue As Integer
             Try 
-                returnValue = command.ExecuteScalar
+                returnValue = command.ExecuteNonQuery
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
                     command.Connection.Close
                 End If
             End Try
-            If ((returnValue Is Nothing)  _
-                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return Nothing
-            Else
-                Return CType(returnValue,Object)
-            End If
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function ViewPortrait(ByVal visit_ID As Integer) As Byte()
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
             command.Parameters(0).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
