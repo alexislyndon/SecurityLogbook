@@ -1,6 +1,5 @@
 ﻿Public Class PopView
     Public visitID As Integer
-    Private DS1 As New DataSet
     Dim vciobj As View_Checked_in
 
     Public Sub New(visitID As Integer, vci As View_Checked_in)
@@ -22,11 +21,11 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim checkout As String
-        Dim undo As String
+        'Dim undo As String
         checkout = MessageBox.Show("Are you sure you want to check out Visitor #" & visitID & vbCrLf &
                      DB1DataSet1.Tables(0).Rows(0).Item("FullName") & vbCrLf &
                      "with Badge Number: " & DB1DataSet1.Tables(0).Rows(0).Item("badge_number") & "?",
-                     "Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                     "Please Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         If checkout = vbYes Then
             Me.VisitorsTableAdapter.CHECKOUT(visitID)
 

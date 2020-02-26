@@ -22,6 +22,7 @@ Partial Class Add_Vehicle
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Middle_NameLabel = New System.Windows.Forms.Label()
         Me.First_NameLabel = New System.Windows.Forms.Label()
         Me.Last_NameLabel = New System.Windows.Forms.Label()
@@ -36,7 +37,10 @@ Partial Class Add_Vehicle
         Me.CheckIn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.typecombobox = New System.Windows.Forms.ComboBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.VehiclesTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VehiclesTableAdapter()
         Me.Panel2.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Middle_NameLabel
@@ -57,9 +61,9 @@ Partial Class Add_Vehicle
         Me.First_NameLabel.Location = New System.Drawing.Point(208, 358)
         Me.First_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.First_NameLabel.Name = "First_NameLabel"
-        Me.First_NameLabel.Size = New System.Drawing.Size(56, 20)
+        Me.First_NameLabel.Size = New System.Drawing.Size(91, 20)
         Me.First_NameLabel.TabIndex = 46
-        Me.First_NameLabel.Text = "Model:"
+        Me.First_NameLabel.Text = "Model-Year"
         '
         'Last_NameLabel
         '
@@ -190,6 +194,14 @@ Partial Class Add_Vehicle
         Me.typecombobox.Size = New System.Drawing.Size(262, 41)
         Me.typecombobox.TabIndex = 5
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'VehiclesTableAdapter
+        '
+        Me.VehiclesTableAdapter.ClearBeforeFill = True
+        '
         'Add_Vehicle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -211,6 +223,7 @@ Partial Class Add_Vehicle
         Me.Size = New System.Drawing.Size(1109, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +243,6 @@ Partial Class Add_Vehicle
     Friend WithEvents Visitor_IDLabel As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents typecombobox As ComboBox
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents VehiclesTableAdapter As DB1DataSetTableAdapters.VehiclesTableAdapter
 End Class

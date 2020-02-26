@@ -1190,6 +1190,8 @@ Partial Public Class DB1DataSet
         
         Private columnuserid As Global.System.Data.DataColumn
         
+        Private columntype As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1298,6 +1300,14 @@ Partial Public Class DB1DataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntype
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1334,9 +1344,9 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddVehiclesRow(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Integer, ByVal time_in As Date, ByVal time_out As Date, ByVal userid As Integer) As VehiclesRow
+        Public Overloads Function AddVehiclesRow(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Integer, ByVal time_in As Date, ByVal time_out As Date, ByVal userid As Integer, ByVal type As String) As VehiclesRow
             Dim rowVehiclesRow As VehiclesRow = CType(Me.NewRow,VehiclesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, make, model, color, plate, driver, time_in, time_out, userid}
+            Dim columnValuesArray() As Object = New Object() {Nothing, make, model, color, plate, driver, time_in, time_out, userid, type}
             rowVehiclesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVehiclesRow)
             Return rowVehiclesRow
@@ -1374,6 +1384,7 @@ Partial Public Class DB1DataSet
             Me.columntime_in = MyBase.Columns("time_in")
             Me.columntime_out = MyBase.Columns("time_out")
             Me.columnuserid = MyBase.Columns("userid")
+            Me.columntype = MyBase.Columns("type")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1397,6 +1408,8 @@ Partial Public Class DB1DataSet
             MyBase.Columns.Add(Me.columntime_out)
             Me.columnuserid = New Global.System.Data.DataColumn("userid", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuserid)
+            Me.columntype = New Global.System.Data.DataColumn("type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntype)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1413,6 +1426,8 @@ Partial Public Class DB1DataSet
             Me.columnplate.AllowDBNull = false
             Me.columnplate.MaxLength = 10
             Me.columntime_in.AllowDBNull = false
+            Me.columntype.AllowDBNull = false
+            Me.columntype.MaxLength = 20
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2264,6 +2279,17 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property type() As String
+            Get
+                Return CType(Me(Me.tableVehicles.typeColumn),String)
+            End Get
+            Set
+                Me(Me.tableVehicles.typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdriverNull() As Boolean
             Return Me.IsNull(Me.tableVehicles.driverColumn)
         End Function
@@ -2720,7 +2746,7 @@ Namespace DB1DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        visit_ID, firstname, middlename, surname, sex, entry, [exit], desti"& _ 
@@ -2754,33 +2780,47 @@ Namespace DB1DataSetTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        visit_ID, firstname, middlename, surname, sex, entry, [exit], desti"& _ 
-                "nation, purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrender"& _ 
-                "ed, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ([exit] IS N"& _ 
-                "ULL)"
+            Me._commandCollection(3).CommandText = "SELECT        visit_ID, firstname, middlename, surname, CASE WHEN [sex] = 'm' THE"& _ 
+                "N 'Male' WHEN [sex] = 'f' THEN 'Female' ELSE 'Other/Unspecified' END AS Sex, ent"& _ 
+                "ry, [exit], destination, purpose, time_in, time_out, badge_number, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              portrait, id_pic, ID_surrendered, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
+                "         Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        ([exit] IS NULL) AND (entry = 'm')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        MAX(visit_ID) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"
+            Me._commandCollection(4).CommandText = "SELECT        visit_ID, firstname, middlename, surname, CASE WHEN [sex] = 'm' THE"& _ 
+                "N 'Male' WHEN [sex] = 'f' THEN 'Female' ELSE 'Other/Unspecified' END AS Sex, ent"& _ 
+                "ry, [exit], destination, purpose, time_in, time_out, badge_number, portrait, id_"& _ 
+                "pic, ID_surrendered, phone, userid, FullName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE ba"& _ 
+                "dge_number = @badge_number"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge_number", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                time_out = NULL, [exit] = NULL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
-                "      (visit_ID = @visit_ID)"
+            Me._commandCollection(5).CommandText = "SELECT        MAX(visit_ID) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT FullName, ID_surrendered, badge_number, destination, entry, [exit], firstn"& _ 
-                "ame, id_pic, middlename, phone, portrait, purpose, sex, surname, time_in, time_o"& _ 
-                "ut, userid, visit_ID FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(6).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                time_out = NULL, [exit] = NULL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
+                "      (visit_ID = @visit_ID)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT portrait, userid, FullName FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(7).CommandText = "SELECT        visit_ID, FullName, ID_surrendered, badge_number, destination, CASE"& _ 
+                " WHEN [entry] = 'm' THEN 'Main Gate' WHEN [entry] = 'b' THEN 'Back Gate' WHEN [e"& _ 
+                "ntry] = 'd' THEN 'Med' ELSE 'Other/Unspecified' END AS Entry, [exit], "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"        "& _ 
+                "                 firstname, id_pic, middlename, phone, portrait, purpose, CASE W"& _ 
+                "HEN [sex] = 'm' THEN 'Male' WHEN [sex] = 'f' THEN 'Female' ELSE 'Other/Unspecifi"& _ 
+                "ed' END AS Sex, surname, time_in, time_out, userid, visit_ID AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     "& _ 
+                "       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (visit_ID = @visit_ID)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "SELECT portrait, userid, FullName FROM Visitors WHERE (visit_ID = @visit_ID)"
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visit_ID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "visit_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2835,8 +2875,42 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FilterbyBadge(ByVal dataTable As DB1DataSet.VisitorsDataTable, ByVal badge_number As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (badge_number Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(badge_number,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDatabyBadge(ByVal badge_number As String) As DB1DataSet.VisitorsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (badge_number Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(badge_number,String)
+            End If
+            Dim dataTable As DB1DataSet.VisitorsDataTable = New DB1DataSet.VisitorsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
         Public Overloads Overridable Function View(ByVal dataTable As DB1DataSet.VisitorsDataTable, ByVal visit_ID As Integer) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(6)
+            Me.Adapter.SelectCommand = Me.CommandCollection(7)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(visit_ID,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -3516,7 +3590,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function MaxID() As Global.System.Nullable(Of Integer)
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3543,7 +3617,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UndoCheckOUT(ByVal visit_ID As Integer) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             command.Parameters(0).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3565,7 +3639,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function ViewPortrait(ByVal visit_ID As Integer) As Byte()
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(8)
             command.Parameters(0).Value = CType(visit_ID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3786,8 +3860,8 @@ Namespace DB1DataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            users"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (username = @usern"& _ 
-                "ame) AND (password = @password)"
+            Me._commandCollection(1).CommandText = "SELECT        id, designation"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            users"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (username = @u"& _ 
+                "sername) AND (password = @password)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -3827,6 +3901,50 @@ Namespace DB1DataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As DB1DataSet.usersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DB1DataSet.usersDataTable = New DB1DataSet.usersDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function DesignationQuery(ByVal dataTable As DB1DataSet.usersDataTable, ByVal username As String, ByVal password As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (username Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(username,String)
+            End If
+            If (password Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(password,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDesignationQuery(ByVal username As String, ByVal password As String) As DB1DataSet.usersDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (username Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(username,String)
+            End If
+            If (password Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(password,String)
+            End If
             Dim dataTable As DB1DataSet.usersDataTable = New DB1DataSet.usersDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -4002,42 +4120,6 @@ Namespace DB1DataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal username As String, ByVal password As String, ByVal designation As String, ByVal Original_id As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_designation As String) As Integer
             Return Me.Update(Original_id, username, password, designation, Original_id, Original_username, Original_password, Original_designation)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function DesignationQuery(ByVal username As String, ByVal password As String) As Object
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
-            If (username Is Nothing) Then
-                command.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                command.Parameters(0).Value = CType(username,String)
-            End If
-            If (password Is Nothing) Then
-                command.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                command.Parameters(1).Value = CType(password,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
-            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                command.Connection.Open
-            End If
-            Dim returnValue As Object
-            Try 
-                returnValue = command.ExecuteScalar
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    command.Connection.Close
-                End If
-            End Try
-            If ((returnValue Is Nothing)  _
-                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
-                Return Nothing
-            Else
-                Return CType(returnValue,Object)
-            End If
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4250,6 +4332,7 @@ Namespace DB1DataSetTableAdapters
             tableMapping.ColumnMappings.Add("time_in", "time_in")
             tableMapping.ColumnMappings.Add("time_out", "time_out")
             tableMapping.ColumnMappings.Add("userid", "userid")
+            tableMapping.ColumnMappings.Add("type", "type")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -4258,7 +4341,8 @@ Namespace DB1DataSetTableAdapters
                 "@Original_plate) AND ((@IsNull_driver = 1 AND [driver] IS NULL) OR ([driver] = @"& _ 
                 "Original_driver)) AND ([time_in] = @Original_time_in) AND ((@IsNull_time_out = 1"& _ 
                 " AND [time_out] IS NULL) OR ([time_out] = @Original_time_out)) AND ((@IsNull_use"& _ 
-                "rid = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)))"
+                "rid = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND ([type] = @O"& _ 
+                "riginal_type))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4272,29 +4356,35 @@ Namespace DB1DataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_type", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vehicles] ([make], [model], [color], [plate], [driver]) VALUES"& _ 
-                " (@make, @model, @color, @plate, @driver);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, plate"& _ 
-                ", driver FROM Vehicles WHERE (Id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Vehicles] ([make], [model], [color], [plate], [driver], [time_in], ["& _ 
+                "time_out], [userid], [type]) VALUES (@make, @model, @color, @plate, @driver, @ti"& _ 
+                "me_in, @time_out, @userid, @type);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, plate, driver"& _ 
+                ", time_in, time_out, userid, type FROM Vehicles WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@color", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "color", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@plate", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "plate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@driver", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "driver", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@type", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [Vehicles] SET [make] = @make, [model] = @model, [color] = @color, [plate]"& _ 
                 " = @plate, [driver] = @driver, [time_in] = @time_in, [time_out] = @time_out, [us"& _ 
-                "erid] = @userid WHERE (([Id] = @Original_Id) AND ([make] = @Original_make) AND ("& _ 
-                "[model] = @Original_model) AND ([color] = @Original_color) AND ([plate] = @Origi"& _ 
-                "nal_plate) AND ((@IsNull_driver = 1 AND [driver] IS NULL) OR ([driver] = @Origin"& _ 
-                "al_driver)) AND ([time_in] = @Original_time_in) AND ((@IsNull_time_out = 1 AND ["& _ 
-                "time_out] IS NULL) OR ([time_out] = @Original_time_out)) AND ((@IsNull_userid = "& _ 
-                "1 AND [userid] IS NULL) OR ([userid] = @Original_userid)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, mo"& _ 
-                "del, color, plate, driver, time_in, time_out, userid FROM Vehicles WHERE (Id = @"& _ 
-                "Id)"
+                "erid] = @userid, [type] = @type WHERE (([Id] = @Original_Id) AND ([make] = @Orig"& _ 
+                "inal_make) AND ([model] = @Original_model) AND ([color] = @Original_color) AND ("& _ 
+                "[plate] = @Original_plate) AND ((@IsNull_driver = 1 AND [driver] IS NULL) OR ([d"& _ 
+                "river] = @Original_driver)) AND ([time_in] = @Original_time_in) AND ((@IsNull_ti"& _ 
+                "me_out = 1 AND [time_out] IS NULL) OR ([time_out] = @Original_time_out)) AND ((@"& _ 
+                "IsNull_userid = 1 AND [userid] IS NULL) OR ([userid] = @Original_userid)) AND (["& _ 
+                "type] = @Original_type));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, make, model, color, plate, driver, time_in"& _ 
+                ", time_out, userid, type FROM Vehicles WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4304,6 +4394,7 @@ Namespace DB1DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_in", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_in", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@type", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_make", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_model", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4316,6 +4407,7 @@ Namespace DB1DataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_time_out", Global.System.Data.SqlDbType.DateTime2, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "time_out", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_userid", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "userid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_type", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -4329,12 +4421,28 @@ Namespace DB1DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, make, model, color, plate, driver, time_in, time_out, userid FROM Vehi"& _ 
-                "cles"
+            Me._commandCollection(0).CommandText = "SELECT        Id, make, model, color, plate, driver, time_in, time_out, userid, t"& _ 
+                "ype"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Vehicles"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (time_out IS NULL)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT Id, color, driver, make, model, plate, time_in, time_out, type, userid FRO"& _ 
+                "M Vehicles WHERE (plate LIKE '%' + @plate + '%') AND (time_out IS NULL)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@plate", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "plate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "INSERT INTO [Vehicles] ([make], [model], [color], [plate], [type]) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@m"& _ 
+                "ake, @model, @color, @plate, @type);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@make", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "make", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@model", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "model", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@color", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "color", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@plate", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "plate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@type", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4356,6 +4464,40 @@ Namespace DB1DataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As DB1DataSet.VehiclesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DB1DataSet.VehiclesDataTable = New DB1DataSet.VehiclesDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillVehicleFilter(ByVal dataTable As DB1DataSet.VehiclesDataTable, ByVal plate As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (plate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("plate")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(plate,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetVehicleFilter(ByVal plate As String) As DB1DataSet.VehiclesDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (plate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("plate")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(plate,String)
+            End If
             Dim dataTable As DB1DataSet.VehiclesDataTable = New DB1DataSet.VehiclesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -4393,7 +4535,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_make As String, ByVal Original_model As String, ByVal Original_color As String, ByVal Original_plate As String, ByVal Original_driver As Global.System.Nullable(Of Integer), ByVal Original_time_in As Date, ByVal Original_time_out As Global.System.Nullable(Of Date), ByVal Original_userid As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_make As String, ByVal Original_model As String, ByVal Original_color As String, ByVal Original_plate As String, ByVal Original_driver As Global.System.Nullable(Of Integer), ByVal Original_time_in As Date, ByVal Original_time_out As Global.System.Nullable(Of Date), ByVal Original_userid As Global.System.Nullable(Of Integer), ByVal Original_type As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_make Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_make")
@@ -4437,6 +4579,11 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
+            If (Original_type Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_type")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_type,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4456,7 +4603,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Global.System.Nullable(Of Integer), ByVal time_in As Date, ByVal time_out As Global.System.Nullable(Of Date), ByVal userid As Global.System.Nullable(Of Integer), ByVal type As String) As Integer
             If (make Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("make")
             Else
@@ -4481,6 +4628,22 @@ Namespace DB1DataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(driver.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(time_in,Date)
+            If (time_out.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(time_out.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (userid.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(userid.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (type Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("type")
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(type,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4510,6 +4673,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal time_in As Date,  _
                     ByVal time_out As Global.System.Nullable(Of Date),  _
                     ByVal userid As Global.System.Nullable(Of Integer),  _
+                    ByVal type As String,  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_make As String,  _
                     ByVal Original_model As String,  _
@@ -4519,6 +4683,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_time_in As Date,  _
                     ByVal Original_time_out As Global.System.Nullable(Of Date),  _
                     ByVal Original_userid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_type As String,  _
                     ByVal Id As Integer) As Integer
             If (make Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("make")
@@ -4556,50 +4721,60 @@ Namespace DB1DataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Id,Integer)
+            If (type Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("type")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(type,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Id,Integer)
             If (Original_make Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_make")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_make,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_make,String)
             End If
             If (Original_model Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_model")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_model,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_model,String)
             End If
             If (Original_color Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_color")
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_color,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_color,String)
             End If
             If (Original_plate Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_plate")
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_plate,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_plate,String)
             End If
             If (Original_driver.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_driver.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_driver.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_time_in,Date)
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_time_in,Date)
             If (Original_time_out.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_time_out.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_time_out.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
             If (Original_userid.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_userid.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_userid.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Id,Integer)
+            If (Original_type Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_type")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_type,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4628,6 +4803,7 @@ Namespace DB1DataSetTableAdapters
                     ByVal time_in As Date,  _
                     ByVal time_out As Global.System.Nullable(Of Date),  _
                     ByVal userid As Global.System.Nullable(Of Integer),  _
+                    ByVal type As String,  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_make As String,  _
                     ByVal Original_model As String,  _
@@ -4636,8 +4812,56 @@ Namespace DB1DataSetTableAdapters
                     ByVal Original_driver As Global.System.Nullable(Of Integer),  _
                     ByVal Original_time_in As Date,  _
                     ByVal Original_time_out As Global.System.Nullable(Of Date),  _
-                    ByVal Original_userid As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(make, model, color, plate, driver, time_in, time_out, userid, Original_Id, Original_make, Original_model, Original_color, Original_plate, Original_driver, Original_time_in, Original_time_out, Original_userid, Original_Id)
+                    ByVal Original_userid As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_type As String) As Integer
+            Return Me.Update(make, model, color, plate, driver, time_in, time_out, userid, type, Original_Id, Original_make, Original_model, Original_color, Original_plate, Original_driver, Original_time_in, Original_time_out, Original_userid, Original_type, Original_Id)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertVehicle(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal type As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (make Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("make")
+            Else
+                command.Parameters(0).Value = CType(make,String)
+            End If
+            If (model Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("model")
+            Else
+                command.Parameters(1).Value = CType(model,String)
+            End If
+            If (color Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("color")
+            Else
+                command.Parameters(2).Value = CType(color,String)
+            End If
+            If (plate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("plate")
+            Else
+                command.Parameters(3).Value = CType(plate,String)
+            End If
+            If (type Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("type")
+            Else
+                command.Parameters(4).Value = CType(type,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

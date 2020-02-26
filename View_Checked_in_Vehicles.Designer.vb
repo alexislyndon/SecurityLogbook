@@ -29,11 +29,24 @@ Partial Class View_Checked_in_Vehicles
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.VehiclesDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VehiclesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DB1DataSet = New Security_Logbook.DB1DataSet()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
+        Me.VehiclesTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VehiclesTableAdapter()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
+        CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,6 +117,74 @@ Partial Class View_Checked_in_Vehicles
         Me.TextBox1.TabIndex = 24
         Me.TextBox1.Text = "Search here"
         '
+        'VehiclesDataGridView
+        '
+        Me.VehiclesDataGridView.AutoGenerateColumns = False
+        Me.VehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VehiclesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
+        Me.VehiclesDataGridView.DataSource = Me.VehiclesBindingSource
+        Me.VehiclesDataGridView.Location = New System.Drawing.Point(27, 226)
+        Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
+        Me.VehiclesDataGridView.ReadOnly = True
+        Me.VehiclesDataGridView.Size = New System.Drawing.Size(1082, 233)
+        Me.VehiclesDataGridView.TabIndex = 26
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.Frozen = True
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "plate"
+        Me.DataGridViewTextBoxColumn5.Frozen = True
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Plate"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "make"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Make"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "model"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Model"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "color"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Color"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "time_in"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Time in"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "type"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Type"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'VehiclesBindingSource
+        '
+        Me.VehiclesBindingSource.DataMember = "Vehicles"
+        Me.VehiclesBindingSource.DataSource = Me.DB1DataSet
+        '
         'DB1DataSet
         '
         Me.DB1DataSet.DataSetName = "DB1DataSet"
@@ -126,10 +207,25 @@ Partial Class View_Checked_in_Vehicles
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
         Me.TableAdapterManager.VisitorsTableAdapter = Me.VisitorsTableAdapter
         '
+        'VehiclesTableAdapter
+        '
+        Me.VehiclesTableAdapter.ClearBeforeFill = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(27, 197)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 27
+        Me.Button3.Text = "Refresh"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'View_Checked_in_Vehicles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.VehiclesDataGridView)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TextBox1)
@@ -139,6 +235,8 @@ Partial Class View_Checked_in_Vehicles
         Me.Size = New System.Drawing.Size(1129, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -155,4 +253,15 @@ Partial Class View_Checked_in_Vehicles
     Friend WithEvents VisitorsBindingSource As BindingSource
     Friend WithEvents VisitorsTableAdapter As DB1DataSetTableAdapters.VisitorsTableAdapter
     Friend WithEvents TableAdapterManager As DB1DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents VehiclesBindingSource As BindingSource
+    Friend WithEvents VehiclesTableAdapter As DB1DataSetTableAdapters.VehiclesTableAdapter
+    Friend WithEvents VehiclesDataGridView As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
 End Class

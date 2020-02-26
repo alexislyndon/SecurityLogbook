@@ -9,6 +9,7 @@
         Add_Vehicle1.Visible = False
         View_Checked_in1.Visible = False
         View_Checked_in_Vehicles1.Visible = False
+
     End Sub
 
     Private Sub view_checkin_btn_Click(sender As Object, e As EventArgs) Handles view_checkin_btn.Click

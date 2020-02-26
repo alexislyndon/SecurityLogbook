@@ -24,12 +24,14 @@ Partial Class PopView
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PortraitPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PortraitPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -55,19 +57,17 @@ Partial Class PopView
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.PortraitPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -80,6 +80,17 @@ Partial Class PopView
         Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox1.TabIndex = 83
         Me.PictureBox1.TabStop = False
+        '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
+        '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.EnforceConstraints = False
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel5
         '
@@ -110,9 +121,18 @@ Partial Class PopView
         Me.Panel6.Size = New System.Drawing.Size(322, 242)
         Me.Panel6.TabIndex = 88
         '
+        'PortraitPictureBox
+        '
+        Me.PortraitPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.VisitorsBindingSource, "portrait", True))
+        Me.PortraitPictureBox.Location = New System.Drawing.Point(3, 5)
+        Me.PortraitPictureBox.Name = "PortraitPictureBox"
+        Me.PortraitPictureBox.Size = New System.Drawing.Size(316, 234)
+        Me.PortraitPictureBox.TabIndex = 92
+        Me.PortraitPictureBox.TabStop = False
+        '
         'TextBox4
         '
-        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.VisitorsBindingSource, "visit_ID", True))
+        Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VisitorsBindingSource, "visit_ID", True))
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.Location = New System.Drawing.Point(66, 8)
         Me.TextBox4.Name = "TextBox4"
@@ -130,15 +150,6 @@ Partial Class PopView
         Me.Label4.Size = New System.Drawing.Size(48, 19)
         Me.Label4.TabIndex = 90
         Me.Label4.Text = "Visit ID"
-        '
-        'PortraitPictureBox
-        '
-        Me.PortraitPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.VisitorsBindingSource, "portrait", True))
-        Me.PortraitPictureBox.Location = New System.Drawing.Point(3, 5)
-        Me.PortraitPictureBox.Name = "PortraitPictureBox"
-        Me.PortraitPictureBox.Size = New System.Drawing.Size(316, 234)
-        Me.PortraitPictureBox.TabIndex = 92
-        Me.PortraitPictureBox.TabStop = False
         '
         'TextBox1
         '
@@ -388,17 +399,6 @@ Partial Class PopView
         Me.Button1.Text = "Check out"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
-        '
-        'DB1DataSet1
-        '
-        Me.DB1DataSet1.DataSetName = "DB1DataSet"
-        Me.DB1DataSet1.EnforceConstraints = False
-        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'VisitorsTableAdapter
         '
         Me.VisitorsTableAdapter.ClearBeforeFill = True
@@ -469,12 +469,12 @@ Partial Class PopView
         Me.Name = "PopView"
         Me.Text = "View Visitor"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         CType(Me.PortraitPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

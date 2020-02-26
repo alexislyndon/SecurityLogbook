@@ -4,8 +4,15 @@
     End Sub
 
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
-        Dim designation As String
-        designation = UsersTableAdapter.DesignationQuery(TextBox1.Text, TextBox2.Text)
+        'Dim udt As DB1DataSet.usersDataTable = UsersTableAdapter.GetDesignationQuery(TextBox1.Text, TextBox2.Text)
+        'Dim id As Integer
+        'Dim designation As String
+        'id = udt.Rows(0).Item(0)
+        'designation = udt.Rows(0).Item("designation")
+
+        'MsgBox(id)
+        'MsgBox(designation)
+
         'If UsersTableAdapter.LoginQuery(TextBox1.Text, TextBox2.Text) = 1 Then
         '    Dash.Show()
         '    Me.Hide()

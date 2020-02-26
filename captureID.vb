@@ -45,6 +45,7 @@ Public Class captureID
         Timer1.Stop()
         If Not rotated Then
             rotate()
+            rotated = True
         End If
         PictureBox1.Image.Save(fileName, Imaging.ImageFormat.Jpeg)
         avobj.setidpic(PictureBox1.Image)

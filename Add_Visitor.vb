@@ -1,11 +1,9 @@
 ﻿
-Imports System.ComponentModel
-Imports System.IO
 Imports System.Text.RegularExpressions
 Public Class Add_Visitor 'checks in visitor
 
-    Dim names As New Regex("^[a-zA-z\s]*$")
-    Dim phonenumber As New Regex("^\+?[\d]*$")
+    Dim names As New Regex("^[a-zA-z\s]+$")
+    Dim phonenumber As New Regex("^\+?[\d]+$")
     Dim goodtogo As Boolean = True
     Public hadcappor As Boolean = False 'had captured a portrait
     Public hadcapid As Boolean = False 'had captured id 
@@ -79,7 +77,7 @@ Public Class Add_Visitor 'checks in visitor
 
             VisitorsTableAdapter.CheckIn(First_NameTextBox.Text.Trim, Middle_NameTextBox.Text.Trim, Last_NameTextBox.Text.Trim,
                                          sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
-                                         imgtobyte(PictureBox1.Image,hadcappor), imgtobyte(PictureBox2.Image,hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text)
+                                         imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text)
             MsgBox("Successfully Checked in visitor!")
             maxid = VisitorsTableAdapter.MaxID() + 1
             v_id.Text = maxid
@@ -109,10 +107,5 @@ Public Class Add_Visitor 'checks in visitor
     Public Sub setidpic(img As Image)
         PictureBox2.Image = img
     End Sub
-
-    Public Function byeSpace(str As String) As String
-        Dim rgx As New Regex("\s+")
-        Return rgx.Replace(str, " ").Trim
-    End Function
 
 End Class
