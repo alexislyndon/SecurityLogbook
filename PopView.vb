@@ -1,10 +1,8 @@
 ﻿Public Class PopView
     Public visitID As Integer
-    Dim vciobj As View_Checked_in
 
-    Public Sub New(visitID As Integer, vci As View_Checked_in)
+    Public Sub New(visitID As Integer)
         Me.visitID = visitID
-        vciobj = vci
         ' This call is required by the designer.
         InitializeComponent()
 
@@ -21,7 +19,6 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim checkout As String
-        'Dim undo As String
         checkout = MessageBox.Show("Are you sure you want to check out Visitor #" & visitID & vbCrLf &
                      DB1DataSet1.Tables(0).Rows(0).Item("FullName") & vbCrLf &
                      "with Badge Number: " & DB1DataSet1.Tables(0).Rows(0).Item("badge_number") & "?",
@@ -32,7 +29,7 @@
             MessageBox.Show("Checkout Success." & vbCrLf,
                "Checkout Success.", MessageBoxButtons.OK, MessageBoxIcon.Information
                )
-            vciobj.refresher()
+            refreshAll()
             Me.Dispose()
         End If
     End Sub

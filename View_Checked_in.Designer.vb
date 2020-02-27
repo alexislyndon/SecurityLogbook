@@ -131,7 +131,6 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.visit_ID, Me.DataGridViewTextBoxColumn15, Me.FullName, Me.phone, Me.sex, Me.entry, Me.destination, Me.purpose, Me.time_in})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
         Me.VisitorsDataGridView.Location = New System.Drawing.Point(45, 225)
-        Me.VisitorsDataGridView.MultiSelect = False
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
         Me.VisitorsDataGridView.ReadOnly = True
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

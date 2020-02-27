@@ -53,11 +53,34 @@ Module Module1
         Next
     End Sub
 
-    Public Function CheckOutMsg(selectedcells As DataGridViewSelectedCellCollection, DSet1 As DB1DataSet)
-        Dim id As Integer = selectedcells.Item(0).Value
-        Return MessageBox.Show("Are you sure you want to check out Visitor #" & id & vbCrLf & "NAME:" &
-                    selectedcells.Item(2).Value & vbCrLf &
-                    "Badge Number: " & selectedcells.Item(1).Value & "?",
+    Public Function CheckOutMsg(selectedrows As DataGridViewSelectedRowCollection)
+        Dim cnt As Integer = selectedrows.Count()
+        Dim cols As Integer = 3
+        Dim arr(cnt, cols)
+        Dim str As String = "Check out: " & vbCrLf & vbCrLf
+        For i = 0 To cnt - 1 'populate the array | badge | name |
+            For j = 1 To cols - 1
+                arr(i, j) = selectedrows.Item(i).Cells.Item(j).Value
+            Next
+        Next
+        For i = 0 To cnt - 1
+            For j = 1 To cols - 1
+                Dim helper As String = ""
+                If j = 1 Then
+                    helper = "Badge: "
+                    helper += arr(i, j) & " "
+                    str += helper
+                End If
+                If j = 2 Then
+                    helper = "Name: "
+                    helper += arr(i, j) & vbCrLf
+                    str += helper
+                End If
+            Next
+        Next
+
+
+        Return MessageBox.Show(str,
                     "Confirm Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
     End Function
 
@@ -71,6 +94,10 @@ Module Module1
         Return rgx.Replace(str, " ").Trim
     End Function
 
+    Public Sub refreshAll()
+        Dash.View_Checked_in1.refresher()
+        Dash.View_Checked_in_Vehicles1.refresher()
+    End Sub
 
 
 End Module

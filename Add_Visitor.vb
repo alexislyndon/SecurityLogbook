@@ -81,6 +81,7 @@ Public Class Add_Visitor 'checks in visitor
             MsgBox("Successfully Checked in visitor!")
             maxid = VisitorsTableAdapter.MaxID() + 1
             v_id.Text = maxid
+            refreshAll()
             clear(Me)
         Else
             MsgBox("Please fill out the form completely.")

@@ -37,6 +37,7 @@ Public Class Add_Vehicle
         If gtg Then
             VehiclesTableAdapter.InsertVehicle(makeCbox.Text, modelbox.Text, colorbox.Text, platebox.Text, typeCbox.Text)
             MsgBox("Successfully Checked in visitor!")
+            refreshAll()
             clear(Me)
         End If
     End Sub

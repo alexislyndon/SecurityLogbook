@@ -1,17 +1,13 @@
 ﻿Public Class View_Checked_in
-    Dim vciObj As View_Checked_in = Me
-    'Dim vDT As DB1DataSet.VisitorsDataTable = Me.DB1DataSet1.Visitors 'vDT means visitorsdatatable
 
     Private Sub View_Checked_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DB1DataSet1.Visitors.Clear()
         DB1DataSet1.EnforceConstraints = False
-        'Me.VisitorsTableAdapter1.Fill(Me.DB1DataSet1.Visitors)
         Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
     End Sub
 
     Private Sub VisitorsDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
         Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
-        Dim pv As New PopView(id, vciObj)
+        Dim pv As New PopView(id)
         pv.Show()
     End Sub
 
@@ -20,7 +16,6 @@
     End Sub
 
     Public Sub refresher()
-        filterbox.Text = "Filter by Badge"
         Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
     End Sub
 
@@ -35,24 +30,37 @@
 
     Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
         Dim id As Integer = VisitorsDataGridView.SelectedCells.Item(0).Value
-        Dim pv As New PopView(id, vciObj)
+        Dim pv As New PopView(id)
         pv.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles checkoutbtn.Click
+        'BIG CHECKOUT BUTTON
+        Dim selectedrows As DataGridViewSelectedRowCollection = VisitorsDataGridView.SelectedRows
 
-        'big checkout button
-        Dim selectedcells As DataGridViewSelectedCellCollection = VisitorsDataGridView.SelectedCells
-        Dim id As Integer = selectedcells.Item(0).Value
+        'For i = 0 To VisitorsDataGridView.SelectedRows.Count()
+        '    Dim checkout As String
+        '    checkout = CheckOutMsg(selectedrows, DB1DataSet1)
+        '    Me.VisitorsTableAdapter1.CHECKOUT(selectedrows.Item(i).Cells.Item(0).Value)
+        'Next
+        Dim checkout = CheckOutMsg(selectedrows)
 
-        Dim checkout As String
-        checkout = CheckOutMsg(selectedcells, DB1DataSet1)
+
+        'Dim id As Integer = selectedcells.Item(0).Value
+
+
+        'Dim checkout As String
+        'checkout = CheckOutMsg(selectedcells, DB1DataSet1)
 
         If checkout = vbYes Then
-            Me.VisitorsTableAdapter1.CHECKOUT(id)
+            For i = 0 To selectedrows.Count() - 1
+                Me.VisitorsTableAdapter1.CHECKOUT(selectedrows.Item(i).Cells.Item(0).Value)
+            Next
 
             SuccessMsg()
-            refresher()
+            refreshAll()
+            'Else
+            '    MsgBox("No one was checked out.")
         End If
     End Sub
 
