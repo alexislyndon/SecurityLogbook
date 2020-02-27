@@ -28,6 +28,4 @@
         'Label1.Text = Format(Now, "Long Date")
         Label3.Text = Date.Now.ToString(" HH:mm:ss")
     End Sub
-
-
 End Class

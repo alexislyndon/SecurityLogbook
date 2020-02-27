@@ -8,7 +8,7 @@ Public Class capturePortrait
     Dim avobj As Add_Visitor
     Dim cap As New Capture() 'first line
     Dim rotated As Boolean = False
-    Public Sub New(av As Object)
+    Public Sub New(av As Add_Visitor)
         cap.FlipHorizontal = True
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 320) '424
         cap.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 240) '240
