@@ -38,7 +38,7 @@ Partial Class backForm
         '
         'Add_Visitor1
         '
-        Me.Add_Visitor1.Location = New System.Drawing.Point(253, 2)
+        Me.Add_Visitor1.Location = New System.Drawing.Point(252, 3)
         Me.Add_Visitor1.Name = "Add_Visitor1"
         Me.Add_Visitor1.Size = New System.Drawing.Size(1109, 763)
         Me.Add_Visitor1.TabIndex = 0

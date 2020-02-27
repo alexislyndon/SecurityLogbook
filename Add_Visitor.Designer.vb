@@ -49,8 +49,6 @@ Partial Class Add_Visitor
         Me.capportraitbtn = New System.Windows.Forms.Button()
         Me.capidbtn = New System.Windows.Forms.Button()
         Me.surrenderedcbox = New System.Windows.Forms.ComboBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.v_id = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -58,6 +56,8 @@ Partial Class Add_Visitor
         Me.DB1DataSet = New Security_Logbook.DB1DataSet()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         DestinationLabel = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
         Phone_NumberLabel = New System.Windows.Forms.Label()
@@ -69,18 +69,18 @@ Partial Class Add_Visitor
         lbl_surrendered = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DestinationLabel
         '
         DestinationLabel.AutoSize = True
         DestinationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DestinationLabel.Location = New System.Drawing.Point(29, 353)
+        DestinationLabel.Location = New System.Drawing.Point(29, 328)
         DestinationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         DestinationLabel.Name = "DestinationLabel"
         DestinationLabel.Size = New System.Drawing.Size(94, 20)
@@ -91,7 +91,7 @@ Partial Class Add_Visitor
         '
         Label9.AutoSize = True
         Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(55, 388)
+        Label9.Location = New System.Drawing.Point(29, 389)
         Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(68, 20)
@@ -113,7 +113,7 @@ Partial Class Add_Visitor
         '
         Middle_NameLabel.AutoSize = True
         Middle_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Middle_NameLabel.Location = New System.Drawing.Point(42, 262)
+        Middle_NameLabel.Location = New System.Drawing.Point(29, 259)
         Middle_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Middle_NameLabel.Name = "Middle_NameLabel"
         Middle_NameLabel.Size = New System.Drawing.Size(101, 20)
@@ -124,7 +124,7 @@ Partial Class Add_Visitor
         '
         First_NameLabel.AutoSize = True
         First_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        First_NameLabel.Location = New System.Drawing.Point(57, 197)
+        First_NameLabel.Location = New System.Drawing.Point(29, 194)
         First_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         First_NameLabel.Name = "First_NameLabel"
         First_NameLabel.Size = New System.Drawing.Size(86, 20)
@@ -135,7 +135,7 @@ Partial Class Add_Visitor
         '
         Last_NameLabel.AutoSize = True
         Last_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Last_NameLabel.Location = New System.Drawing.Point(57, 132)
+        Last_NameLabel.Location = New System.Drawing.Point(29, 132)
         Last_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Last_NameLabel.Name = "Last_NameLabel"
         Last_NameLabel.Size = New System.Drawing.Size(86, 20)
@@ -193,7 +193,7 @@ Partial Class Add_Visitor
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(-4, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1109, 77)
+        Me.Panel2.Size = New System.Drawing.Size(1113, 77)
         Me.Panel2.TabIndex = 13
         '
         'Label6
@@ -212,10 +212,10 @@ Partial Class Add_Visitor
         Me.destinationcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.destinationcbox.FormattingEnabled = True
         Me.destinationcbox.Items.AddRange(New Object() {"Finance", "Registrar", "College of Computer Studies", "Office of the President", "Admissions", "Magis", "OSA", "SEC Mall", "Security Office"})
-        Me.destinationcbox.Location = New System.Drawing.Point(128, 339)
+        Me.destinationcbox.Location = New System.Drawing.Point(147, 323)
         Me.destinationcbox.MaxLength = 35
         Me.destinationcbox.Name = "destinationcbox"
-        Me.destinationcbox.Size = New System.Drawing.Size(459, 41)
+        Me.destinationcbox.Size = New System.Drawing.Size(466, 41)
         Me.destinationcbox.TabIndex = 6
         '
         'AddNew
@@ -234,55 +234,59 @@ Partial Class Add_Visitor
         'purposebox
         '
         Me.purposebox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.purposebox.Location = New System.Drawing.Point(128, 385)
+        Me.purposebox.Location = New System.Drawing.Point(147, 389)
         Me.purposebox.Margin = New System.Windows.Forms.Padding(2)
         Me.purposebox.MaxLength = 30
         Me.purposebox.Multiline = True
         Me.purposebox.Name = "purposebox"
-        Me.purposebox.Size = New System.Drawing.Size(459, 45)
+        Me.purposebox.Size = New System.Drawing.Size(466, 45)
         Me.purposebox.TabIndex = 7
         '
         'Phone_NumberTextBox
         '
-        Me.Phone_NumberTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Phone_NumberTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Phone_NumberTextBox.Location = New System.Drawing.Point(519, 129)
         Me.Phone_NumberTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Phone_NumberTextBox.MaxLength = 25
+        Me.Phone_NumberTextBox.Multiline = True
         Me.Phone_NumberTextBox.Name = "Phone_NumberTextBox"
-        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(184, 26)
+        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(209, 37)
         Me.Phone_NumberTextBox.TabIndex = 5
         Me.Phone_NumberTextBox.Text = "0000"
         '
         'Middle_NameTextBox
         '
-        Me.Middle_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Middle_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Middle_NameTextBox.Location = New System.Drawing.Point(147, 259)
         Me.Middle_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Middle_NameTextBox.MaxLength = 30
+        Me.Middle_NameTextBox.Multiline = True
         Me.Middle_NameTextBox.Name = "Middle_NameTextBox"
-        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 37)
         Me.Middle_NameTextBox.TabIndex = 3
         Me.Middle_NameTextBox.Text = "TUNGANG APILIDO"
         '
         'First_NameTextBox
         '
-        Me.First_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.First_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.First_NameTextBox.Location = New System.Drawing.Point(147, 194)
         Me.First_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.First_NameTextBox.MaxLength = 30
+        Me.First_NameTextBox.Multiline = True
         Me.First_NameTextBox.Name = "First_NameTextBox"
-        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 37)
         Me.First_NameTextBox.TabIndex = 2
         Me.First_NameTextBox.Text = "PANGALAN"
         '
         'Last_NameTextBox
         '
-        Me.Last_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Last_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Last_NameTextBox.Location = New System.Drawing.Point(147, 129)
         Me.Last_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Last_NameTextBox.MaxLength = 30
+        Me.Last_NameTextBox.Multiline = True
         Me.Last_NameTextBox.Name = "Last_NameTextBox"
-        Me.Last_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.Last_NameTextBox.Size = New System.Drawing.Size(209, 37)
         Me.Last_NameTextBox.TabIndex = 1
         Me.Last_NameTextBox.Text = "APILIDO"
         '
@@ -304,29 +308,29 @@ Partial Class Add_Visitor
         Me.badgecbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.badgecbox.FormattingEnabled = True
         Me.badgecbox.Items.AddRange(New Object() {"A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3", "B4", "B5"})
-        Me.badgecbox.Location = New System.Drawing.Point(694, 531)
+        Me.badgecbox.Location = New System.Drawing.Point(645, 531)
         Me.badgecbox.MaxLength = 4
         Me.badgecbox.Name = "badgecbox"
-        Me.badgecbox.Size = New System.Drawing.Size(72, 32)
+        Me.badgecbox.Size = New System.Drawing.Size(121, 32)
         Me.badgecbox.TabIndex = 8
         '
         'sexcbox
         '
         Me.sexcbox.BackColor = System.Drawing.SystemColors.Window
         Me.sexcbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sexcbox.FormattingEnabled = True
         Me.sexcbox.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
-        Me.sexcbox.Location = New System.Drawing.Point(442, 194)
+        Me.sexcbox.Location = New System.Drawing.Point(519, 188)
         Me.sexcbox.Name = "sexcbox"
-        Me.sexcbox.Size = New System.Drawing.Size(94, 28)
+        Me.sexcbox.Size = New System.Drawing.Size(94, 32)
         Me.sexcbox.TabIndex = 4
         '
         'capportraitbtn
         '
-        Me.capportraitbtn.Location = New System.Drawing.Point(662, 299)
+        Me.capportraitbtn.Location = New System.Drawing.Point(677, 287)
         Me.capportraitbtn.Name = "capportraitbtn"
-        Me.capportraitbtn.Size = New System.Drawing.Size(105, 23)
+        Me.capportraitbtn.Size = New System.Drawing.Size(90, 35)
         Me.capportraitbtn.TabIndex = 52
         Me.capportraitbtn.Text = "Capture Portrait"
         Me.capportraitbtn.UseVisualStyleBackColor = True
@@ -342,32 +346,14 @@ Partial Class Add_Visitor
         '
         'surrenderedcbox
         '
+        Me.surrenderedcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.surrenderedcbox.FormattingEnabled = True
         Me.surrenderedcbox.Items.AddRange(New Object() {"Driver's License", "School ID", "UMID", "Company ID", "Voter's ID", "Postal ID"})
         Me.surrenderedcbox.Location = New System.Drawing.Point(645, 471)
         Me.surrenderedcbox.MaxLength = 20
         Me.surrenderedcbox.Name = "surrenderedcbox"
-        Me.surrenderedcbox.Size = New System.Drawing.Size(121, 21)
+        Me.surrenderedcbox.Size = New System.Drawing.Size(121, 32)
         Me.surrenderedcbox.TabIndex = 9
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Security_Logbook.My.Resources.Resources.blankid
-        Me.PictureBox2.Location = New System.Drawing.Point(773, 339)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
-        Me.PictureBox2.TabIndex = 51
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Security_Logbook.My.Resources.Resources.portrait
-        Me.PictureBox1.InitialImage = Global.Security_Logbook.My.Resources.Resources.portrait
-        Me.PictureBox1.Location = New System.Drawing.Point(773, 83)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
-        Me.PictureBox1.TabIndex = 51
-        Me.PictureBox1.TabStop = False
         '
         'v_id
         '
@@ -415,6 +401,25 @@ Partial Class Add_Visitor
         '
         Me.VisitorsTableAdapter.ClearBeforeFill = True
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Security_Logbook.My.Resources.Resources.blankid
+        Me.PictureBox2.Location = New System.Drawing.Point(773, 339)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
+        Me.PictureBox2.TabIndex = 51
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Security_Logbook.My.Resources.Resources.portrait
+        Me.PictureBox1.InitialImage = Global.Security_Logbook.My.Resources.Resources.portrait
+        Me.PictureBox1.Location = New System.Drawing.Point(773, 83)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(320, 240)
+        Me.PictureBox1.TabIndex = 51
+        Me.PictureBox1.TabStop = False
+        '
         'Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -452,11 +457,11 @@ Partial Class Add_Visitor
         Me.Size = New System.Drawing.Size(1109, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

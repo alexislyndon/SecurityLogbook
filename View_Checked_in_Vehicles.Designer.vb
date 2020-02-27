@@ -126,7 +126,7 @@ Partial Class View_Checked_in_Vehicles
         Me.VehiclesDataGridView.Location = New System.Drawing.Point(27, 226)
         Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
         Me.VehiclesDataGridView.ReadOnly = True
-        Me.VehiclesDataGridView.Size = New System.Drawing.Size(1082, 233)
+        Me.VehiclesDataGridView.Size = New System.Drawing.Size(745, 233)
         Me.VehiclesDataGridView.TabIndex = 26
         '
         'DataGridViewTextBoxColumn1

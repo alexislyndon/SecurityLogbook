@@ -69,9 +69,9 @@ Partial Class Login
         Me.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.loginbtn.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginbtn.ForeColor = System.Drawing.Color.Black
-        Me.loginbtn.Location = New System.Drawing.Point(72, 274)
+        Me.loginbtn.Location = New System.Drawing.Point(122, 272)
         Me.loginbtn.Name = "loginbtn"
-        Me.loginbtn.Size = New System.Drawing.Size(173, 41)
+        Me.loginbtn.Size = New System.Drawing.Size(78, 41)
         Me.loginbtn.TabIndex = 3
         Me.loginbtn.Text = "Login"
         Me.loginbtn.UseVisualStyleBackColor = False

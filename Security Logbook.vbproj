@@ -144,6 +144,12 @@
     <Compile Include="backForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ADMIN.Designer.vb">
+      <DependentUpon>ADMIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PopView.Designer.vb">
       <DependentUpon>PopView.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
+    <Compile Include="REGISTER.Designer.vb">
+      <DependentUpon>REGISTER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REGISTER.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view_Vehicles.Designer.vb">
+      <DependentUpon>view_Vehicles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view_Vehicles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ViewSelector.Designer.vb">
       <DependentUpon>ViewSelector.vb</DependentUpon>
     </Compile>
@@ -203,6 +221,12 @@
     <Compile Include="View_Checked_in_Vehicles.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="view_visitors.Designer.vb">
+      <DependentUpon>view_visitors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="view_visitors.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Visitors_History.Designer.vb">
       <DependentUpon>Visitors_History.vb</DependentUpon>
     </Compile>
@@ -226,8 +250,14 @@
     <EmbeddedResource Include="backForm.resx">
       <DependentUpon>backForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN.resx">
+      <DependentUpon>ADMIN.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopView.resx">
       <DependentUpon>PopView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REGISTER.resx">
+      <DependentUpon>REGISTER.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSelector.resx">
       <DependentUpon>ViewSelector.vb</DependentUpon>
@@ -252,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View_Checked_in_Vehicles.resx">
       <DependentUpon>View_Checked_in_Vehicles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_Vehicles.resx">
+      <DependentUpon>view_Vehicles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_visitors.resx">
+      <DependentUpon>view_visitors.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visitors_History.resx">
       <DependentUpon>Visitors_History.vb</DependentUpon>
