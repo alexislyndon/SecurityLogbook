@@ -496,7 +496,7 @@ VALUES (@make, @model, @color, @plate, @type);
   <xs:element name="DB1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB1DataSet" msprop:Generator_UserDSName="DB1DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent" msprop:Generator_RowClassName="VisitorsRow">
+        <xs:element name="Visitors" msprop:Generator_TableClassName="VisitorsDataTable" msprop:Generator_TableVarName="tableVisitors" msprop:Generator_RowChangedName="VisitorsRowChanged" msprop:Generator_TablePropName="Visitors" msprop:Generator_RowDeletingName="VisitorsRowDeleting" msprop:Generator_RowChangingName="VisitorsRowChanging" msprop:Generator_RowEvHandlerName="VisitorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VisitorsRowDeleted" msprop:Generator_RowClassName="VisitorsRow" msprop:Generator_UserTableName="Visitors" msprop:Generator_RowEvArgName="VisitorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="visit_ID" msprop:Generator_ColumnVarNameInTable="columnvisit_ID" msprop:Generator_ColumnPropNameInRow="visit_ID" msprop:Generator_ColumnPropNameInTable="visit_IDColumn" msprop:Generator_UserColumnName="visit_ID" type="xs:int" />
@@ -592,7 +592,7 @@ VALUES (@make, @model, @color, @plate, @type);
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent" msprop:Generator_RowClassName="VehiclesRow">
+        <xs:element name="Vehicles" msprop:Generator_TableClassName="VehiclesDataTable" msprop:Generator_TableVarName="tableVehicles" msprop:Generator_RowChangedName="VehiclesRowChanged" msprop:Generator_TablePropName="Vehicles" msprop:Generator_RowDeletingName="VehiclesRowDeleting" msprop:Generator_RowChangingName="VehiclesRowChanging" msprop:Generator_RowEvHandlerName="VehiclesRowChangeEventHandler" msprop:Generator_RowDeletedName="VehiclesRowDeleted" msprop:Generator_RowClassName="VehiclesRow" msprop:Generator_UserTableName="Vehicles" msprop:Generator_RowEvArgName="VehiclesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -638,7 +638,7 @@ VALUES (@make, @model, @color, @plate, @type);
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -680,5 +680,13 @@ VALUES (@make, @model, @color, @plate, @type);
       <xs:selector xpath=".//mstns:users" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:keyref name="FK_users_Vehicles" refer="users_Constraint1" msprop:rel_Generator_UserChildTable="Vehicles" msprop:rel_Generator_ChildPropName="GetVehiclesRows" msprop:rel_Generator_UserRelationName="FK_users_Vehicles" msprop:rel_Generator_ParentPropName="usersRow" msprop:rel_Generator_RelationVarName="relationFK_users_Vehicles" msprop:rel_Generator_UserParentTable="users">
+      <xs:selector xpath=".//mstns:Vehicles" />
+      <xs:field xpath="mstns:userid" />
+    </xs:keyref>
+    <xs:keyref name="users_Visitors" refer="users_Constraint1" msprop:rel_Generator_UserChildTable="Visitors" msprop:rel_Generator_ChildPropName="GetVisitorsRows" msprop:rel_Generator_UserRelationName="users_Visitors" msprop:rel_Generator_RelationVarName="relationusers_Visitors" msprop:rel_Generator_UserParentTable="users" msprop:rel_Generator_ParentPropName="usersRow" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Visitors" />
+      <xs:field xpath="mstns:userid" />
+    </xs:keyref>
   </xs:element>
 </xs:schema>

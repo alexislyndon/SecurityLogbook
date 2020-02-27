@@ -23,6 +23,7 @@ Partial Class captureID
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(captureID))
         Me.UnfreezeBtn = New System.Windows.Forms.Button()
         Me.FreezeBtn = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -101,6 +102,7 @@ Partial Class captureID
         '
         'PictureBox2
         '
+        Me.PictureBox2.InitialImage = Global.Security_Logbook.My.Resources.Resources.blankid
         Me.PictureBox2.Location = New System.Drawing.Point(363, 6)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(160, 120)
@@ -110,6 +112,7 @@ Partial Class captureID
         '
         'PictureBox3
         '
+        Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(363, 132)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(160, 120)

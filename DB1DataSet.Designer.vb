@@ -31,6 +31,10 @@ Partial Public Class DB1DataSet
     
     Private tableVehicles As VehiclesDataTable
     
+    Private relationusers_Visitors As Global.System.Data.DataRelation
+    
+    Private relationFK_users_Vehicles As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -242,6 +246,8 @@ Partial Public Class DB1DataSet
                 Me.tableVehicles.InitVars
             End If
         End If
+        Me.relationusers_Visitors = Me.Relations("users_Visitors")
+        Me.relationFK_users_Vehicles = Me.Relations("FK_users_Vehicles")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -258,6 +264,21 @@ Partial Public Class DB1DataSet
         MyBase.Tables.Add(Me.tableusers)
         Me.tableVehicles = New VehiclesDataTable()
         MyBase.Tables.Add(Me.tableVehicles)
+        Dim fkc As Global.System.Data.ForeignKeyConstraint
+        fkc = New Global.System.Data.ForeignKeyConstraint("users_Visitors", New Global.System.Data.DataColumn() {Me.tableusers.idColumn}, New Global.System.Data.DataColumn() {Me.tableVisitors.useridColumn})
+        Me.tableVisitors.Constraints.Add(fkc)
+        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
+        fkc.DeleteRule = Global.System.Data.Rule.None
+        fkc.UpdateRule = Global.System.Data.Rule.None
+        fkc = New Global.System.Data.ForeignKeyConstraint("FK_users_Vehicles", New Global.System.Data.DataColumn() {Me.tableusers.idColumn}, New Global.System.Data.DataColumn() {Me.tableVehicles.useridColumn})
+        Me.tableVehicles.Constraints.Add(fkc)
+        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
+        fkc.DeleteRule = Global.System.Data.Rule.Cascade
+        fkc.UpdateRule = Global.System.Data.Rule.Cascade
+        Me.relationusers_Visitors = New Global.System.Data.DataRelation("users_Visitors", New Global.System.Data.DataColumn() {Me.tableusers.idColumn}, New Global.System.Data.DataColumn() {Me.tableVisitors.useridColumn}, false)
+        Me.Relations.Add(Me.relationusers_Visitors)
+        Me.relationFK_users_Vehicles = New Global.System.Data.DataRelation("FK_users_Vehicles", New Global.System.Data.DataColumn() {Me.tableusers.idColumn}, New Global.System.Data.DataColumn() {Me.tableVehicles.useridColumn}, false)
+        Me.Relations.Add(Me.relationFK_users_Vehicles)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -622,10 +643,13 @@ Partial Public Class DB1DataSet
                     ByVal id_pic() As Byte,  _
                     ByVal ID_surrendered As String,  _
                     ByVal phone As String,  _
-                    ByVal userid As Integer,  _
+                    ByVal parentusersRowByusers_Visitors As usersRow,  _
                     ByVal FullName As String) As VisitorsRow
             Dim rowVisitorsRow As VisitorsRow = CType(Me.NewRow,VisitorsRow)
-            Dim columnValuesArray() As Object = New Object() {visit_ID, firstname, middlename, surname, sex, entry, _exit, destination, purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrendered, phone, userid, FullName}
+            Dim columnValuesArray() As Object = New Object() {visit_ID, firstname, middlename, surname, sex, entry, _exit, destination, purpose, time_in, time_out, badge_number, portrait, id_pic, ID_surrendered, phone, Nothing, FullName}
+            If (Not (parentusersRowByusers_Visitors) Is Nothing) Then
+                columnValuesArray(16) = parentusersRowByusers_Visitors(0)
+            End If
             rowVisitorsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVisitorsRow)
             Return rowVisitorsRow
@@ -1344,9 +1368,12 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddVehiclesRow(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Integer, ByVal time_in As Date, ByVal time_out As Date, ByVal userid As Integer, ByVal type As String) As VehiclesRow
+        Public Overloads Function AddVehiclesRow(ByVal make As String, ByVal model As String, ByVal color As String, ByVal plate As String, ByVal driver As Integer, ByVal time_in As Date, ByVal time_out As Date, ByVal parentusersRowByFK_users_Vehicles As usersRow, ByVal type As String) As VehiclesRow
             Dim rowVehiclesRow As VehiclesRow = CType(Me.NewRow,VehiclesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, make, model, color, plate, driver, time_in, time_out, userid, type}
+            Dim columnValuesArray() As Object = New Object() {Nothing, make, model, color, plate, driver, time_in, time_out, Nothing, type}
+            If (Not (parentusersRowByFK_users_Vehicles) Is Nothing) Then
+                columnValuesArray(8) = parentusersRowByFK_users_Vehicles(0)
+            End If
             rowVehiclesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVehiclesRow)
             Return rowVehiclesRow
@@ -1840,6 +1867,17 @@ Partial Public Class DB1DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property usersRow() As usersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("users_Visitors")),usersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("users_Visitors"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsfirstnameNull() As Boolean
             Return Me.IsNull(Me.tableVisitors.firstnameColumn)
         End Function
@@ -2149,6 +2187,26 @@ Partial Public Class DB1DataSet
         Public Sub SetdesignationNull()
             Me(Me.tableusers.designationColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetVehiclesRows() As VehiclesRow()
+            If (Me.Table.ChildRelations("FK_users_Vehicles") Is Nothing) Then
+                Return New VehiclesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_users_Vehicles")),VehiclesRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetVisitorsRows() As VisitorsRow()
+            If (Me.Table.ChildRelations("users_Visitors") Is Nothing) Then
+                Return New VisitorsRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("users_Visitors")),VisitorsRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -2285,6 +2343,17 @@ Partial Public Class DB1DataSet
             End Get
             Set
                 Me(Me.tableVehicles.typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property usersRow() As usersRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_users_Vehicles")),usersRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_users_Vehicles"))
             End Set
         End Property
         
@@ -5005,12 +5074,12 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DB1DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._visitorsTableAdapter.Update(updatedRows))
+                    result = (result + Me._usersTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5023,12 +5092,12 @@ Namespace DB1DataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(updatedRows))
+                    result = (result + Me._visitorsTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5042,11 +5111,11 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DB1DataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._visitorsTableAdapter.Update(addedRows))
+                    result = (result + Me._usersTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -5058,11 +5127,11 @@ Namespace DB1DataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(addedRows))
+                    result = (result + Me._visitorsTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -5076,11 +5145,11 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DB1DataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._usersTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._usersTableAdapter.Update(deletedRows))
+                    result = (result + Me._visitorsTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -5092,11 +5161,11 @@ Namespace DB1DataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._visitorsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Visitors.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._usersTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.users.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._visitorsTableAdapter.Update(deletedRows))
+                    result = (result + Me._usersTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

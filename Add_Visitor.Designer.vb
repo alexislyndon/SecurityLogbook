@@ -438,6 +438,7 @@ Partial Class Add_Visitor
         Me.idtoggle.TabIndex = 53
         Me.idtoggle.Text = "Show Backside"
         Me.idtoggle.UseVisualStyleBackColor = True
+        Me.idtoggle.Visible = False
         '
         'Add_Visitor
         '

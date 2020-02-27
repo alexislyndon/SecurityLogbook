@@ -145,4 +145,8 @@ Public Class Add_Visitor 'checks in visitor
             boo = False
         End If
     End Sub
+
+    Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
+        clear(Me)
+    End Sub
 End Class
