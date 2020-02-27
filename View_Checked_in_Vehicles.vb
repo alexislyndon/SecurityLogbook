@@ -20,7 +20,6 @@
         End If
     End Sub
 
-
     Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         Me.VehiclesTableAdapter.FillVehicleFilter(Me.DB1DataSet.Vehicles, TextBox1.Text.Trim)
 
