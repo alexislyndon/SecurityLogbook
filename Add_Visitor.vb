@@ -7,11 +7,16 @@ Public Class Add_Visitor 'checks in visitor
     Dim goodtogo As Boolean = True
     Public hadcappor As Boolean = False 'had captured a portrait
     Public hadcapid As Boolean = False 'had captured id 
+    Public hadcapback As Boolean = False 'had captured id 
+    Dim boo As Boolean = False
 
     Dim maxid As Integer
     Dim sextoDB As String
 
     Private Sub Add_Visitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox2.Visible = True
+        PictureBox3.Visible = False
+
         maxid = VisitorsTableAdapter.MaxID() + 1
         ErrorProvider1.Clear()
         v_id.Text = VisitorsTableAdapter.MaxID() + 1
@@ -79,6 +84,9 @@ Public Class Add_Visitor 'checks in visitor
                                          sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
                                          imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text)
             MsgBox("Successfully Checked in visitor!")
+            hadcapid = False
+            hadcappor = False
+            hadcapback = False
             maxid = VisitorsTableAdapter.MaxID() + 1
             v_id.Text = maxid
             refreshAll()
@@ -108,5 +116,33 @@ Public Class Add_Visitor 'checks in visitor
     Public Sub setidpic(img As Image)
         PictureBox2.Image = img
     End Sub
+    Public Sub setidback(img As Image)
+        PictureBox3.Image = img
+    End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        PictureBox2.Visible = False
+        PictureBox3.Visible = True
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        PictureBox3.Visible = False
+        PictureBox2.Visible = True
+    End Sub
+
+    Private Sub idtoggle_Click(sender As Object, e As EventArgs) Handles idtoggle.Click
+        If boo = False Then
+            idtoggle.Text = "Show Frontside"
+            PictureBox2.Visible = False
+            PictureBox3.Visible = True
+            boo = True
+        End If
+
+        If boo = True Then
+            idtoggle.Text = "Show Backside"
+            PictureBox2.Visible = True
+            PictureBox3.Visible = False
+            boo = False
+        End If
+    End Sub
 End Class

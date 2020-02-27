@@ -54,10 +54,12 @@ Partial Class Add_Visitor
         Me.v_id = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DB1DataSet = New Security_Logbook.DB1DataSet()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.idtoggle = New System.Windows.Forms.Button()
         DestinationLabel = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
         Phone_NumberLabel = New System.Windows.Forms.Label()
@@ -72,6 +74,8 @@ Partial Class Add_Visitor
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,7 +150,7 @@ Partial Class Add_Visitor
         '
         Visitor_IDLabel.AutoSize = True
         Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Visitor_IDLabel.Location = New System.Drawing.Point(637, 508)
+        Visitor_IDLabel.Location = New System.Drawing.Point(341, 574)
         Visitor_IDLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Visitor_IDLabel.Name = "Visitor_IDLabel"
         Visitor_IDLabel.Size = New System.Drawing.Size(129, 20)
@@ -168,7 +172,7 @@ Partial Class Add_Visitor
         '
         lbl_surrendered.AutoSize = True
         lbl_surrendered.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lbl_surrendered.Location = New System.Drawing.Point(641, 445)
+        lbl_surrendered.Location = New System.Drawing.Point(345, 511)
         lbl_surrendered.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         lbl_surrendered.Name = "lbl_surrendered"
         lbl_surrendered.Size = New System.Drawing.Size(110, 20)
@@ -304,7 +308,7 @@ Partial Class Add_Visitor
         Me.badgecbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.badgecbox.FormattingEnabled = True
         Me.badgecbox.Items.AddRange(New Object() {"A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3", "B4", "B5"})
-        Me.badgecbox.Location = New System.Drawing.Point(694, 531)
+        Me.badgecbox.Location = New System.Drawing.Point(398, 597)
         Me.badgecbox.MaxLength = 4
         Me.badgecbox.Name = "badgecbox"
         Me.badgecbox.Size = New System.Drawing.Size(72, 32)
@@ -344,7 +348,7 @@ Partial Class Add_Visitor
         '
         Me.surrenderedcbox.FormattingEnabled = True
         Me.surrenderedcbox.Items.AddRange(New Object() {"Driver's License", "School ID", "UMID", "Company ID", "Voter's ID", "Postal ID"})
-        Me.surrenderedcbox.Location = New System.Drawing.Point(645, 471)
+        Me.surrenderedcbox.Location = New System.Drawing.Point(349, 537)
         Me.surrenderedcbox.MaxLength = 20
         Me.surrenderedcbox.Name = "surrenderedcbox"
         Me.surrenderedcbox.Size = New System.Drawing.Size(121, 21)
@@ -388,10 +392,21 @@ Partial Class Add_Visitor
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Location = New System.Drawing.Point(772, 338)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(322, 242)
         Me.Panel1.TabIndex = 58
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(320, 240)
+        Me.PictureBox3.TabIndex = 51
+        Me.PictureBox3.TabStop = False
         '
         'Panel3
         '
@@ -415,12 +430,22 @@ Partial Class Add_Visitor
         '
         Me.VisitorsTableAdapter.ClearBeforeFill = True
         '
+        'idtoggle
+        '
+        Me.idtoggle.Location = New System.Drawing.Point(677, 543)
+        Me.idtoggle.Name = "idtoggle"
+        Me.idtoggle.Size = New System.Drawing.Size(90, 37)
+        Me.idtoggle.TabIndex = 53
+        Me.idtoggle.Text = "Show Backside"
+        Me.idtoggle.UseVisualStyleBackColor = True
+        '
         'Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.v_id)
         Me.Controls.Add(Me.surrenderedcbox)
+        Me.Controls.Add(Me.idtoggle)
         Me.Controls.Add(Me.capidbtn)
         Me.Controls.Add(Me.capportraitbtn)
         Me.Controls.Add(Me.PictureBox2)
@@ -455,6 +480,8 @@ Partial Class Add_Visitor
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -486,4 +513,6 @@ Partial Class Add_Visitor
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents VisitorsTableAdapter As DB1DataSetTableAdapters.VisitorsTableAdapter
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents idtoggle As Button
 End Class

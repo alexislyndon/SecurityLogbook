@@ -4,7 +4,7 @@ Imports Emgu.CV.Structure
 Imports System.IO
 Public Class capturePortrait
 
-    Dim fileName = String.Format("D:\secu\MyFile_{0:yyyyMMddHHmmss}.txt", Date.Now)
+    Dim fileName = String.Format("D:\secu\P_{0:yyyyMMddHHmmss}.txt", Date.Now)
     Dim avobj As Add_Visitor
     Dim cap As New Capture() 'first line
     Dim rotated As Boolean = False
