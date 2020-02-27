@@ -25,10 +25,10 @@ Partial Class View_Checked_in_Vehicles
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.checkoutbtn = New System.Windows.Forms.Button()
+        Me.searchbtn = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.filterbox = New System.Windows.Forms.TextBox()
         Me.VehiclesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,7 +43,7 @@ Partial Class View_Checked_in_Vehicles
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.VehiclesTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VehiclesTableAdapter()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.refreshbtn = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,32 +71,32 @@ Partial Class View_Checked_in_Vehicles
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "View Checked in Vehicles"
         '
-        'Button2
+        'checkoutbtn
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(769, 699)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(324, 43)
-        Me.Button2.TabIndex = 22
-        Me.Button2.Text = "Check out"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.checkoutbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.checkoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.checkoutbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkoutbtn.ForeColor = System.Drawing.Color.White
+        Me.checkoutbtn.Location = New System.Drawing.Point(769, 699)
+        Me.checkoutbtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.checkoutbtn.Name = "checkoutbtn"
+        Me.checkoutbtn.Size = New System.Drawing.Size(324, 43)
+        Me.checkoutbtn.TabIndex = 22
+        Me.checkoutbtn.Text = "Check out"
+        Me.checkoutbtn.UseVisualStyleBackColor = False
         '
-        'Button1
+        'searchbtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(253, 162)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 23)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.searchbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.searchbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchbtn.ForeColor = System.Drawing.Color.White
+        Me.searchbtn.Location = New System.Drawing.Point(253, 162)
+        Me.searchbtn.Name = "searchbtn"
+        Me.searchbtn.Size = New System.Drawing.Size(103, 23)
+        Me.searchbtn.TabIndex = 26
+        Me.searchbtn.Text = "Search"
+        Me.searchbtn.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -106,16 +106,16 @@ Partial Class View_Checked_in_Vehicles
         Me.Panel1.Size = New System.Drawing.Size(220, 1)
         Me.Panel1.TabIndex = 25
         '
-        'TextBox1
+        'filterbox
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Location = New System.Drawing.Point(27, 162)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(217, 23)
-        Me.TextBox1.TabIndex = 24
-        Me.TextBox1.Text = "Search here"
+        Me.filterbox.BackColor = System.Drawing.SystemColors.Window
+        Me.filterbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.filterbox.Location = New System.Drawing.Point(27, 162)
+        Me.filterbox.Multiline = True
+        Me.filterbox.Name = "filterbox"
+        Me.filterbox.Size = New System.Drawing.Size(217, 23)
+        Me.filterbox.TabIndex = 24
+        Me.filterbox.Text = "Search here"
         '
         'VehiclesDataGridView
         '
@@ -211,25 +211,25 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.VehiclesTableAdapter.ClearBeforeFill = True
         '
-        'Button3
+        'refreshbtn
         '
-        Me.Button3.Location = New System.Drawing.Point(27, 197)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 27
-        Me.Button3.Text = "Refresh"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.refreshbtn.Location = New System.Drawing.Point(27, 197)
+        Me.refreshbtn.Name = "refreshbtn"
+        Me.refreshbtn.Size = New System.Drawing.Size(75, 23)
+        Me.refreshbtn.TabIndex = 27
+        Me.refreshbtn.Text = "Refresh"
+        Me.refreshbtn.UseVisualStyleBackColor = True
         '
         'View_Checked_in_Vehicles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VehiclesDataGridView)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.searchbtn)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.filterbox)
+        Me.Controls.Add(Me.checkoutbtn)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "View_Checked_in_Vehicles"
         Me.Size = New System.Drawing.Size(1129, 763)
@@ -245,10 +245,10 @@ Partial Class View_Checked_in_Vehicles
     End Sub
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents checkoutbtn As Button
+    Friend WithEvents searchbtn As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents filterbox As TextBox
     Friend WithEvents DB1DataSet As DB1DataSet
     Friend WithEvents VisitorsBindingSource As BindingSource
     Friend WithEvents VisitorsTableAdapter As DB1DataSetTableAdapters.VisitorsTableAdapter
@@ -263,5 +263,5 @@ Partial Class View_Checked_in_Vehicles
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents Button3 As Button
+    Friend WithEvents refreshbtn As Button
 End Class

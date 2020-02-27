@@ -1,5 +1,5 @@
 ﻿Public Class View_Checked_in_Vehicles
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles checkoutbtn.Click
 
     End Sub
 
@@ -10,18 +10,18 @@
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
-        TextBox1.Clear()
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles filterbox.GotFocus
+        filterbox.Clear()
     End Sub
 
-    Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles TextBox1.LostFocus
-        If TextBox1.Text = "" Then
-            TextBox1.Text = "Filter by plate number"
+    Private Sub TextBox1_LostFocus(sender As Object, e As EventArgs) Handles filterbox.LostFocus
+        If filterbox.Text = "" Then
+            filterbox.Text = "Filter by plate number"
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        Me.VehiclesTableAdapter.FillVehicleFilter(Me.DB1DataSet.Vehicles, TextBox1.Text.Trim)
+    Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs) Handles filterbox.TextChanged
+        Me.VehiclesTableAdapter.FillVehicleFilter(Me.DB1DataSet.Vehicles, filterbox.Text.Trim)
 
     End Sub
 
@@ -29,7 +29,7 @@
         refresher()
     End Sub
 
-    Public Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Public Sub Button3_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
         'refresh
         refresher()
     End Sub

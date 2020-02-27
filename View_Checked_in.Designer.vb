@@ -25,22 +25,11 @@ Partial Class View_Checked_in
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.searchbtn = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.filterbox = New System.Windows.Forms.TextBox()
+        Me.checkoutbtn = New System.Windows.Forms.Button()
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
-        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
-        Me.Refreshbtn = New System.Windows.Forms.Button()
-        Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
-        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.visit_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,6 +39,16 @@ Partial Class View_Checked_in
         Me.destination = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.time_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.refreshbtn = New System.Windows.Forms.Button()
+        Me.TableAdapterManager1 = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
+        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,18 +76,18 @@ Partial Class View_Checked_in
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Visitors List (Checked in visitors)"
         '
-        'Button2
+        'searchbtn
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(204, 189)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 23)
-        Me.Button2.TabIndex = 20
-        Me.Button2.Text = "Search"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.searchbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.searchbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchbtn.ForeColor = System.Drawing.Color.White
+        Me.searchbtn.Location = New System.Drawing.Point(204, 189)
+        Me.searchbtn.Name = "searchbtn"
+        Me.searchbtn.Size = New System.Drawing.Size(103, 23)
+        Me.searchbtn.TabIndex = 20
+        Me.searchbtn.Text = "Search"
+        Me.searchbtn.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -98,30 +97,30 @@ Partial Class View_Checked_in
         Me.Panel1.Size = New System.Drawing.Size(147, 1)
         Me.Panel1.TabIndex = 19
         '
-        'TextBox1
+        'filterbox
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Location = New System.Drawing.Point(51, 189)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(147, 23)
-        Me.TextBox1.TabIndex = 18
-        Me.TextBox1.Text = "Filter by Badge"
+        Me.filterbox.BackColor = System.Drawing.SystemColors.Window
+        Me.filterbox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.filterbox.Location = New System.Drawing.Point(51, 189)
+        Me.filterbox.Multiline = True
+        Me.filterbox.Name = "filterbox"
+        Me.filterbox.Size = New System.Drawing.Size(147, 23)
+        Me.filterbox.TabIndex = 18
+        Me.filterbox.Text = "Filter by Badge"
         '
-        'Button1
+        'checkoutbtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(769, 699)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(324, 43)
-        Me.Button1.TabIndex = 21
-        Me.Button1.Text = "Check out"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.checkoutbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.checkoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.checkoutbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkoutbtn.ForeColor = System.Drawing.Color.White
+        Me.checkoutbtn.Location = New System.Drawing.Point(769, 699)
+        Me.checkoutbtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.checkoutbtn.Name = "checkoutbtn"
+        Me.checkoutbtn.Size = New System.Drawing.Size(324, 43)
+        Me.checkoutbtn.TabIndex = 21
+        Me.checkoutbtn.Text = "Check out"
+        Me.checkoutbtn.UseVisualStyleBackColor = False
         '
         'VisitorsDataGridView
         '
@@ -139,78 +138,6 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1048, 286)
         Me.VisitorsDataGridView.TabIndex = 21
-        '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
-        '
-        'DB1DataSet1
-        '
-        Me.DB1DataSet1.DataSetName = "DB1DataSet"
-        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Refreshbtn
-        '
-        Me.Refreshbtn.Location = New System.Drawing.Point(999, 196)
-        Me.Refreshbtn.Name = "Refreshbtn"
-        Me.Refreshbtn.Size = New System.Drawing.Size(94, 23)
-        Me.Refreshbtn.TabIndex = 22
-        Me.Refreshbtn.Text = "Reset/Refresh"
-        Me.Refreshbtn.UseVisualStyleBackColor = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager1.usersTableAdapter = Nothing
-        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
-        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
-        '
-        'VisitorsTableAdapter1
-        '
-        Me.VisitorsTableAdapter1.ClearBeforeFill = True
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.ToolStripSeparator1, Me.CheckoutToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(126, 54)
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(122, 6)
-        '
-        'CheckoutToolStripMenuItem
-        '
-        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.CheckoutToolStripMenuItem.Text = "Checkout"
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(-15, -15)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 23
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(62, 683)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 24
-        Me.Button4.Text = "Test"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'visit_ID
         '
@@ -286,18 +213,80 @@ Partial Class View_Checked_in
         Me.time_in.Name = "time_in"
         Me.time_in.ReadOnly = True
         '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
+        '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'refreshbtn
+        '
+        Me.refreshbtn.Location = New System.Drawing.Point(999, 196)
+        Me.refreshbtn.Name = "refreshbtn"
+        Me.refreshbtn.Size = New System.Drawing.Size(94, 23)
+        Me.refreshbtn.TabIndex = 22
+        Me.refreshbtn.Text = "Reset/Refresh"
+        Me.refreshbtn.UseVisualStyleBackColor = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.usersTableAdapter = Nothing
+        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
+        '
+        'VisitorsTableAdapter1
+        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.ToolStripSeparator1, Me.CheckoutToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(126, 54)
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(122, 6)
+        '
+        'CheckoutToolStripMenuItem
+        '
+        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.CheckoutToolStripMenuItem.Text = "Checkout"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(62, 683)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 24
+        Me.Button4.Text = "Test"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Refreshbtn)
+        Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VisitorsDataGridView)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.checkoutbtn)
+        Me.Controls.Add(Me.searchbtn)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.filterbox)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "View_Checked_in"
         Me.Size = New System.Drawing.Size(1129, 763)
@@ -314,10 +303,10 @@ Partial Class View_Checked_in
 
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents searchbtn As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents filterbox As TextBox
+    Friend WithEvents checkoutbtn As Button
     Friend WithEvents DB1DataSet1 As DB1DataSet
     Friend WithEvents TableAdapterManager1 As DB1DataSetTableAdapters.TableAdapterManager
     Friend WithEvents VisitorsTableAdapter1 As DB1DataSetTableAdapters.VisitorsTableAdapter
@@ -326,12 +315,11 @@ Partial Class View_Checked_in
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents VisitorsDataGridView As DataGridView
-    Friend WithEvents Refreshbtn As Button
+    Friend WithEvents refreshbtn As Button
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn

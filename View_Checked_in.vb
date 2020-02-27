@@ -15,21 +15,21 @@
         pv.Show()
     End Sub
 
-    Private Sub Refreshbtn_Click(sender As Object, e As EventArgs) Handles Refreshbtn.Click
+    Private Sub Refreshbtn_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
         Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
     End Sub
 
     Public Sub refresher()
-        TextBox1.Text = "Filter by Badge"
+        filterbox.Text = "Filter by Badge"
         Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles searchbtn.Click
         'Filter by badge - click search button
-        If TextBox1.Text = "" Then
+        If filterbox.Text = "" Then
             Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
         Else
-            Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, TextBox1.Text.Trim)
+            Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
         End If
     End Sub
 
@@ -39,7 +39,7 @@
         pv.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles checkoutbtn.Click
 
         'big checkout button
         Dim selectedcells As DataGridViewSelectedCellCollection = VisitorsDataGridView.SelectedCells
@@ -62,16 +62,16 @@
         testestest(selectedcells)
     End Sub
 
-    Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles TextBox1.GotFocus
-        TextBox1.Clear()
+    Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles filterbox.GotFocus
+        filterbox.Clear()
     End Sub
 
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles filterbox.KeyPress
         If e.KeyChar = ChrW(Keys.Return) Then
-            If TextBox1.Text = "" Then
+            If filterbox.Text = "" Then
                 Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
             Else
-                Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, TextBox1.Text.Trim)
+                Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
                 e.Handled = True
             End If
         End If
