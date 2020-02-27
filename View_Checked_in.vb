@@ -56,12 +56,6 @@
         End If
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim selectedcells As DataGridViewSelectedCellCollection = VisitorsDataGridView.SelectedCells
-
-        testestest(selectedcells)
-    End Sub
-
     Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles filterbox.GotFocus
         filterbox.Clear()
     End Sub
@@ -76,5 +70,4 @@
             End If
         End If
     End Sub
-
 End Class

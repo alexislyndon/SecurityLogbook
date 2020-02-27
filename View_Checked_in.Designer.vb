@@ -48,7 +48,6 @@ Partial Class View_Checked_in
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -267,20 +266,10 @@ Partial Class View_Checked_in
         Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.CheckoutToolStripMenuItem.Text = "Checkout"
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(62, 683)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 24
-        Me.Button4.Text = "Test"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Controls.Add(Me.checkoutbtn)
@@ -320,7 +309,6 @@ Partial Class View_Checked_in
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button4 As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn

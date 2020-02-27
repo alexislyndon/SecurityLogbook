@@ -23,6 +23,7 @@ Partial Class Add_Vehicle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_Vehicle))
         Me.Middle_NameLabel = New System.Windows.Forms.Label()
         Me.First_NameLabel = New System.Windows.Forms.Label()
         Me.Last_NameLabel = New System.Windows.Forms.Label()
@@ -196,7 +197,9 @@ Partial Class Add_Vehicle
         '
         'ErrorProvider1
         '
+        Me.ErrorProvider1.BlinkRate = 50
         Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
         '
         'VehiclesTableAdapter
         '

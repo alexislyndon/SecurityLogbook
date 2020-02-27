@@ -71,6 +71,8 @@ Module Module1
         For Each ctrl In obj.Controls
             Dim tb = TryCast(ctrl, TextBox)
             Dim cb = TryCast(ctrl, ComboBox)
+            Dim pb = TryCast(ctrl, PictureBox)
+
             If tb IsNot Nothing Then
                 tb.Clear()
             End If
@@ -78,6 +80,15 @@ Module Module1
             If cb IsNot Nothing Then
                 'cb.Text = ""
                 cb.SelectedIndex = -1
+            End If
+
+            If pb.Image IsNot Nothing Then
+                If pb.Name = "Picturebox1" Then
+                    pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+                End If
+                If pb.Name = "Picturebox2" Then
+                    pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
+                End If
             End If
         Next
     End Sub
@@ -95,17 +106,11 @@ Module Module1
                "Checkout Success.", MessageBoxButtons.OK, MessageBoxIcon.Information
                )
     End Sub
-
-    Public Sub testestest(selectedcells As DataGridViewSelectedCellCollection)
-        For Each cell As DataGridViewCell In selectedcells
-            MsgBox(cell.Value)
-        Next
-
-    End Sub
-
     Public Function byeSpace(str As String) As String 'removes extra spaces
         Dim rgx As New Regex("\s+")
         Return rgx.Replace(str, " ").Trim
     End Function
+
+
 
 End Module
