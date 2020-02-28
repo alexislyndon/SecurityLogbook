@@ -93,7 +93,7 @@ Partial Class Dash
         Me.view_checkedin_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.view_checkedin_btn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.view_checkedin_btn.ForeColor = System.Drawing.Color.White
-        Me.view_checkedin_btn.Location = New System.Drawing.Point(0, 358)
+        Me.view_checkedin_btn.Location = New System.Drawing.Point(0, 306)
         Me.view_checkedin_btn.Name = "view_checkedin_btn"
         Me.view_checkedin_btn.Size = New System.Drawing.Size(252, 50)
         Me.view_checkedin_btn.TabIndex = 17
@@ -105,7 +105,7 @@ Partial Class Dash
         Me.add_vehicle_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.add_vehicle_btn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.add_vehicle_btn.ForeColor = System.Drawing.Color.White
-        Me.add_vehicle_btn.Location = New System.Drawing.Point(0, 309)
+        Me.add_vehicle_btn.Location = New System.Drawing.Point(0, 258)
         Me.add_vehicle_btn.Name = "add_vehicle_btn"
         Me.add_vehicle_btn.Size = New System.Drawing.Size(252, 50)
         Me.add_vehicle_btn.TabIndex = 16
@@ -115,12 +115,12 @@ Partial Class Dash
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Digital-7 Mono", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.GreenYellow
         Me.Label3.Location = New System.Drawing.Point(29, 102)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(188, 44)
+        Me.Label3.Size = New System.Drawing.Size(198, 51)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "06:30:00"
         '

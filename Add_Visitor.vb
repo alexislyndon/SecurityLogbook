@@ -16,10 +16,15 @@ Public Class Add_Visitor 'checks in visitor
     Private Sub Add_Visitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2.Visible = True
         PictureBox3.Visible = False
+        If VisitorsTableAdapter.MaxID() Is Nothing Then
+            maxid = 1
+        Else
+            maxid = VisitorsTableAdapter.MaxID() + 1
 
-        maxid = VisitorsTableAdapter.MaxID() + 1
+        End If
+
         ErrorProvider1.Clear()
-        v_id.Text = VisitorsTableAdapter.MaxID() + 1
+        v_id.Text = maxid
     End Sub
 
     Private Sub CheckIn_Click(sender As Object, e As EventArgs) Handles CheckIn.Click

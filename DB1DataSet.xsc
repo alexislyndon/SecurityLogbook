@@ -9,38 +9,50 @@
     <TableUISetting Name="Visitors">
       <ColumnUISettings>
         <ColumnUISetting Name="sex">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="portrait">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="PictureBox" Type="System.Windows.Forms.PictureBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="id_pic">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="PictureBox" Type="System.Windows.Forms.PictureBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
       </ColumnUISettings>
     </TableUISetting>
     <TableUISetting Name="Vehicles">
       <ColumnUISettings>
         <ColumnUISetting Name="make">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="ComboBox" Type="System.Windows.Forms.ComboBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="model">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
         <ColumnUISetting Name="color">
-          <ControlSettings><ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+          <ControlSettings>
+            <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
               <BindableControlInfo Name="ComboBox" Type="System.Windows.Forms.ComboBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-            </ControlSetting></ControlSettings>
+            </ControlSetting>
+          </ControlSettings>
         </ColumnUISetting>
       </ColumnUISettings>
     </TableUISetting>

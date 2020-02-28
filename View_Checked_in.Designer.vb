@@ -23,8 +23,6 @@ Partial Class View_Checked_in
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.searchbtn = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.filterbox = New System.Windows.Forms.TextBox()
@@ -48,32 +46,14 @@ Partial Class View_Checked_in
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2.SuspendLayout()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1109, 156)
-        Me.Panel2.TabIndex = 14
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(20, 100)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(411, 37)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Visitors List (Checked in visitors)"
         '
         'searchbtn
         '
@@ -134,7 +114,7 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.Name = "VisitorsDataGridView"
         Me.VisitorsDataGridView.ReadOnly = True
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.VisitorsDataGridView.Size = New System.Drawing.Size(1048, 286)
+        Me.VisitorsDataGridView.Size = New System.Drawing.Size(907, 286)
         Me.VisitorsDataGridView.TabIndex = 21
         '
         'visit_ID
@@ -265,32 +245,49 @@ Partial Class View_Checked_in
         Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.CheckoutToolStripMenuItem.Text = "Checkout"
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Location = New System.Drawing.Point(0, 1)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1126, 77)
+        Me.Panel3.TabIndex = 23
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(18, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(411, 37)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Visitors List (Checked in visitors)"
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Controls.Add(Me.checkoutbtn)
         Me.Controls.Add(Me.searchbtn)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.filterbox)
-        Me.Controls.Add(Me.Panel2)
         Me.Name = "View_Checked_in"
         Me.Size = New System.Drawing.Size(1129, 763)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label6 As Label
     Friend WithEvents searchbtn As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents filterbox As TextBox
@@ -326,4 +323,6 @@ Partial Class View_Checked_in
     Friend WithEvents destination As DataGridViewTextBoxColumn
     Friend WithEvents purpose As DataGridViewTextBoxColumn
     Friend WithEvents time_in As DataGridViewTextBoxColumn
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label2 As Label
 End Class
