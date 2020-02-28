@@ -44,8 +44,7 @@ Partial Class View_Checked_in_Vehicles
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.VehiclesTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VehiclesTableAdapter()
-        Me.refreshbtn = New System.Windows.Forms.Button()
-        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,9 +67,9 @@ Partial Class View_Checked_in_Vehicles
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(18, 30)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(321, 37)
+        Me.Label6.Size = New System.Drawing.Size(325, 37)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "View Checked in Vehicles"
+        Me.Label6.Text = "View Checked-in Vehicles"
         '
         'checkoutbtn
         '
@@ -78,10 +77,10 @@ Partial Class View_Checked_in_Vehicles
         Me.checkoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.checkoutbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkoutbtn.ForeColor = System.Drawing.Color.White
-        Me.checkoutbtn.Location = New System.Drawing.Point(769, 699)
+        Me.checkoutbtn.Location = New System.Drawing.Point(933, 686)
         Me.checkoutbtn.Margin = New System.Windows.Forms.Padding(4)
         Me.checkoutbtn.Name = "checkoutbtn"
-        Me.checkoutbtn.Size = New System.Drawing.Size(324, 43)
+        Me.checkoutbtn.Size = New System.Drawing.Size(154, 52)
         Me.checkoutbtn.TabIndex = 22
         Me.checkoutbtn.Text = "Check out"
         Me.checkoutbtn.UseVisualStyleBackColor = False
@@ -92,17 +91,18 @@ Partial Class View_Checked_in_Vehicles
         Me.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.searchbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbtn.ForeColor = System.Drawing.Color.White
-        Me.searchbtn.Location = New System.Drawing.Point(320, 149)
+        Me.searchbtn.Location = New System.Drawing.Point(416, 226)
         Me.searchbtn.Name = "searchbtn"
         Me.searchbtn.Size = New System.Drawing.Size(103, 23)
         Me.searchbtn.TabIndex = 26
         Me.searchbtn.Text = "Search"
         Me.searchbtn.UseVisualStyleBackColor = False
+        Me.searchbtn.Visible = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel1.Location = New System.Drawing.Point(94, 171)
+        Me.Panel1.Location = New System.Drawing.Point(190, 248)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 1)
         Me.Panel1.TabIndex = 25
@@ -111,7 +111,7 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.filterbox.BackColor = System.Drawing.SystemColors.Window
         Me.filterbox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.filterbox.Location = New System.Drawing.Point(94, 149)
+        Me.filterbox.Location = New System.Drawing.Point(190, 226)
         Me.filterbox.Multiline = True
         Me.filterbox.Name = "filterbox"
         Me.filterbox.Size = New System.Drawing.Size(217, 23)
@@ -129,10 +129,10 @@ Partial Class View_Checked_in_Vehicles
         Me.VehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VehiclesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
         Me.VehiclesDataGridView.DataSource = Me.VehiclesBindingSource
-        Me.VehiclesDataGridView.Location = New System.Drawing.Point(232, 227)
+        Me.VehiclesDataGridView.Location = New System.Drawing.Point(190, 255)
         Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
         Me.VehiclesDataGridView.ReadOnly = True
-        Me.VehiclesDataGridView.Size = New System.Drawing.Size(746, 233)
+        Me.VehiclesDataGridView.Size = New System.Drawing.Size(744, 229)
         Me.VehiclesDataGridView.TabIndex = 26
         '
         'DataGridViewTextBoxColumn1
@@ -209,7 +209,6 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BadgesTableAdapter = Nothing
-        Me.TableAdapterManager.TableTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -219,21 +218,10 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.VehiclesTableAdapter.ClearBeforeFill = True
         '
-        'refreshbtn
-        '
-        Me.refreshbtn.Location = New System.Drawing.Point(94, 198)
-        Me.refreshbtn.Name = "refreshbtn"
-        Me.refreshbtn.Size = New System.Drawing.Size(75, 23)
-        Me.refreshbtn.TabIndex = 27
-        Me.refreshbtn.Text = "Refresh"
-        Me.refreshbtn.UseVisualStyleBackColor = True
-        '
         'View_Checked_in_Vehicles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VehiclesDataGridView)
         Me.Controls.Add(Me.searchbtn)
         Me.Controls.Add(Me.Panel1)
@@ -270,6 +258,4 @@ Partial Class View_Checked_in_Vehicles
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents refreshbtn As Button
-    Friend WithEvents Panel3 As Panel
 End Class

@@ -33,7 +33,10 @@ Partial Class backForm
         Me.View_Checked_in1 = New Security_Logbook.View_Checked_in()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.Panel1.SuspendLayout()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Add_Visitor1
@@ -54,7 +57,7 @@ Partial Class backForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(252, 768)
+        Me.Panel1.Size = New System.Drawing.Size(252, 749)
         Me.Panel1.TabIndex = 5
         '
         'LogOutBtn
@@ -137,11 +140,20 @@ Partial Class backForm
         'Timer1
         '
         '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VisitorsTableAdapter1
+        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        '
         'backForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.ClientSize = New System.Drawing.Size(1366, 749)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Add_Visitor1)
@@ -151,6 +163,7 @@ Partial Class backForm
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,4 +179,6 @@ Partial Class backForm
     Friend WithEvents View_Checked_in1 As View_Checked_in
     Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents DB1DataSet1 As DB1DataSet
+    Friend WithEvents VisitorsTableAdapter1 As DB1DataSetTableAdapters.VisitorsTableAdapter
 End Class

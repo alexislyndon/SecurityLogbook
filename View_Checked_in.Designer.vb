@@ -57,6 +57,26 @@ Partial Class View_Checked_in
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1109, 156)
+        Me.Panel2.TabIndex = 14
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(20, 100)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(415, 37)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Visitors List (Checked-in visitors)"
+        '
         'searchbtn
         '
         Me.searchbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
@@ -69,6 +89,7 @@ Partial Class View_Checked_in
         Me.searchbtn.TabIndex = 20
         Me.searchbtn.Text = "Search"
         Me.searchbtn.UseVisualStyleBackColor = False
+        Me.searchbtn.Visible = False
         '
         'Panel1
         '
@@ -109,6 +130,8 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.AllowUserToDeleteRows = False
         Me.VisitorsDataGridView.AllowUserToOrderColumns = True
         Me.VisitorsDataGridView.AutoGenerateColumns = False
+        Me.VisitorsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.VisitorsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.VisitorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.visit_ID, Me.DataGridViewTextBoxColumn15, Me.FullName, Me.phone, Me.sex, Me.entry, Me.destination, Me.purpose, Me.time_in})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
@@ -121,74 +144,72 @@ Partial Class View_Checked_in
         '
         'visit_ID
         '
+        Me.visit_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.visit_ID.DataPropertyName = "visit_ID"
-        Me.visit_ID.Frozen = True
         Me.visit_ID.HeaderText = "Visit ID"
         Me.visit_ID.Name = "visit_ID"
         Me.visit_ID.ReadOnly = True
         '
         'DataGridViewTextBoxColumn15
         '
-        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn15.DataPropertyName = "badge_number"
-        Me.DataGridViewTextBoxColumn15.Frozen = True
         Me.DataGridViewTextBoxColumn15.HeaderText = "Badge"
         Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
         Me.DataGridViewTextBoxColumn15.ReadOnly = True
-        Me.DataGridViewTextBoxColumn15.Width = 63
         '
         'FullName
         '
+        Me.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.FullName.DataPropertyName = "FullName"
-        Me.FullName.Frozen = True
         Me.FullName.HeaderText = "Full Name"
         Me.FullName.Name = "FullName"
         Me.FullName.ReadOnly = True
         '
         'phone
         '
+        Me.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.phone.DataPropertyName = "phone"
-        Me.phone.Frozen = True
         Me.phone.HeaderText = "Phone"
         Me.phone.Name = "phone"
         Me.phone.ReadOnly = True
         '
         'sex
         '
+        Me.sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.sex.DataPropertyName = "sex"
-        Me.sex.Frozen = True
         Me.sex.HeaderText = "Sex"
         Me.sex.Name = "sex"
         Me.sex.ReadOnly = True
         '
         'entry
         '
+        Me.entry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.entry.DataPropertyName = "entry"
-        Me.entry.Frozen = True
         Me.entry.HeaderText = "Entry"
         Me.entry.Name = "entry"
         Me.entry.ReadOnly = True
         '
         'destination
         '
+        Me.destination.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.destination.DataPropertyName = "destination"
-        Me.destination.Frozen = True
         Me.destination.HeaderText = "Destination"
         Me.destination.Name = "destination"
         Me.destination.ReadOnly = True
         '
         'purpose
         '
+        Me.purpose.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.purpose.DataPropertyName = "purpose"
-        Me.purpose.Frozen = True
         Me.purpose.HeaderText = "Purpose"
         Me.purpose.Name = "purpose"
         Me.purpose.ReadOnly = True
         '
         'time_in
         '
+        Me.time_in.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.time_in.DataPropertyName = "time_in"
-        Me.time_in.Frozen = True
         Me.time_in.HeaderText = "Time in"
         Me.time_in.Name = "time_in"
         Me.time_in.ReadOnly = True
@@ -211,6 +232,7 @@ Partial Class View_Checked_in
         Me.refreshbtn.TabIndex = 22
         Me.refreshbtn.Text = "Reset/Refresh"
         Me.refreshbtn.UseVisualStyleBackColor = True
+        Me.refreshbtn.Visible = False
         '
         'TableAdapterManager1
         '
@@ -317,6 +339,7 @@ Partial Class View_Checked_in
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
     Friend WithEvents visit_ID As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents FullName As DataGridViewTextBoxColumn
@@ -326,7 +349,4 @@ Partial Class View_Checked_in
     Friend WithEvents destination As DataGridViewTextBoxColumn
     Friend WithEvents purpose As DataGridViewTextBoxColumn
     Friend WithEvents time_in As DataGridViewTextBoxColumn
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
 End Class

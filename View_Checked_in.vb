@@ -2,7 +2,7 @@
 
     Private Sub View_Checked_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DB1DataSet1.EnforceConstraints = False
-        Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
+        Me.VisitorsTableAdapter1.FillCheckedInMainGate(Me.DB1DataSet1.Visitors)
     End Sub
 
     Private Sub VisitorsDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles VisitorsDataGridView.CellDoubleClick
@@ -12,17 +12,17 @@
     End Sub
 
     Private Sub Refreshbtn_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
-        Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
+        Me.VisitorsTableAdapter1.FillCheckedInMainGate(Me.DB1DataSet1.Visitors)
     End Sub
 
     Public Sub refresher()
-        Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
+        Me.VisitorsTableAdapter1.FillCheckedInMainGate(Me.DB1DataSet1.Visitors)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles searchbtn.Click
         'Filter by badge - click search button
         If filterbox.Text = "" Then
-            Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
+            Me.VisitorsTableAdapter1.FillCheckedInMainGate(Me.DB1DataSet1.Visitors)
         Else
             Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
         End If
@@ -69,14 +69,12 @@
         filterbox.Clear()
     End Sub
 
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles filterbox.KeyPress
-        If e.KeyChar = ChrW(Keys.Return) Then
-            If filterbox.Text = "" Then
-                Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
-            Else
-                Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
-                e.Handled = True
-            End If
+    Private Sub filterbox_TextChanged(sender As Object, e As EventArgs) Handles filterbox.TextChanged
+
+        If filterbox.Text = "" Then
+            Me.VisitorsTableAdapter1.FillCheckedInMainGate(Me.DB1DataSet1.Visitors)
+        Else
+            Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
         End If
     End Sub
 End Class

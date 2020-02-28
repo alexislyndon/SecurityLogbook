@@ -10,7 +10,7 @@
 
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Text = "Visitor Info"
         'TODO: This line of code loads data into the 'DB1DataSet1.Visitors' table. You can move, or remove it, as needed.
 
         Me.VisitorsTableAdapter.View(Me.DB1DataSet1.Visitors, visitID)
@@ -32,5 +32,9 @@
             refreshAll()
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Dispose()
     End Sub
 End Class

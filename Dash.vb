@@ -13,6 +13,7 @@
     End Sub
 
     Private Sub view_checkin_btn_Click(sender As Object, e As EventArgs) Handles view_checkin_btn.Click
+        'VIEW CHECKED IN PEOPLE
         Add_Visitor1.Visible = False
         Add_Vehicle1.Visible = False
         View_Checked_in1.Visible = True

@@ -4,36 +4,45 @@
     End Sub
 
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
-        Dim u As String = "alex"
-        Dim p As String = "123"
-        Dim udt As DB1DataSet.usersDataTable = UsersTableAdapter.GetDesignationQuery(u, p)
-        Dim id As Integer
-        Dim designation, name As String
-        id = udt.Rows(0).Item(0)
-        designation = udt.Rows(0).Item("designation")
-        name = udt.Rows(0).Item("name")
+        If TextBox1.Text = "Username" Or TextBox2.Text = "Password" Then
+            MsgBox("Please fill in username and password.")
+        Else
+            Try
+                Dim u As String = TextBox1.Text.Trim
+                Dim p As String = TextBox2.Text.Trim
+                Dim udt As DB1DataSet.usersDataTable = UsersTableAdapter.GetDesignationQuery(u, p)
+                Dim id As Integer
+                Dim designation, name As String
+                id = udt.Rows(0).Item(0)
+                designation = udt.Rows(0).Item("designation")
+                name = udt.Rows(0).Item("name")
 
-        If designation = "admin" Then
-            'append userid to session and logs
-            'show the admin panel
-            MsgBox("Please log in using a developer account.")
-            startsession(id)
-        ElseIf designation = "main" Then
-            'append userid to session and logs
-            'show main gate panel
-            MsgBox("Please log in using a developer account.")
-            startsession(id)
-        ElseIf designation = "back" Then
-            'append userid to session and logs
-            'show main gate panel
-            MsgBox("Please log in using a developer account.")
-            startsession(id)
-        ElseIf designation = "coder" Then
-            ViewSelector.Show()
-            Me.Hide()
-            startsession(id)
+                If designation = "admin" Then
+                    'append userid to session and logs
+                    'show the admin panel
+                    startsession(id)
+                    Form1.Show()
+                    Me.Hide()
+
+                ElseIf designation = "main" Then
+                    startsession(id)
+                    Dash.Show()
+                    Me.Hide()
+                ElseIf designation = "back" Then
+                    startsession(id)
+                    backForm.Show()
+                    Me.Show()
+                End If
+                Me.Hide()
+            Catch ex As Exception
+                MsgBox("Wrong username or password.")
+                'MsgBox(ex.ToString)
+
+            End Try
+
         End If
-        Me.Hide()
+
+
     End Sub
 
     Private Sub TextBox2_Click(sender As Object, e As EventArgs) Handles TextBox2.GotFocus

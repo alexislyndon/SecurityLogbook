@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Add_Vehicle
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Add_Vehicle
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_Vehicle))
@@ -47,22 +47,22 @@ Partial Class Add_Vehicle
         'Middle_NameLabel
         '
         Me.Middle_NameLabel.AutoSize = True
-        Me.Middle_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Middle_NameLabel.Location = New System.Drawing.Point(205, 361)
+        Me.Middle_NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Middle_NameLabel.Location = New System.Drawing.Point(208, 410)
         Me.Middle_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Middle_NameLabel.Name = "Middle_NameLabel"
-        Me.Middle_NameLabel.Size = New System.Drawing.Size(50, 20)
+        Me.Middle_NameLabel.Size = New System.Drawing.Size(65, 25)
         Me.Middle_NameLabel.TabIndex = 47
         Me.Middle_NameLabel.Text = "Color:"
         '
         'First_NameLabel
         '
         Me.First_NameLabel.AutoSize = True
-        Me.First_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.First_NameLabel.Location = New System.Drawing.Point(205, 309)
+        Me.First_NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.First_NameLabel.Location = New System.Drawing.Point(208, 358)
         Me.First_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.First_NameLabel.Name = "First_NameLabel"
-        Me.First_NameLabel.Size = New System.Drawing.Size(91, 20)
+        Me.First_NameLabel.Size = New System.Drawing.Size(113, 25)
         Me.First_NameLabel.TabIndex = 46
         Me.First_NameLabel.Text = "Model-Year"
         '
@@ -70,32 +70,32 @@ Partial Class Add_Vehicle
         '
         Me.Last_NameLabel.AutoSize = True
         Me.Last_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Last_NameLabel.Location = New System.Drawing.Point(205, 258)
+        Me.Last_NameLabel.Location = New System.Drawing.Point(208, 307)
         Me.Last_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Last_NameLabel.Name = "Last_NameLabel"
-        Me.Last_NameLabel.Size = New System.Drawing.Size(52, 20)
+        Me.Last_NameLabel.Size = New System.Drawing.Size(63, 25)
         Me.Last_NameLabel.TabIndex = 44
         Me.Last_NameLabel.Text = "Make:"
         '
         'Visitor_IDLabel
         '
         Me.Visitor_IDLabel.AutoSize = True
-        Me.Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Visitor_IDLabel.Location = New System.Drawing.Point(205, 201)
+        Me.Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Visitor_IDLabel.Location = New System.Drawing.Point(208, 250)
         Me.Visitor_IDLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Visitor_IDLabel.Name = "Visitor_IDLabel"
-        Me.Visitor_IDLabel.Size = New System.Drawing.Size(109, 20)
+        Me.Visitor_IDLabel.Size = New System.Drawing.Size(136, 25)
         Me.Visitor_IDLabel.TabIndex = 43
         Me.Visitor_IDLabel.Text = "Plate Number:"
         '
         'makeCbox
         '
-        Me.makeCbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.makeCbox.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.makeCbox.FormattingEnabled = True
         Me.makeCbox.Items.AddRange(New Object() {"Toyota", "Mitsubishi", "Nissan", "Hyundai", "Suzuki", "Ford", "Honda", "Isuzu", "MG", "Kia"})
         Me.makeCbox.Location = New System.Drawing.Point(365, 258)
         Me.makeCbox.Name = "makeCbox"
-        Me.makeCbox.Size = New System.Drawing.Size(343, 41)
+        Me.makeCbox.Size = New System.Drawing.Size(208, 34)
         Me.makeCbox.TabIndex = 2
         '
         'clearbtn
@@ -104,7 +104,7 @@ Partial Class Add_Vehicle
         Me.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.clearbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clearbtn.ForeColor = System.Drawing.Color.White
-        Me.clearbtn.Location = New System.Drawing.Point(356, 501)
+        Me.clearbtn.Location = New System.Drawing.Point(698, 680)
         Me.clearbtn.Name = "clearbtn"
         Me.clearbtn.Size = New System.Drawing.Size(168, 54)
         Me.clearbtn.TabIndex = 50
@@ -113,28 +113,28 @@ Partial Class Add_Vehicle
         '
         'colorbox
         '
-        Me.colorbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.colorbox.Location = New System.Drawing.Point(365, 359)
+        Me.colorbox.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.colorbox.Location = New System.Drawing.Point(368, 408)
         Me.colorbox.Margin = New System.Windows.Forms.Padding(2)
         Me.colorbox.Multiline = True
         Me.colorbox.Name = "colorbox"
-        Me.colorbox.Size = New System.Drawing.Size(343, 45)
+        Me.colorbox.Size = New System.Drawing.Size(279, 45)
         Me.colorbox.TabIndex = 4
         '
         'modelbox
         '
-        Me.modelbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.modelbox.Location = New System.Drawing.Point(365, 307)
+        Me.modelbox.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.modelbox.Location = New System.Drawing.Point(368, 356)
         Me.modelbox.Margin = New System.Windows.Forms.Padding(2)
         Me.modelbox.Multiline = True
         Me.modelbox.Name = "modelbox"
-        Me.modelbox.Size = New System.Drawing.Size(343, 45)
+        Me.modelbox.Size = New System.Drawing.Size(279, 45)
         Me.modelbox.TabIndex = 3
         '
         'platebox
         '
-        Me.platebox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.platebox.Location = New System.Drawing.Point(365, 195)
+        Me.platebox.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.platebox.Location = New System.Drawing.Point(368, 246)
         Me.platebox.Margin = New System.Windows.Forms.Padding(2)
         Me.platebox.Multiline = True
         Me.platebox.Name = "platebox"
@@ -147,32 +147,32 @@ Partial Class Add_Vehicle
         Me.checkinbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.checkinbtn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkinbtn.ForeColor = System.Drawing.Color.White
-        Me.checkinbtn.Location = New System.Drawing.Point(553, 501)
+        Me.checkinbtn.Location = New System.Drawing.Point(900, 680)
         Me.checkinbtn.Name = "checkinbtn"
         Me.checkinbtn.Size = New System.Drawing.Size(168, 54)
         Me.checkinbtn.TabIndex = 6
-        Me.checkinbtn.Text = "Check in"
+        Me.checkinbtn.Text = "Check in Vehicle"
         Me.checkinbtn.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(205, 423)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(208, 472)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 20)
+        Me.Label1.Size = New System.Drawing.Size(59, 25)
         Me.Label1.TabIndex = 47
         Me.Label1.Text = "Type:"
         '
         'typeCbox
         '
-        Me.typeCbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.typeCbox.Font = New System.Drawing.Font("Microsoft Tai Le", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.typeCbox.FormattingEnabled = True
         Me.typeCbox.Items.AddRange(New Object() {"Private 4-Wheeler", "Private 3-Wheeler", "Private Motorcycle", "PUJeep", "PUVehicle", "Delivery MC", "Delivery Vehicle", "Truck", "Emergency Vehicle", "Helicopter"})
         Me.typeCbox.Location = New System.Drawing.Point(365, 414)
         Me.typeCbox.Name = "typeCbox"
-        Me.typeCbox.Size = New System.Drawing.Size(343, 41)
+        Me.typeCbox.Size = New System.Drawing.Size(279, 34)
         Me.typeCbox.TabIndex = 5
         '
         'ErrorProvider1

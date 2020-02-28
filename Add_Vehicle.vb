@@ -37,15 +37,21 @@ Public Class Add_Vehicle
         If gtg Then
             Try
                 VehiclesTableAdapter.InsertVehicle(makeCbox.Text, modelbox.Text, colorbox.Text, platebox.Text, typeCbox.Text, getsessionid)
-                MsgBox("Successfully Checked in visitor!")
+                MsgBox("Successfully Checked in Vehicle!")
+                ErrorProvider1.Clear()
                 refreshAll()
                 clear(Me)
 
             Catch ex As Exception
                 MsgBox(ex)
             End Try
+
+        Else
+            MsgBox("Please fill out the form completely and correctly.")
         End If
     End Sub
 
-
+    Private Sub clearbtn_Click(sender As Object, e As EventArgs) Handles clearbtn.Click
+        clear(Me)
+    End Sub
 End Class

@@ -392,12 +392,14 @@ Partial Class PopView
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 488)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(749, 507)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(110, 42)
         Me.Button1.TabIndex = 91
         Me.Button1.Text = "Check out"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'VisitorsTableAdapter
         '
@@ -406,6 +408,7 @@ Partial Class PopView
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -421,12 +424,14 @@ Partial Class PopView
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(540, 488)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(580, 507)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(110, 42)
         Me.Button2.TabIndex = 91
         Me.Button2.Text = "Close"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'PopView
         '

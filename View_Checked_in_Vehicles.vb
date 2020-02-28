@@ -15,8 +15,11 @@
     End Sub
 
     Private Sub TextBox1_TextChanged_1(sender As Object, e As EventArgs) Handles filterbox.TextChanged
-        Me.VehiclesTableAdapter.FillVehicleFilter(Me.DB1DataSet.Vehicles, filterbox.Text.Trim)
-
+        If filterbox.Text = "" Then
+            Me.VehiclesTableAdapter.Fill(Me.DB1DataSet.Vehicles)
+        Else
+            Me.VehiclesTableAdapter.FillVehicleFilter(Me.DB1DataSet.Vehicles, filterbox.Text.Trim)
+        End If
     End Sub
 
     Private Sub View_Checked_in_Vehicles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,7 +27,7 @@
         refresher()
     End Sub
 
-    Public Sub Button3_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
+    Public Sub Button3_Click(sender As Object, e As EventArgs)
         'refresh
         refresher()
     End Sub

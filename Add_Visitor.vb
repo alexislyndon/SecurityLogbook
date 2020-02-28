@@ -93,9 +93,14 @@ Public Class Add_Visitor 'checks in visitor
                                          imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, imgtobyte(PictureBox3.Image, hadcapback), Phone_NumberTextBox.Text, getsessionid())
                 BadgesTableAdapter1.TakeBadge(BadgeComboBox.Text)
                 MsgBox("Successfully Checked in visitor!")
+                ErrorProvider1.Clear()
                 hadcapid = False
                 hadcappor = False
                 hadcapback = False
+                PictureBox1.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+                PictureBox2.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
+                PictureBox3.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
+
                 maxid = VisitorsTableAdapter.MaxID() + 1
                 v_id.Text = maxid
                 refreshAll()
@@ -105,7 +110,7 @@ Public Class Add_Visitor 'checks in visitor
                 MsgBox(ex.ToString)
             End Try
         Else
-            MsgBox("Please fill out the form completely.")
+            MsgBox("Please fill out the form completely and correctly.")
         End If
     End Sub
 
@@ -143,24 +148,11 @@ Public Class Add_Visitor 'checks in visitor
         PictureBox2.Visible = True
     End Sub
 
-    Private Sub idtoggle_Click(sender As Object, e As EventArgs) Handles idtoggle.Click
-        If boo = False Then
-            idtoggle.Text = "Show Frontside"
-            PictureBox2.Visible = False
-            PictureBox3.Visible = True
-            boo = True
-        End If
-
-        If boo = True Then
-            idtoggle.Text = "Show Backside"
-            PictureBox2.Visible = True
-            PictureBox3.Visible = False
-            boo = False
-        End If
-    End Sub
-
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
         clear(Me)
+        PictureBox1.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+        PictureBox2.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
+        PictureBox3.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
     End Sub
 
     'Private Sub FillBadgeToolStripButton_Click(sender As Object, e As EventArgs) Handles FillBadgeToolStripButton.Click
