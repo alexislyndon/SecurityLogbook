@@ -22,38 +22,38 @@ Partial Class ViewSelector
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.mainbtn = New System.Windows.Forms.Button()
+        Me.backbtn = New System.Windows.Forms.Button()
+        Me.adminbtn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'mainbtn
         '
-        Me.Button1.Location = New System.Drawing.Point(117, 67)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Main"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.mainbtn.Location = New System.Drawing.Point(117, 67)
+        Me.mainbtn.Name = "mainbtn"
+        Me.mainbtn.Size = New System.Drawing.Size(75, 23)
+        Me.mainbtn.TabIndex = 1
+        Me.mainbtn.Text = "Main"
+        Me.mainbtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'backbtn
         '
-        Me.Button2.Location = New System.Drawing.Point(117, 115)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Back"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.backbtn.Location = New System.Drawing.Point(117, 115)
+        Me.backbtn.Name = "backbtn"
+        Me.backbtn.Size = New System.Drawing.Size(75, 23)
+        Me.backbtn.TabIndex = 2
+        Me.backbtn.Text = "Back"
+        Me.backbtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'adminbtn
         '
-        Me.Button3.Location = New System.Drawing.Point(117, 156)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Admin"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.adminbtn.Location = New System.Drawing.Point(117, 156)
+        Me.adminbtn.Name = "adminbtn"
+        Me.adminbtn.Size = New System.Drawing.Size(75, 23)
+        Me.adminbtn.TabIndex = 3
+        Me.adminbtn.Text = "Admin"
+        Me.adminbtn.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -70,9 +70,9 @@ Partial Class ViewSelector
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(324, 267)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.adminbtn)
+        Me.Controls.Add(Me.backbtn)
+        Me.Controls.Add(Me.mainbtn)
         Me.Name = "ViewSelector"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -80,8 +80,8 @@ Partial Class ViewSelector
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents mainbtn As Button
+    Friend WithEvents backbtn As Button
+    Friend WithEvents adminbtn As Button
     Friend WithEvents Label1 As Label
 End Class

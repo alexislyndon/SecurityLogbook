@@ -64,11 +64,7 @@ Partial Class Add_Visitor
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.idtoggle = New System.Windows.Forms.Button()
         Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
-        Me.FillBadgeToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.FillBadgeToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.FKVehiclesBadgesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FillByAvailToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.FillByAvailToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.DB1DataSet2 = New Security_Logbook.DB1DataSet()
         Me.BadgesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -95,9 +91,7 @@ Partial Class Add_Visitor
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FillBadgeToolStrip.SuspendLayout()
         CType(Me.FKVehiclesBadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FillByAvailToolStrip.SuspendLayout()
         CType(Me.DB1DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BadgesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -479,42 +473,10 @@ Partial Class Add_Visitor
         '
         Me.BadgesTableAdapter1.ClearBeforeFill = True
         '
-        'FillBadgeToolStrip
-        '
-        Me.FillBadgeToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillBadgeToolStripButton})
-        Me.FillBadgeToolStrip.Location = New System.Drawing.Point(0, 0)
-        Me.FillBadgeToolStrip.Name = "FillBadgeToolStrip"
-        Me.FillBadgeToolStrip.Size = New System.Drawing.Size(1125, 25)
-        Me.FillBadgeToolStrip.TabIndex = 60
-        Me.FillBadgeToolStrip.Text = "FillBadgeToolStrip"
-        '
-        'FillBadgeToolStripButton
-        '
-        Me.FillBadgeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillBadgeToolStripButton.Name = "FillBadgeToolStripButton"
-        Me.FillBadgeToolStripButton.Size = New System.Drawing.Size(59, 22)
-        Me.FillBadgeToolStripButton.Text = "FillBadge"
-        '
         'FKVehiclesBadgesBindingSource
         '
         Me.FKVehiclesBadgesBindingSource.DataMember = "FK_Vehicles_Badges"
         Me.FKVehiclesBadgesBindingSource.DataSource = Me.BadgesBindingSource
-        '
-        'FillByAvailToolStrip
-        '
-        Me.FillByAvailToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillByAvailToolStripButton})
-        Me.FillByAvailToolStrip.Location = New System.Drawing.Point(0, 25)
-        Me.FillByAvailToolStrip.Name = "FillByAvailToolStrip"
-        Me.FillByAvailToolStrip.Size = New System.Drawing.Size(1125, 25)
-        Me.FillByAvailToolStrip.TabIndex = 61
-        Me.FillByAvailToolStrip.Text = "FillByAvailToolStrip"
-        '
-        'FillByAvailToolStripButton
-        '
-        Me.FillByAvailToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillByAvailToolStripButton.Name = "FillByAvailToolStripButton"
-        Me.FillByAvailToolStripButton.Size = New System.Drawing.Size(65, 22)
-        Me.FillByAvailToolStripButton.Text = "FillByAvail"
         '
         'TableAdapterManager
         '
@@ -555,8 +517,6 @@ Partial Class Add_Visitor
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(BadgeLabel)
         Me.Controls.Add(Me.BadgeComboBox)
-        Me.Controls.Add(Me.FillByAvailToolStrip)
-        Me.Controls.Add(Me.FillBadgeToolStrip)
         Me.Controls.Add(Me.v_id)
         Me.Controls.Add(Me.surrenderedcbox)
         Me.Controls.Add(Me.idtoggle)
@@ -599,11 +559,7 @@ Partial Class Add_Visitor
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FillBadgeToolStrip.ResumeLayout(False)
-        Me.FillBadgeToolStrip.PerformLayout()
         CType(Me.FKVehiclesBadgesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FillByAvailToolStrip.ResumeLayout(False)
-        Me.FillByAvailToolStrip.PerformLayout()
         CType(Me.DB1DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BadgesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -637,11 +593,7 @@ Partial Class Add_Visitor
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents idtoggle As Button
     Friend WithEvents BadgesBindingSource As BindingSource
-    Friend WithEvents FillBadgeToolStrip As ToolStrip
-    Friend WithEvents FillBadgeToolStripButton As ToolStripButton
     Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
-    Friend WithEvents FillByAvailToolStrip As ToolStrip
-    Friend WithEvents FillByAvailToolStripButton As ToolStripButton
     Friend WithEvents FKVehiclesBadgesBindingSource As BindingSource
     Friend WithEvents DB1DataSet1BindingSource As BindingSource
     Friend WithEvents DB1DataSet1 As DB1DataSet
