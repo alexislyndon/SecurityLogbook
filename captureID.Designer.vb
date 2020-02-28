@@ -42,7 +42,7 @@ Partial Class captureID
         'UnfreezeBtn
         '
         Me.UnfreezeBtn.BackColor = System.Drawing.Color.DarkSeaGreen
-        Me.UnfreezeBtn.Location = New System.Drawing.Point(63, 254)
+        Me.UnfreezeBtn.Location = New System.Drawing.Point(63, 258)
         Me.UnfreezeBtn.Name = "UnfreezeBtn"
         Me.UnfreezeBtn.Size = New System.Drawing.Size(60, 23)
         Me.UnfreezeBtn.TabIndex = 1
@@ -52,7 +52,7 @@ Partial Class captureID
         'FreezeBtn
         '
         Me.FreezeBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.FreezeBtn.Location = New System.Drawing.Point(10, 254)
+        Me.FreezeBtn.Location = New System.Drawing.Point(10, 258)
         Me.FreezeBtn.Name = "FreezeBtn"
         Me.FreezeBtn.Size = New System.Drawing.Size(47, 23)
         Me.FreezeBtn.TabIndex = 2
@@ -75,11 +75,11 @@ Partial Class captureID
         'frontbtn
         '
         Me.frontbtn.BackColor = System.Drawing.SystemColors.Control
-        Me.frontbtn.Location = New System.Drawing.Point(161, 254)
+        Me.frontbtn.Location = New System.Drawing.Point(161, 258)
         Me.frontbtn.Name = "frontbtn"
         Me.frontbtn.Size = New System.Drawing.Size(75, 23)
         Me.frontbtn.TabIndex = 4
-        Me.frontbtn.Text = "Front"
+        Me.frontbtn.Text = "Frontside"
         Me.frontbtn.UseVisualStyleBackColor = False
         '
         'PictureBox1
@@ -93,11 +93,11 @@ Partial Class captureID
         'backbtn
         '
         Me.backbtn.BackColor = System.Drawing.SystemColors.Control
-        Me.backbtn.Location = New System.Drawing.Point(258, 254)
+        Me.backbtn.Location = New System.Drawing.Point(257, 258)
         Me.backbtn.Name = "backbtn"
         Me.backbtn.Size = New System.Drawing.Size(75, 23)
         Me.backbtn.TabIndex = 4
-        Me.backbtn.Text = "Back"
+        Me.backbtn.Text = "Backside"
         Me.backbtn.UseVisualStyleBackColor = False
         '
         'PictureBox2
@@ -122,10 +122,11 @@ Partial Class captureID
         '
         'save
         '
-        Me.save.BackColor = System.Drawing.SystemColors.Control
-        Me.save.Location = New System.Drawing.Point(430, 258)
+        Me.save.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.save.ForeColor = System.Drawing.Color.White
+        Me.save.Location = New System.Drawing.Point(418, 258)
         Me.save.Name = "save"
-        Me.save.Size = New System.Drawing.Size(93, 23)
+        Me.save.Size = New System.Drawing.Size(104, 34)
         Me.save.TabIndex = 4
         Me.save.Text = "Save and Close"
         Me.save.UseVisualStyleBackColor = False
@@ -134,7 +135,7 @@ Partial Class captureID
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 284)
+        Me.ClientSize = New System.Drawing.Size(534, 296)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.save)

@@ -66,9 +66,9 @@ Partial Class View_Checked_in_Vehicles
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(20, 100)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(321, 37)
+        Me.Label6.Size = New System.Drawing.Size(325, 37)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "View Checked in Vehicles"
+        Me.Label6.Text = "View Checked-in Vehicles"
         '
         'checkoutbtn
         '

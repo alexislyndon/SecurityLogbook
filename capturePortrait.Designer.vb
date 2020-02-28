@@ -35,36 +35,40 @@ Partial Class capturePortrait
         '
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(360, 360)
+        Me.PictureBox1.Size = New System.Drawing.Size(360, 240)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Start
         '
-        Me.Start.Location = New System.Drawing.Point(378, 12)
+        Me.Start.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.Start.Location = New System.Drawing.Point(70, 262)
         Me.Start.Name = "Start"
-        Me.Start.Size = New System.Drawing.Size(75, 23)
+        Me.Start.Size = New System.Drawing.Size(61, 23)
         Me.Start.TabIndex = 1
-        Me.Start.Text = "Start"
-        Me.Start.UseVisualStyleBackColor = True
+        Me.Start.Text = "Unfreeze"
+        Me.Start.UseVisualStyleBackColor = False
         '
         'CapturePor
         '
-        Me.CapturePor.Location = New System.Drawing.Point(378, 41)
+        Me.CapturePor.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.CapturePor.Location = New System.Drawing.Point(12, 262)
         Me.CapturePor.Name = "CapturePor"
-        Me.CapturePor.Size = New System.Drawing.Size(75, 23)
+        Me.CapturePor.Size = New System.Drawing.Size(52, 23)
         Me.CapturePor.TabIndex = 2
-        Me.CapturePor.Text = "Capture"
-        Me.CapturePor.UseVisualStyleBackColor = True
+        Me.CapturePor.Text = "Freeze"
+        Me.CapturePor.UseVisualStyleBackColor = False
         '
         'Save
         '
-        Me.Save.Location = New System.Drawing.Point(378, 201)
+        Me.Save.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.Save.ForeColor = System.Drawing.Color.White
+        Me.Save.Location = New System.Drawing.Point(297, 258)
         Me.Save.Name = "Save"
-        Me.Save.Size = New System.Drawing.Size(75, 23)
+        Me.Save.Size = New System.Drawing.Size(75, 30)
         Me.Save.TabIndex = 3
         Me.Save.Text = "Save"
-        Me.Save.UseVisualStyleBackColor = True
+        Me.Save.UseVisualStyleBackColor = False
         '
         'Timer1
         '
@@ -73,7 +77,7 @@ Partial Class capturePortrait
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(457, 382)
+        Me.ClientSize = New System.Drawing.Size(387, 291)
         Me.Controls.Add(Me.Save)
         Me.Controls.Add(Me.CapturePor)
         Me.Controls.Add(Me.Start)

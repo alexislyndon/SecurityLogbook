@@ -38,12 +38,16 @@ Public Class Add_Vehicle
             Try
                 VehiclesTableAdapter.InsertVehicle(makeCbox.Text, modelbox.Text, colorbox.Text, platebox.Text, typeCbox.Text, getsessionid)
                 MsgBox("Successfully Checked in Vehicle!")
+                ErrorProvider1.Clear()
                 refreshAll()
                 clear(Me)
 
             Catch ex As Exception
                 MsgBox(ex)
             End Try
+
+        Else
+            MsgBox("Please fill out the form completely and correctly.")
         End If
     End Sub
 

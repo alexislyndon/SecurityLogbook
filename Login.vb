@@ -35,8 +35,8 @@
                 End If
                 Me.Hide()
             Catch ex As Exception
-                'MsgBox("Wrong username or password.")
-                MsgBox(ex.ToString)
+                MsgBox("Wrong username or password.")
+                'MsgBox(ex.ToString)
 
             End Try
 

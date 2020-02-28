@@ -47,8 +47,8 @@ Partial Class UserControl1
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.filterbyCbox = New System.Windows.Forms.ComboBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -62,7 +62,7 @@ Partial Class UserControl1
         Me.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.searchbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbtn.ForeColor = System.Drawing.Color.White
-        Me.searchbtn.Location = New System.Drawing.Point(632, 169)
+        Me.searchbtn.Location = New System.Drawing.Point(412, 169)
         Me.searchbtn.Name = "searchbtn"
         Me.searchbtn.Size = New System.Drawing.Size(103, 23)
         Me.searchbtn.TabIndex = 28
@@ -223,24 +223,35 @@ Partial Class UserControl1
         Me.DataGridViewTextBoxColumn15.HeaderText = "Guard"
         Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
         '
-        'ComboBox1
+        'filterbyCbox
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(46, 171)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(102, 21)
-        Me.ComboBox1.TabIndex = 31
-        Me.ComboBox1.Text = "Filterby:"
+        Me.filterbyCbox.FormattingEnabled = True
+        Me.filterbyCbox.Items.AddRange(New Object() {"Family Name", "First Name"})
+        Me.filterbyCbox.Location = New System.Drawing.Point(46, 171)
+        Me.filterbyCbox.Name = "filterbyCbox"
+        Me.filterbyCbox.Size = New System.Drawing.Size(102, 21)
+        Me.filterbyCbox.TabIndex = 31
+        Me.filterbyCbox.Text = "Filterby:"
         '
-        'VisitorsTableAdapter1
+        'CheckBox1
         '
-        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(963, 175)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.CheckBox1.Size = New System.Drawing.Size(125, 17)
+        Me.CheckBox1.TabIndex = 32
+        Me.CheckBox1.Text = "Include Checked-out"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'UserControl1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.filterbyCbox)
         Me.Controls.Add(Me.VisitorsDataGridView)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.searchbtn)
@@ -282,6 +293,6 @@ Partial Class UserControl1
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents VisitorsTableAdapter1 As DB1DataSetTableAdapters.VisitorsTableAdapter
+    Friend WithEvents filterbyCbox As ComboBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

@@ -93,6 +93,7 @@ Public Class Add_Visitor 'checks in visitor
                                          imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, imgtobyte(PictureBox3.Image, hadcapback), Phone_NumberTextBox.Text, getsessionid())
                 BadgesTableAdapter1.TakeBadge(BadgeComboBox.Text)
                 MsgBox("Successfully Checked in visitor!")
+                ErrorProvider1.Clear()
                 hadcapid = False
                 hadcappor = False
                 hadcapback = False
@@ -109,7 +110,7 @@ Public Class Add_Visitor 'checks in visitor
                 MsgBox(ex.ToString)
             End Try
         Else
-            MsgBox("Please fill out the form completely.")
+            MsgBox("Please fill out the form completely and correctly.")
         End If
     End Sub
 
