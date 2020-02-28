@@ -9,6 +9,7 @@ Public Class Add_Visitor 'checks in visitor
     Public hadcapid As Boolean = False 'had captured id 
     Public hadcapback As Boolean = False 'had captured id 
     Dim boo As Boolean = False
+    Dim gtg As Boolean = True
 
     Dim maxid As Integer
     Dim sextoDB As String
@@ -22,14 +23,13 @@ Public Class Add_Visitor 'checks in visitor
             maxid = VisitorsTableAdapter.MaxID() + 1
         End If
         ErrorProvider1.Clear()
-        v_id.Text = VisitorsTableAdapter.MaxID() + 1
+        v_id.Text = maxid
     End Sub
 
     Private Sub CheckIn_Click(sender As Object, e As EventArgs) Handles CheckIn.Click
         ''''///// CHECK IN HERE ///// ''''
         Dim sex As String = sexcbox.Text
-        Dim gtg As Boolean = True
-
+        gtg = True
         Select Case sex
             Case "Male"
                 sextoDB = "m"
@@ -85,7 +85,7 @@ Public Class Add_Visitor 'checks in visitor
 
             VisitorsTableAdapter.CheckIn(First_NameTextBox.Text.Trim, Middle_NameTextBox.Text.Trim, Last_NameTextBox.Text.Trim,
                                          sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
-                                         imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text)
+                                         imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text, )
             MsgBox("Successfully Checked in visitor!")
             hadcapid = False
             hadcappor = False

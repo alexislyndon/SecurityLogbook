@@ -4,41 +4,36 @@
     End Sub
 
     Private Sub loginbtn_Click(sender As Object, e As EventArgs) Handles loginbtn.Click
-        'Dim udt As DB1DataSet.usersDataTable = UsersTableAdapter.GetDesignationQuery(TextBox1.Text, TextBox2.Text)
-        'Dim id As Integer
-        'Dim designation As String
-        'id = udt.Rows(0).Item(0)
-        'designation = udt.Rows(0).Item("designation")
+        Dim u As String = "alex"
+        Dim p As String = "123"
+        Dim udt As DB1DataSet.usersDataTable = UsersTableAdapter.GetDesignationQuery(u, p)
+        Dim id As Integer
+        Dim designation, name As String
+        id = udt.Rows(0).Item(0)
+        designation = udt.Rows(0).Item("designation")
+        name = udt.Rows(0).Item("name")
 
-        'MsgBox(id)
-        'MsgBox(designation)
+        If designation = "admin" Then
+            'append userid to session and logs
+            'show the admin panel
+            MsgBox("Please log in using a developer account.")
+            startsession(id)
+        ElseIf designation = "main" Then
+            'append userid to session and logs
+            'show main gate panel
+            MsgBox("Please log in using a developer account.")
+            startsession(id)
+        ElseIf designation = "back" Then
+            'append userid to session and logs
+            'show main gate panel
+            MsgBox("Please log in using a developer account.")
+            startsession(id)
+        ElseIf designation = "coder" Then
+            ViewSelector.Show()
+            Me.Hide()
+            startsession(id)
+        End If
 
-        'If UsersTableAdapter.LoginQuery(TextBox1.Text, TextBox2.Text) = 1 Then
-        '    Dash.Show()
-        '    Me.Hide()
-        'Else
-        '    Label3.Visible = True
-        '    Label2.Text = "Invalid Credentials."
-        'End If 'comment out if block to bypass db
-
-        'If designation = "admin" Then
-        '    'append userid to session and logs
-        '    'show the admin panel
-        '    MsgBox("Please log in using a developer account.")
-        'ElseIf designation = "main" Then
-        '    'append userid to session and logs
-        '    'show main gate panel
-        '    MsgBox("Please log in using a developer account.")
-        'ElseIf designation = "back" Then
-        '    'append userid to session and logs
-        '    'show main gate panel
-        '    MsgBox("Please log in using a developer account.")
-        'ElseIf designation = "coder" Then
-        ViewSelector.Show()
-        '    Me.Hide()
-        'End If
-
-        'Dash.Show()
         Me.Hide()
     End Sub
 

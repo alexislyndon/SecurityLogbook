@@ -2824,23 +2824,25 @@ Namespace DB1DataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO [dbo].[Visitors] ([firstname], [middlename], [surname], [sex], [entry"& _ 
-                "], [destination], [purpose], [badge_number], [portrait], [id_pic], [ID_surrender"& _ 
-                "ed], [phone]) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@firstname, @middlename, @surname, @sex, @entry, @dest"& _ 
-                "ination, @purpose, @badge_number, @portrait, @id_pic, @ID_surrendered, @phone);"
+            Me._commandCollection(1).CommandText = "INSERT INTO Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (firstname, middlename, surname, s"& _ 
+                "ex, entry, destination, purpose, badge_number, portrait, id_pic, ID_surrendered,"& _ 
+                " id_back, phone, userid)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@firstname,@middlename,@surname,@sex,@e"& _ 
+                "ntry,@destination,@purpose,@badge_number,@portrait,@id_pic,@ID_surrendered,@id_b"& _ 
+                "ack,@phone, userid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "firstname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@middlename", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "middlename", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@surname", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "surname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sex", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "sex", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@entry", Global.System.Data.SqlDbType.[Char], 1, Global.System.Data.ParameterDirection.Input, 0, 0, "entry", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destination", Global.System.Data.SqlDbType.VarChar, 35, Global.System.Data.ParameterDirection.Input, 0, 0, "destination", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@purpose", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "purpose", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge_number", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@portrait", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "portrait", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_pic", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "id_pic", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ID_surrendered", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "ID_surrendered", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_back", Global.System.Data.SqlDbType.VarBinary, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "id_back", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phone", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "UPDATE       Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                time_out = GETDATE(), [exit] = 'm'"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHE"& _ 
@@ -3554,7 +3556,7 @@ Namespace DB1DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function CheckIn(ByVal firstname As String, ByVal middlename As String, ByVal surname As String, ByVal sex As String, ByVal entry As String, ByVal destination As String, ByVal purpose As String, ByVal badge_number As String, ByVal portrait() As Byte, ByVal id_pic() As Byte, ByVal ID_surrendered As String, ByVal phone As String) As Integer
+        Public Overloads Overridable Function CheckIn(ByVal firstname As String, ByVal middlename As String, ByVal surname As String, ByVal sex As String, ByVal entry As String, ByVal destination As String, ByVal purpose As String, ByVal badge_number As String, ByVal portrait() As Byte, ByVal id_pic() As Byte, ByVal ID_surrendered As String, ByVal id_back() As Byte, ByVal phone As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             If (firstname Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -3611,10 +3613,15 @@ Namespace DB1DataSetTableAdapters
             Else
                 command.Parameters(10).Value = CType(ID_surrendered,String)
             End If
-            If (phone Is Nothing) Then
+            If (id_back Is Nothing) Then
                 command.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(11).Value = CType(phone,String)
+                command.Parameters(11).Value = CType(id_back,Byte())
+            End If
+            If (phone Is Nothing) Then
+                command.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(12).Value = CType(phone,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

@@ -20,7 +20,7 @@
     End Sub
 
     Private Sub View_Checked_in_Vehicles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DB1DataSet1.EnforceConstraints = False
+        DB1DataSet.EnforceConstraints = False
         refresher()
     End Sub
 
@@ -32,6 +32,5 @@
     Public Sub refresher()
         Me.VehiclesTableAdapter.Fill(Me.DB1DataSet.Vehicles)
     End Sub
-
 
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class View_Checked_in
 
     Private Sub View_Checked_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'DB1DataSet1.EnforceConstraints = False
+        DB1DataSet1.EnforceConstraints = False
         Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
     End Sub
 
