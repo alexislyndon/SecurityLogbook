@@ -76,7 +76,7 @@ Partial Class View_Checked_in_Vehicles
         Me.checkoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.checkoutbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkoutbtn.ForeColor = System.Drawing.Color.White
-        Me.checkoutbtn.Location = New System.Drawing.Point(934, 679)
+        Me.checkoutbtn.Location = New System.Drawing.Point(933, 686)
         Me.checkoutbtn.Margin = New System.Windows.Forms.Padding(4)
         Me.checkoutbtn.Name = "checkoutbtn"
         Me.checkoutbtn.Size = New System.Drawing.Size(154, 52)

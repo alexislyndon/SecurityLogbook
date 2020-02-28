@@ -3386,11 +3386,12 @@ Namespace DB1DataSetTableAdapters
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT visit_ID, firstname, middlename, surname, CASE WHEN [sex] = 'm' THEN 'Male"& _ 
-                "' WHEN [sex] = 'f' THEN 'Female' ELSE 'Other/Unspecified' END AS Sex, entry, [ex"& _ 
-                "it], destination, purpose, time_in, time_out, badge_number, portrait, id_pic, ID"& _ 
-                "_surrendered, phone, userid, FullName, id_back FROM Visitors WHERE (badge_number"& _ 
-                " = @badge_number)"
+            Me._commandCollection(4).CommandText = "SELECT        visit_ID, firstname, middlename, surname, CASE WHEN [sex] = 'm' THE"& _ 
+                "N 'Male' WHEN [sex] = 'f' THEN 'Female' ELSE 'Other/Unspecified' END AS Sex, ent"& _ 
+                "ry, [exit], destination, purpose, time_in, time_out, badge_number, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              portrait, id_pic, ID_surrendered, phone, userid, FullName, id_back"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Visitors"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (badge_number = @badge_number) AND ([ex"& _ 
+                "it] IS NULL)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@badge_number", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "badge_number", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()

@@ -135,9 +135,9 @@ Partial Class Form1
         '
         'UserControl11
         '
-        Me.UserControl11.Location = New System.Drawing.Point(666, 399)
+        Me.UserControl11.Location = New System.Drawing.Point(252, 0)
         Me.UserControl11.Name = "UserControl11"
-        Me.UserControl11.Size = New System.Drawing.Size(1129, 763)
+        Me.UserControl11.Size = New System.Drawing.Size(1129, 765)
         Me.UserControl11.TabIndex = 8
         '
         'Form1

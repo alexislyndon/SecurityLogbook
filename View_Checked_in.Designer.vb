@@ -30,6 +30,15 @@ Partial Class View_Checked_in
         Me.filterbox = New System.Windows.Forms.TextBox()
         Me.checkoutbtn = New System.Windows.Forms.Button()
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.visit_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entry = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.destination = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.purpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.time_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.refreshbtn = New System.Windows.Forms.Button()
@@ -40,15 +49,6 @@ Partial Class View_Checked_in
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
-        Me.visit_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entry = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.destination = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.purpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.time_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,65 +140,6 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1048, 286)
         Me.VisitorsDataGridView.TabIndex = 21
         '
-        'VisitorsBindingSource
-        '
-        Me.VisitorsBindingSource.DataMember = "Visitors"
-        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
-        '
-        'DB1DataSet1
-        '
-        Me.DB1DataSet1.DataSetName = "DB1DataSet"
-        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'refreshbtn
-        '
-        Me.refreshbtn.Location = New System.Drawing.Point(999, 196)
-        Me.refreshbtn.Name = "refreshbtn"
-        Me.refreshbtn.Size = New System.Drawing.Size(94, 23)
-        Me.refreshbtn.TabIndex = 22
-        Me.refreshbtn.Text = "Reset/Refresh"
-        Me.refreshbtn.UseVisualStyleBackColor = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.BadgesTableAdapter = Nothing
-        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager1.usersTableAdapter = Nothing
-        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
-        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
-        '
-        'VisitorsTableAdapter1
-        '
-        Me.VisitorsTableAdapter1.ClearBeforeFill = True
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.ToolStripSeparator1, Me.CheckoutToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(126, 54)
-        '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(122, 6)
-        '
-        'CheckoutToolStripMenuItem
-        '
-        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.CheckoutToolStripMenuItem.Text = "Checkout"
-        '
-        'BadgesTableAdapter1
-        '
-        Me.BadgesTableAdapter1.ClearBeforeFill = True
-        '
         'visit_ID
         '
         Me.visit_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -270,6 +211,65 @@ Partial Class View_Checked_in
         Me.time_in.HeaderText = "Time in"
         Me.time_in.Name = "time_in"
         Me.time_in.ReadOnly = True
+        '
+        'VisitorsBindingSource
+        '
+        Me.VisitorsBindingSource.DataMember = "Visitors"
+        Me.VisitorsBindingSource.DataSource = Me.DB1DataSet1
+        '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'refreshbtn
+        '
+        Me.refreshbtn.Location = New System.Drawing.Point(999, 196)
+        Me.refreshbtn.Name = "refreshbtn"
+        Me.refreshbtn.Size = New System.Drawing.Size(94, 23)
+        Me.refreshbtn.TabIndex = 22
+        Me.refreshbtn.Text = "Reset/Refresh"
+        Me.refreshbtn.UseVisualStyleBackColor = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.usersTableAdapter = Nothing
+        Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager1.VisitorsTableAdapter = Me.VisitorsTableAdapter1
+        '
+        'VisitorsTableAdapter1
+        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewToolStripMenuItem, Me.ToolStripSeparator1, Me.CheckoutToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(126, 54)
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(122, 6)
+        '
+        'CheckoutToolStripMenuItem
+        '
+        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.CheckoutToolStripMenuItem.Text = "Checkout"
+        '
+        'BadgesTableAdapter1
+        '
+        Me.BadgesTableAdapter1.ClearBeforeFill = True
         '
         'View_Checked_in
         '

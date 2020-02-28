@@ -69,14 +69,12 @@
         filterbox.Clear()
     End Sub
 
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles filterbox.KeyPress
-        If e.KeyChar = ChrW(Keys.Return) Then
-            If filterbox.Text = "" Then
-                Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
-            Else
-                Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
-                e.Handled = True
-            End If
+    Private Sub filterbox_TextChanged(sender As Object, e As EventArgs) Handles filterbox.TextChanged
+
+        If filterbox.Text = "" Then
+            Me.VisitorsTableAdapter1.FillCheckedIn(Me.DB1DataSet1.Visitors)
+        Else
+            Me.VisitorsTableAdapter1.FilterbyBadge(Me.DB1DataSet1.Visitors, filterbox.Text.Trim)
         End If
     End Sub
 End Class
