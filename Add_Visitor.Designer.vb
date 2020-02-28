@@ -33,6 +33,7 @@ Partial Class Add_Visitor
         Dim sex As System.Windows.Forms.Label
         Dim lbl_surrendered As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
+        Dim BadgeLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_Visitor))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -44,7 +45,10 @@ Partial Class Add_Visitor
         Me.First_NameTextBox = New System.Windows.Forms.TextBox()
         Me.Last_NameTextBox = New System.Windows.Forms.TextBox()
         Me.CheckIn = New System.Windows.Forms.Button()
-        Me.badgecbox = New System.Windows.Forms.ComboBox()
+        Me.BadgesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DB1DataSet = New Security_Logbook.DB1DataSet()
+        Me.DB1DataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.sexcbox = New System.Windows.Forms.ComboBox()
         Me.capportraitbtn = New System.Windows.Forms.Button()
         Me.capidbtn = New System.Windows.Forms.Button()
@@ -56,10 +60,19 @@ Partial Class Add_Visitor
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.DB1DataSet = New Security_Logbook.DB1DataSet()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.idtoggle = New System.Windows.Forms.Button()
+        Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
+        Me.FillBadgeToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.FillBadgeToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.FKVehiclesBadgesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FillByAvailToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.FillByAvailToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
+        Me.DB1DataSet2 = New Security_Logbook.DB1DataSet()
+        Me.BadgesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BadgeComboBox = New System.Windows.Forms.ComboBox()
         DestinationLabel = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
         Phone_NumberLabel = New System.Windows.Forms.Label()
@@ -70,21 +83,30 @@ Partial Class Add_Visitor
         sex = New System.Windows.Forms.Label()
         lbl_surrendered = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
+        BadgeLabel = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
+        CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB1DataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FillBadgeToolStrip.SuspendLayout()
+        CType(Me.FKVehiclesBadgesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FillByAvailToolStrip.SuspendLayout()
+        CType(Me.DB1DataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BadgesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DestinationLabel
         '
         DestinationLabel.AutoSize = True
         DestinationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DestinationLabel.Location = New System.Drawing.Point(42, 316)
+        DestinationLabel.Location = New System.Drawing.Point(29, 353)
         DestinationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         DestinationLabel.Name = "DestinationLabel"
         DestinationLabel.Size = New System.Drawing.Size(94, 20)
@@ -95,7 +117,7 @@ Partial Class Add_Visitor
         '
         Label9.AutoSize = True
         Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(42, 383)
+        Label9.Location = New System.Drawing.Point(55, 388)
         Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(68, 20)
@@ -128,7 +150,7 @@ Partial Class Add_Visitor
         '
         First_NameLabel.AutoSize = True
         First_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        First_NameLabel.Location = New System.Drawing.Point(42, 194)
+        First_NameLabel.Location = New System.Drawing.Point(57, 197)
         First_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         First_NameLabel.Name = "First_NameLabel"
         First_NameLabel.Size = New System.Drawing.Size(86, 20)
@@ -139,7 +161,7 @@ Partial Class Add_Visitor
         '
         Last_NameLabel.AutoSize = True
         Last_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Last_NameLabel.Location = New System.Drawing.Point(42, 135)
+        Last_NameLabel.Location = New System.Drawing.Point(57, 132)
         Last_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Last_NameLabel.Name = "Last_NameLabel"
         Last_NameLabel.Size = New System.Drawing.Size(86, 20)
@@ -150,7 +172,7 @@ Partial Class Add_Visitor
         '
         Visitor_IDLabel.AutoSize = True
         Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Visitor_IDLabel.Location = New System.Drawing.Point(341, 574)
+        Visitor_IDLabel.Location = New System.Drawing.Point(207, 643)
         Visitor_IDLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Visitor_IDLabel.Name = "Visitor_IDLabel"
         Visitor_IDLabel.Size = New System.Drawing.Size(129, 20)
@@ -161,12 +183,12 @@ Partial Class Add_Visitor
         '
         sex.AutoSize = True
         sex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        sex.Location = New System.Drawing.Point(407, 197)
+        sex.Location = New System.Drawing.Point(402, 197)
         sex.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         sex.Name = "sex"
-        sex.Size = New System.Drawing.Size(63, 20)
+        sex.Size = New System.Drawing.Size(36, 20)
         sex.TabIndex = 29
-        sex.Text = "Gender"
+        sex.Text = "Sex"
         '
         'lbl_surrendered
         '
@@ -191,6 +213,15 @@ Partial Class Add_Visitor
         Label1.TabIndex = 28
         Label1.Text = "ID"
         '
+        'BadgeLabel
+        '
+        BadgeLabel.AutoSize = True
+        BadgeLabel.Location = New System.Drawing.Point(331, 694)
+        BadgeLabel.Name = "BadgeLabel"
+        BadgeLabel.Size = New System.Drawing.Size(40, 13)
+        BadgeLabel.TabIndex = 61
+        BadgeLabel.Text = "badge:"
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(79, Byte), Integer))
@@ -213,13 +244,13 @@ Partial Class Add_Visitor
         '
         'destinationcbox
         '
-        Me.destinationcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.destinationcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.destinationcbox.FormattingEnabled = True
         Me.destinationcbox.Items.AddRange(New Object() {"Finance", "Registrar", "College of Computer Studies", "Office of the President", "Admissions", "Magis", "OSA", "SEC Mall", "Security Office"})
-        Me.destinationcbox.Location = New System.Drawing.Point(147, 318)
+        Me.destinationcbox.Location = New System.Drawing.Point(128, 339)
         Me.destinationcbox.MaxLength = 35
         Me.destinationcbox.Name = "destinationcbox"
-        Me.destinationcbox.Size = New System.Drawing.Size(440, 37)
+        Me.destinationcbox.Size = New System.Drawing.Size(459, 41)
         Me.destinationcbox.TabIndex = 6
         '
         'AddNew
@@ -238,12 +269,12 @@ Partial Class Add_Visitor
         'purposebox
         '
         Me.purposebox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.purposebox.Location = New System.Drawing.Point(147, 383)
+        Me.purposebox.Location = New System.Drawing.Point(128, 385)
         Me.purposebox.Margin = New System.Windows.Forms.Padding(2)
         Me.purposebox.MaxLength = 30
         Me.purposebox.Multiline = True
         Me.purposebox.Name = "purposebox"
-        Me.purposebox.Size = New System.Drawing.Size(459, 105)
+        Me.purposebox.Size = New System.Drawing.Size(459, 45)
         Me.purposebox.TabIndex = 7
         '
         'Phone_NumberTextBox
@@ -252,9 +283,8 @@ Partial Class Add_Visitor
         Me.Phone_NumberTextBox.Location = New System.Drawing.Point(519, 129)
         Me.Phone_NumberTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Phone_NumberTextBox.MaxLength = 25
-        Me.Phone_NumberTextBox.Multiline = True
         Me.Phone_NumberTextBox.Name = "Phone_NumberTextBox"
-        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(209, 38)
+        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(184, 26)
         Me.Phone_NumberTextBox.TabIndex = 5
         Me.Phone_NumberTextBox.Text = "0000"
         '
@@ -264,9 +294,8 @@ Partial Class Add_Visitor
         Me.Middle_NameTextBox.Location = New System.Drawing.Point(147, 259)
         Me.Middle_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Middle_NameTextBox.MaxLength = 30
-        Me.Middle_NameTextBox.Multiline = True
         Me.Middle_NameTextBox.Name = "Middle_NameTextBox"
-        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 38)
+        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 26)
         Me.Middle_NameTextBox.TabIndex = 3
         Me.Middle_NameTextBox.Text = "TUNGANG APILIDO"
         '
@@ -276,9 +305,8 @@ Partial Class Add_Visitor
         Me.First_NameTextBox.Location = New System.Drawing.Point(147, 194)
         Me.First_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.First_NameTextBox.MaxLength = 30
-        Me.First_NameTextBox.Multiline = True
         Me.First_NameTextBox.Name = "First_NameTextBox"
-        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 38)
+        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 26)
         Me.First_NameTextBox.TabIndex = 2
         Me.First_NameTextBox.Text = "PANGALAN"
         '
@@ -288,9 +316,8 @@ Partial Class Add_Visitor
         Me.Last_NameTextBox.Location = New System.Drawing.Point(147, 129)
         Me.Last_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Last_NameTextBox.MaxLength = 30
-        Me.Last_NameTextBox.Multiline = True
         Me.Last_NameTextBox.Name = "Last_NameTextBox"
-        Me.Last_NameTextBox.Size = New System.Drawing.Size(209, 38)
+        Me.Last_NameTextBox.Size = New System.Drawing.Size(209, 26)
         Me.Last_NameTextBox.TabIndex = 1
         Me.Last_NameTextBox.Text = "APILIDO"
         '
@@ -307,35 +334,43 @@ Partial Class Add_Visitor
         Me.CheckIn.Text = "Check In"
         Me.CheckIn.UseVisualStyleBackColor = False
         '
-        'badgecbox
+        'BadgesBindingSource
         '
-        Me.badgecbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.badgecbox.FormattingEnabled = True
-        Me.badgecbox.ItemHeight = 24
-        Me.badgecbox.Items.AddRange(New Object() {"A1", "A2", "A3", "A4", "A5", "B1", "B2", "B3", "B4", "B5"})
-        Me.badgecbox.Location = New System.Drawing.Point(345, 597)
-        Me.badgecbox.MaxLength = 20
-        Me.badgecbox.Name = "badgecbox"
-        Me.badgecbox.Size = New System.Drawing.Size(121, 32)
-        Me.badgecbox.TabIndex = 8
+        Me.BadgesBindingSource.DataMember = "Badges"
+        Me.BadgesBindingSource.DataSource = Me.DB1DataSet
+        '
+        'DB1DataSet
+        '
+        Me.DB1DataSet.DataSetName = "DB1DataSet"
+        Me.DB1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DB1DataSet1BindingSource
+        '
+        Me.DB1DataSet1BindingSource.DataSource = Me.DB1DataSet1
+        Me.DB1DataSet1BindingSource.Position = 0
+        '
+        'DB1DataSet1
+        '
+        Me.DB1DataSet1.DataSetName = "DB1DataSet"
+        Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'sexcbox
         '
         Me.sexcbox.BackColor = System.Drawing.SystemColors.Window
         Me.sexcbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sexcbox.FormattingEnabled = True
         Me.sexcbox.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
-        Me.sexcbox.Location = New System.Drawing.Point(519, 194)
+        Me.sexcbox.Location = New System.Drawing.Point(442, 194)
         Me.sexcbox.Name = "sexcbox"
-        Me.sexcbox.Size = New System.Drawing.Size(94, 37)
+        Me.sexcbox.Size = New System.Drawing.Size(94, 28)
         Me.sexcbox.TabIndex = 4
         '
         'capportraitbtn
         '
-        Me.capportraitbtn.Location = New System.Drawing.Point(677, 286)
+        Me.capportraitbtn.Location = New System.Drawing.Point(662, 299)
         Me.capportraitbtn.Name = "capportraitbtn"
-        Me.capportraitbtn.Size = New System.Drawing.Size(90, 36)
+        Me.capportraitbtn.Size = New System.Drawing.Size(105, 23)
         Me.capportraitbtn.TabIndex = 52
         Me.capportraitbtn.Text = "Capture Portrait"
         Me.capportraitbtn.UseVisualStyleBackColor = True
@@ -344,7 +379,7 @@ Partial Class Add_Visitor
         '
         Me.capidbtn.Location = New System.Drawing.Point(677, 338)
         Me.capidbtn.Name = "capidbtn"
-        Me.capidbtn.Size = New System.Drawing.Size(90, 35)
+        Me.capidbtn.Size = New System.Drawing.Size(90, 31)
         Me.capidbtn.TabIndex = 53
         Me.capidbtn.Text = "CaptureID"
         Me.capidbtn.UseVisualStyleBackColor = True
@@ -353,7 +388,7 @@ Partial Class Add_Visitor
         '
         Me.surrenderedcbox.FormattingEnabled = True
         Me.surrenderedcbox.Items.AddRange(New Object() {"Driver's License", "School ID", "UMID", "Company ID", "Voter's ID", "Postal ID"})
-        Me.surrenderedcbox.Location = New System.Drawing.Point(349, 534)
+        Me.surrenderedcbox.Location = New System.Drawing.Point(349, 537)
         Me.surrenderedcbox.MaxLength = 20
         Me.surrenderedcbox.Name = "surrenderedcbox"
         Me.surrenderedcbox.Size = New System.Drawing.Size(121, 21)
@@ -362,7 +397,7 @@ Partial Class Add_Visitor
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Security_Logbook.My.Resources.Resources.blankid
-        Me.PictureBox2.Location = New System.Drawing.Point(773, 339)
+        Me.PictureBox2.Location = New System.Drawing.Point(774, 340)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox2.TabIndex = 51
@@ -398,7 +433,7 @@ Partial Class Add_Visitor
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Panel1.Controls.Add(Me.PictureBox3)
-        Me.Panel1.Location = New System.Drawing.Point(772, 338)
+        Me.Panel1.Location = New System.Drawing.Point(773, 339)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(322, 242)
         Me.Panel1.TabIndex = 58
@@ -407,7 +442,7 @@ Partial Class Add_Visitor
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox3.Location = New System.Drawing.Point(4, 1)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox3.TabIndex = 51
@@ -420,11 +455,6 @@ Partial Class Add_Visitor
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(322, 242)
         Me.Panel3.TabIndex = 59
-        '
-        'DB1DataSet
-        '
-        Me.DB1DataSet.DataSetName = "DB1DataSet"
-        Me.DB1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'VisitorsBindingSource
         '
@@ -445,19 +475,95 @@ Partial Class Add_Visitor
         Me.idtoggle.UseVisualStyleBackColor = True
         Me.idtoggle.Visible = False
         '
+        'BadgesTableAdapter1
+        '
+        Me.BadgesTableAdapter1.ClearBeforeFill = True
+        '
+        'FillBadgeToolStrip
+        '
+        Me.FillBadgeToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillBadgeToolStripButton})
+        Me.FillBadgeToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.FillBadgeToolStrip.Name = "FillBadgeToolStrip"
+        Me.FillBadgeToolStrip.Size = New System.Drawing.Size(1125, 25)
+        Me.FillBadgeToolStrip.TabIndex = 60
+        Me.FillBadgeToolStrip.Text = "FillBadgeToolStrip"
+        '
+        'FillBadgeToolStripButton
+        '
+        Me.FillBadgeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FillBadgeToolStripButton.Name = "FillBadgeToolStripButton"
+        Me.FillBadgeToolStripButton.Size = New System.Drawing.Size(59, 22)
+        Me.FillBadgeToolStripButton.Text = "FillBadge"
+        '
+        'FKVehiclesBadgesBindingSource
+        '
+        Me.FKVehiclesBadgesBindingSource.DataMember = "FK_Vehicles_Badges"
+        Me.FKVehiclesBadgesBindingSource.DataSource = Me.BadgesBindingSource
+        '
+        'FillByAvailToolStrip
+        '
+        Me.FillByAvailToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillByAvailToolStripButton})
+        Me.FillByAvailToolStrip.Location = New System.Drawing.Point(0, 25)
+        Me.FillByAvailToolStrip.Name = "FillByAvailToolStrip"
+        Me.FillByAvailToolStrip.Size = New System.Drawing.Size(1125, 25)
+        Me.FillByAvailToolStrip.TabIndex = 61
+        Me.FillByAvailToolStrip.Text = "FillByAvailToolStrip"
+        '
+        'FillByAvailToolStripButton
+        '
+        Me.FillByAvailToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FillByAvailToolStripButton.Name = "FillByAvailToolStripButton"
+        Me.FillByAvailToolStripButton.Size = New System.Drawing.Size(65, 22)
+        Me.FillByAvailToolStripButton.Text = "FillByAvail"
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.TableAdapterManager.VehiclesTableAdapter = Nothing
+        Me.TableAdapterManager.VisitorsTableAdapter = Nothing
+        '
+        'DB1DataSet2
+        '
+        Me.DB1DataSet2.DataSetName = "DB1DataSet"
+        Me.DB1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BadgesBindingSource1
+        '
+        Me.BadgesBindingSource1.DataMember = "Badges"
+        Me.BadgesBindingSource1.DataSource = Me.DB1DataSet2
+        '
+        'BadgeComboBox
+        '
+        Me.BadgeComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BadgesBindingSource1, "badge", True))
+        Me.BadgeComboBox.DataSource = Me.BadgesBindingSource1
+        Me.BadgeComboBox.DisplayMember = "badge"
+        Me.BadgeComboBox.FormattingEnabled = True
+        Me.BadgeComboBox.Location = New System.Drawing.Point(377, 691)
+        Me.BadgeComboBox.Name = "BadgeComboBox"
+        Me.BadgeComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.BadgeComboBox.TabIndex = 62
+        Me.BadgeComboBox.ValueMember = "badge"
+        '
         'Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(BadgeLabel)
+        Me.Controls.Add(Me.BadgeComboBox)
+        Me.Controls.Add(Me.FillByAvailToolStrip)
+        Me.Controls.Add(Me.FillBadgeToolStrip)
         Me.Controls.Add(Me.v_id)
         Me.Controls.Add(Me.surrenderedcbox)
         Me.Controls.Add(Me.idtoggle)
         Me.Controls.Add(Me.capidbtn)
         Me.Controls.Add(Me.capportraitbtn)
-        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.sexcbox)
-        Me.Controls.Add(Me.badgecbox)
         Me.Controls.Add(Me.destinationcbox)
         Me.Controls.Add(Me.AddNew)
         Me.Controls.Add(DestinationLabel)
@@ -480,16 +586,26 @@ Partial Class Add_Visitor
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Add_Visitor"
-        Me.Size = New System.Drawing.Size(1109, 763)
+        Me.Size = New System.Drawing.Size(1125, 763)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.BadgesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB1DataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DB1DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FillBadgeToolStrip.ResumeLayout(False)
+        Me.FillBadgeToolStrip.PerformLayout()
+        CType(Me.FKVehiclesBadgesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FillByAvailToolStrip.ResumeLayout(False)
+        Me.FillByAvailToolStrip.PerformLayout()
+        CType(Me.DB1DataSet2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BadgesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -507,7 +623,6 @@ Partial Class Add_Visitor
     Friend WithEvents CheckIn As Button
     Friend WithEvents DB1DataSet As DB1DataSet
     Friend WithEvents VisitorsBindingSource As BindingSource
-    Friend WithEvents badgecbox As ComboBox
     Friend WithEvents sexcbox As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
@@ -521,4 +636,17 @@ Partial Class Add_Visitor
     Friend WithEvents VisitorsTableAdapter As DB1DataSetTableAdapters.VisitorsTableAdapter
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents idtoggle As Button
+    Friend WithEvents BadgesBindingSource As BindingSource
+    Friend WithEvents FillBadgeToolStrip As ToolStrip
+    Friend WithEvents FillBadgeToolStripButton As ToolStripButton
+    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
+    Friend WithEvents FillByAvailToolStrip As ToolStrip
+    Friend WithEvents FillByAvailToolStripButton As ToolStripButton
+    Friend WithEvents FKVehiclesBadgesBindingSource As BindingSource
+    Friend WithEvents DB1DataSet1BindingSource As BindingSource
+    Friend WithEvents DB1DataSet1 As DB1DataSet
+    Friend WithEvents TableAdapterManager As DB1DataSetTableAdapters.TableAdapterManager
+    Friend WithEvents BadgeComboBox As ComboBox
+    Friend WithEvents BadgesBindingSource1 As BindingSource
+    Friend WithEvents DB1DataSet2 As DB1DataSet
 End Class

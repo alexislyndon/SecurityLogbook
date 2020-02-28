@@ -31,7 +31,7 @@ Module Module1
         For Each ctrl In obj.Controls
             Dim tb = TryCast(ctrl, TextBox)
             Dim cb = TryCast(ctrl, ComboBox)
-            Dim pb = TryCast(ctrl, PictureBox)
+            'Dim pb = TryCast(ctrl, PictureBox)
 
             If tb IsNot Nothing Then
                 tb.Clear()
@@ -42,14 +42,17 @@ Module Module1
                 cb.SelectedIndex = -1
             End If
 
-            If pb.Image IsNot Nothing Then
-                If pb.Name = "Picturebox1" Then
-                    pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
-                End If
-                If pb.Name = "Picturebox2" Then
-                    pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
-                End If
-            End If
+            'If True Then
+            '    If pb.Name = "Picturebox1" Then
+            '        pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\portrait.jpg")
+            '    End If
+            '    If pb.Name = "Picturebox2" Then
+            '        pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\blankid.jpg")
+            '    End If
+            '    If pb.Name = "Picturebox3" Then
+            '        pb.Image = Image.FromFile("X:\1902\VB.net\Security Logbook\img\backside.jpg")
+            '    End If
+            'End If
         Next
     End Sub
 

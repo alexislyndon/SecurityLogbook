@@ -35,10 +35,15 @@ Public Class Add_Vehicle
         End If
 
         If gtg Then
-            VehiclesTableAdapter.InsertVehicle(makeCbox.Text, modelbox.Text, colorbox.Text, platebox.Text, typeCbox.Text)
-            MsgBox("Successfully Checked in visitor!")
-            refreshAll()
-            clear(Me)
+            Try
+                VehiclesTableAdapter.InsertVehicle(makeCbox.Text, modelbox.Text, colorbox.Text, platebox.Text, typeCbox.Text, getsessionid)
+                MsgBox("Successfully Checked in visitor!")
+                refreshAll()
+                clear(Me)
+
+            Catch ex As Exception
+                MsgBox(ex)
+            End Try
         End If
     End Sub
 

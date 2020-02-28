@@ -9,7 +9,7 @@
         Add_Vehicle1.Visible = False
         View_Checked_in1.Visible = False
         View_Checked_in_Vehicles1.Visible = False
-
+        Add_Visitor1.ErrorProvider1.Clear()
     End Sub
 
     Private Sub view_checkin_btn_Click(sender As Object, e As EventArgs) Handles view_checkin_btn.Click
@@ -17,15 +17,17 @@
         Add_Vehicle1.Visible = False
         View_Checked_in1.Visible = True
         View_Checked_in_Vehicles1.Visible = False
+        Add_Visitor1.ErrorProvider1.Clear()
+
     End Sub
-
-
 
     Private Sub add_vehicle_btn_Click(sender As Object, e As EventArgs) Handles add_vehicle_btn.Click
         Add_Visitor1.Visible = False
         Add_Vehicle1.Visible = True
         View_Checked_in1.Visible = False
         View_Checked_in_Vehicles1.Visible = False
+        Add_Vehicle1.ErrorProvider1.Clear()
+
     End Sub
 
     Private Sub view_checkedin_btn_Click(sender As Object, e As EventArgs) Handles view_checkedin_btn.Click
@@ -48,6 +50,7 @@
         If dialog = DialogResult.No Then
             Me.Show()
         Else
+            endsession()
             Me.Hide()
             Login.Show()
             ViewSelector.Hide()
