@@ -48,6 +48,7 @@ Partial Class View_Checked_in
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,6 +234,7 @@ Partial Class View_Checked_in
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.BadgesTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager1.usersTableAdapter = Nothing
         Me.TableAdapterManager1.VehiclesTableAdapter = Nothing
@@ -264,6 +266,10 @@ Partial Class View_Checked_in
         Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
         Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.CheckoutToolStripMenuItem.Text = "Checkout"
+        '
+        'BadgesTableAdapter1
+        '
+        Me.BadgesTableAdapter1.ClearBeforeFill = True
         '
         'View_Checked_in
         '
@@ -326,4 +332,5 @@ Partial Class View_Checked_in
     Friend WithEvents destination As DataGridViewTextBoxColumn
     Friend WithEvents purpose As DataGridViewTextBoxColumn
     Friend WithEvents time_in As DataGridViewTextBoxColumn
+    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
 End Class

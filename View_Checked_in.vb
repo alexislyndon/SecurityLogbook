@@ -55,6 +55,7 @@
         If checkout = vbYes Then
             For i = 0 To selectedrows.Count() - 1
                 Me.VisitorsTableAdapter1.CHECKOUT(selectedrows.Item(i).Cells.Item(0).Value)
+                BadgesTableAdapter1.ReturnBadge(selectedrows.Item(i).Cells.Item(1).Value)
             Next
 
             SuccessMsg()

@@ -15,6 +15,11 @@ Public Class Add_Visitor 'checks in visitor
     Dim sextoDB As String
 
     Private Sub Add_Visitor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            Me.BadgesTableAdapter1.FillBadge(Me.DB1DataSet2.Badges)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
         PictureBox2.Visible = True
         PictureBox3.Visible = False
         If VisitorsTableAdapter.MaxID() Is Nothing Then
@@ -75,17 +80,18 @@ Public Class Add_Visitor 'checks in visitor
             gtg = False
             ErrorProvider1.SetError(surrenderedcbox, "Please fill out this Field.")
         End If
-        If badgecbox.Text = "" Then 'badge
+        If BadgeComboBox.Text = "" Then 'badge
             gtg = False
-            ErrorProvider1.SetError(badgecbox, "Please fill out this Field.")
+            ErrorProvider1.SetError(BadgeComboBox, "Please fill out this Field.")
         End If
 
 
         If gtg Then
             Try
                 VisitorsTableAdapter.CheckIn(First_NameTextBox.Text.Trim, Middle_NameTextBox.Text.Trim, Last_NameTextBox.Text.Trim,
-            sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
+            sextoDB, "m", destinationcbox.Text, purposebox.Text, BadgeComboBox.Text,
                                          imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, imgtobyte(PictureBox3.Image, hadcapback), Phone_NumberTextBox.Text, getsessionid())
+                BadgesTableAdapter1.TakeBadge(BadgeComboBox.Text)
                 MsgBox("Successfully Checked in visitor!")
                 hadcapid = False
                 hadcappor = False
@@ -96,7 +102,7 @@ Public Class Add_Visitor 'checks in visitor
                 clear(Me)
 
             Catch ex As Exception
-                MsgBox(ex)
+                MsgBox(ex.ToString)
             End Try
         Else
             MsgBox("Please fill out the form completely.")
@@ -156,4 +162,22 @@ Public Class Add_Visitor 'checks in visitor
     Private Sub AddNew_Click(sender As Object, e As EventArgs) Handles AddNew.Click
         clear(Me)
     End Sub
+
+    'Private Sub FillBadgeToolStripButton_Click(sender As Object, e As EventArgs) Handles FillBadgeToolStripButton.Click
+    '    Try
+    '        Me.BadgesTableAdapter1.FillBadge(Me.DB1DataSet2.Badges)
+    '    Catch ex As System.Exception
+    '        System.Windows.Forms.MessageBox.Show(ex.Message)
+    '    End Try
+
+    'End Sub
+
+    Private Sub BadgeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BadgeComboBox.GotFocus
+        Try
+            Me.BadgesTableAdapter1.FillBadge(Me.DB1DataSet2.Badges)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 End Class
