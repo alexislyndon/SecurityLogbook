@@ -88,6 +88,7 @@ Partial Class View_Checked_in
         Me.searchbtn.TabIndex = 20
         Me.searchbtn.Text = "Search"
         Me.searchbtn.UseVisualStyleBackColor = False
+        Me.searchbtn.Visible = False
         '
         'Panel1
         '
@@ -230,6 +231,7 @@ Partial Class View_Checked_in
         Me.refreshbtn.TabIndex = 22
         Me.refreshbtn.Text = "Reset/Refresh"
         Me.refreshbtn.UseVisualStyleBackColor = True
+        Me.refreshbtn.Visible = False
         '
         'TableAdapterManager1
         '

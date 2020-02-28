@@ -90,17 +90,18 @@ Partial Class View_Checked_in_Vehicles
         Me.searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.searchbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchbtn.ForeColor = System.Drawing.Color.White
-        Me.searchbtn.Location = New System.Drawing.Point(253, 162)
+        Me.searchbtn.Location = New System.Drawing.Point(416, 226)
         Me.searchbtn.Name = "searchbtn"
         Me.searchbtn.Size = New System.Drawing.Size(103, 23)
         Me.searchbtn.TabIndex = 26
         Me.searchbtn.Text = "Search"
         Me.searchbtn.UseVisualStyleBackColor = False
+        Me.searchbtn.Visible = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel1.Location = New System.Drawing.Point(27, 184)
+        Me.Panel1.Location = New System.Drawing.Point(190, 248)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(220, 1)
         Me.Panel1.TabIndex = 25
@@ -109,7 +110,7 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.filterbox.BackColor = System.Drawing.SystemColors.Window
         Me.filterbox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.filterbox.Location = New System.Drawing.Point(27, 162)
+        Me.filterbox.Location = New System.Drawing.Point(190, 226)
         Me.filterbox.Multiline = True
         Me.filterbox.Name = "filterbox"
         Me.filterbox.Size = New System.Drawing.Size(217, 23)
@@ -125,7 +126,7 @@ Partial Class View_Checked_in_Vehicles
         Me.VehiclesDataGridView.Location = New System.Drawing.Point(190, 255)
         Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
         Me.VehiclesDataGridView.ReadOnly = True
-        Me.VehiclesDataGridView.Size = New System.Drawing.Size(749, 229)
+        Me.VehiclesDataGridView.Size = New System.Drawing.Size(744, 229)
         Me.VehiclesDataGridView.TabIndex = 26
         '
         'DataGridViewTextBoxColumn1
