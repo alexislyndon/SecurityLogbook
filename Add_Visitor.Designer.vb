@@ -29,7 +29,6 @@ Partial Class Add_Visitor
         Dim Middle_NameLabel As System.Windows.Forms.Label
         Dim First_NameLabel As System.Windows.Forms.Label
         Dim Last_NameLabel As System.Windows.Forms.Label
-        Dim Visitor_IDLabel As System.Windows.Forms.Label
         Dim sex As System.Windows.Forms.Label
         Dim lbl_surrendered As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
@@ -62,20 +61,20 @@ Partial Class Add_Visitor
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
-        Me.idtoggle = New System.Windows.Forms.Button()
         Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
         Me.FKVehiclesBadgesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.DB1DataSet2 = New Security_Logbook.DB1DataSet()
         Me.BadgesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BadgeComboBox = New System.Windows.Forms.ComboBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         DestinationLabel = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
         Phone_NumberLabel = New System.Windows.Forms.Label()
         Middle_NameLabel = New System.Windows.Forms.Label()
         First_NameLabel = New System.Windows.Forms.Label()
         Last_NameLabel = New System.Windows.Forms.Label()
-        Visitor_IDLabel = New System.Windows.Forms.Label()
         sex = New System.Windows.Forms.Label()
         lbl_surrendered = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -99,99 +98,88 @@ Partial Class Add_Visitor
         'DestinationLabel
         '
         DestinationLabel.AutoSize = True
-        DestinationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DestinationLabel.Location = New System.Drawing.Point(29, 353)
+        DestinationLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DestinationLabel.Location = New System.Drawing.Point(72, 366)
         DestinationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         DestinationLabel.Name = "DestinationLabel"
-        DestinationLabel.Size = New System.Drawing.Size(94, 20)
+        DestinationLabel.Size = New System.Drawing.Size(93, 21)
         DestinationLabel.TabIndex = 40
-        DestinationLabel.Text = "Destination:"
+        DestinationLabel.Text = "Destination"
         '
         'Label9
         '
         Label9.AutoSize = True
-        Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label9.Location = New System.Drawing.Point(55, 388)
+        Label9.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label9.Location = New System.Drawing.Point(94, 429)
         Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(68, 20)
+        Label9.Size = New System.Drawing.Size(70, 21)
         Label9.TabIndex = 37
         Label9.Text = "Purpose"
         '
         'Phone_NumberLabel
         '
         Phone_NumberLabel.AutoSize = True
-        Phone_NumberLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Phone_NumberLabel.Location = New System.Drawing.Point(400, 132)
+        Phone_NumberLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Phone_NumberLabel.Location = New System.Drawing.Point(25, 181)
         Phone_NumberLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Phone_NumberLabel.Name = "Phone_NumberLabel"
-        Phone_NumberLabel.Size = New System.Drawing.Size(115, 20)
+        Phone_NumberLabel.Size = New System.Drawing.Size(121, 21)
         Phone_NumberLabel.TabIndex = 36
         Phone_NumberLabel.Text = "Phone Number"
         '
         'Middle_NameLabel
         '
         Middle_NameLabel.AutoSize = True
-        Middle_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Middle_NameLabel.Location = New System.Drawing.Point(42, 262)
+        Middle_NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Middle_NameLabel.Location = New System.Drawing.Point(523, 93)
         Middle_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Middle_NameLabel.Name = "Middle_NameLabel"
-        Middle_NameLabel.Size = New System.Drawing.Size(101, 20)
+        Middle_NameLabel.Size = New System.Drawing.Size(110, 21)
         Middle_NameLabel.TabIndex = 34
         Middle_NameLabel.Text = "Middle Name"
         '
         'First_NameLabel
         '
         First_NameLabel.AutoSize = True
-        First_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        First_NameLabel.Location = New System.Drawing.Point(57, 197)
+        First_NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        First_NameLabel.Location = New System.Drawing.Point(271, 93)
         First_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         First_NameLabel.Name = "First_NameLabel"
-        First_NameLabel.Size = New System.Drawing.Size(86, 20)
+        First_NameLabel.Size = New System.Drawing.Size(89, 21)
         First_NameLabel.TabIndex = 32
         First_NameLabel.Text = "First Name"
         '
         'Last_NameLabel
         '
         Last_NameLabel.AutoSize = True
-        Last_NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Last_NameLabel.Location = New System.Drawing.Point(57, 132)
+        Last_NameLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Last_NameLabel.Location = New System.Drawing.Point(24, 93)
         Last_NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Last_NameLabel.Name = "Last_NameLabel"
-        Last_NameLabel.Size = New System.Drawing.Size(86, 20)
+        Last_NameLabel.Size = New System.Drawing.Size(88, 21)
         Last_NameLabel.TabIndex = 29
         Last_NameLabel.Text = "Last Name"
-        '
-        'Visitor_IDLabel
-        '
-        Visitor_IDLabel.AutoSize = True
-        Visitor_IDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Visitor_IDLabel.Location = New System.Drawing.Point(207, 643)
-        Visitor_IDLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Visitor_IDLabel.Name = "Visitor_IDLabel"
-        Visitor_IDLabel.Size = New System.Drawing.Size(129, 20)
-        Visitor_IDLabel.TabIndex = 28
-        Visitor_IDLabel.Text = "Visitor ID Badge:"
         '
         'sex
         '
         sex.AutoSize = True
-        sex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        sex.Location = New System.Drawing.Point(402, 197)
+        sex.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        sex.Location = New System.Drawing.Point(281, 181)
         sex.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         sex.Name = "sex"
-        sex.Size = New System.Drawing.Size(36, 20)
+        sex.Size = New System.Drawing.Size(35, 21)
         sex.TabIndex = 29
         sex.Text = "Sex"
         '
         'lbl_surrendered
         '
         lbl_surrendered.AutoSize = True
-        lbl_surrendered.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lbl_surrendered.Location = New System.Drawing.Point(345, 511)
+        lbl_surrendered.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lbl_surrendered.Location = New System.Drawing.Point(52, 491)
         lbl_surrendered.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         lbl_surrendered.Name = "lbl_surrendered"
-        lbl_surrendered.Size = New System.Drawing.Size(110, 20)
+        lbl_surrendered.Size = New System.Drawing.Size(114, 21)
         lbl_surrendered.TabIndex = 29
         lbl_surrendered.Text = "ID Surrendred"
         '
@@ -210,11 +198,12 @@ Partial Class Add_Visitor
         'BadgeLabel
         '
         BadgeLabel.AutoSize = True
-        BadgeLabel.Location = New System.Drawing.Point(331, 694)
+        BadgeLabel.Font = New System.Drawing.Font("Microsoft YaHei UI Light", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        BadgeLabel.Location = New System.Drawing.Point(26, 541)
         BadgeLabel.Name = "BadgeLabel"
-        BadgeLabel.Size = New System.Drawing.Size(40, 13)
+        BadgeLabel.Size = New System.Drawing.Size(140, 21)
         BadgeLabel.TabIndex = 61
-        BadgeLabel.Text = "badge:"
+        BadgeLabel.Text = "Visitor's ID Badge"
         '
         'Panel2
         '
@@ -238,13 +227,13 @@ Partial Class Add_Visitor
         '
         'destinationcbox
         '
-        Me.destinationcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.destinationcbox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.destinationcbox.FormattingEnabled = True
         Me.destinationcbox.Items.AddRange(New Object() {"Finance", "Registrar", "College of Computer Studies", "Office of the President", "Admissions", "Magis", "OSA", "SEC Mall", "Security Office"})
-        Me.destinationcbox.Location = New System.Drawing.Point(128, 339)
+        Me.destinationcbox.Location = New System.Drawing.Point(178, 362)
         Me.destinationcbox.MaxLength = 35
         Me.destinationcbox.Name = "destinationcbox"
-        Me.destinationcbox.Size = New System.Drawing.Size(459, 41)
+        Me.destinationcbox.Size = New System.Drawing.Size(246, 31)
         Me.destinationcbox.TabIndex = 6
         '
         'AddNew
@@ -253,7 +242,7 @@ Partial Class Add_Visitor
         Me.AddNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.AddNew.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddNew.ForeColor = System.Drawing.Color.White
-        Me.AddNew.Location = New System.Drawing.Point(723, 667)
+        Me.AddNew.Location = New System.Drawing.Point(698, 680)
         Me.AddNew.Name = "AddNew"
         Me.AddNew.Size = New System.Drawing.Size(168, 54)
         Me.AddNew.TabIndex = 41
@@ -262,58 +251,54 @@ Partial Class Add_Visitor
         '
         'purposebox
         '
-        Me.purposebox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.purposebox.Location = New System.Drawing.Point(128, 385)
+        Me.purposebox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.purposebox.Location = New System.Drawing.Point(178, 417)
         Me.purposebox.Margin = New System.Windows.Forms.Padding(2)
         Me.purposebox.MaxLength = 30
         Me.purposebox.Multiline = True
         Me.purposebox.Name = "purposebox"
-        Me.purposebox.Size = New System.Drawing.Size(459, 45)
+        Me.purposebox.Size = New System.Drawing.Size(246, 45)
         Me.purposebox.TabIndex = 7
         '
         'Phone_NumberTextBox
         '
-        Me.Phone_NumberTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Phone_NumberTextBox.Location = New System.Drawing.Point(519, 129)
+        Me.Phone_NumberTextBox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Phone_NumberTextBox.Location = New System.Drawing.Point(21, 200)
         Me.Phone_NumberTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Phone_NumberTextBox.MaxLength = 25
         Me.Phone_NumberTextBox.Name = "Phone_NumberTextBox"
-        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(184, 26)
-        Me.Phone_NumberTextBox.TabIndex = 5
-        Me.Phone_NumberTextBox.Text = "0000"
+        Me.Phone_NumberTextBox.Size = New System.Drawing.Size(184, 32)
+        Me.Phone_NumberTextBox.TabIndex = 4
         '
         'Middle_NameTextBox
         '
-        Me.Middle_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Middle_NameTextBox.Location = New System.Drawing.Point(147, 259)
+        Me.Middle_NameTextBox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Middle_NameTextBox.Location = New System.Drawing.Point(519, 112)
         Me.Middle_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Middle_NameTextBox.MaxLength = 30
         Me.Middle_NameTextBox.Name = "Middle_NameTextBox"
-        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.Middle_NameTextBox.Size = New System.Drawing.Size(209, 32)
         Me.Middle_NameTextBox.TabIndex = 3
-        Me.Middle_NameTextBox.Text = "TUNGANG APILIDO"
         '
         'First_NameTextBox
         '
-        Me.First_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.First_NameTextBox.Location = New System.Drawing.Point(147, 194)
+        Me.First_NameTextBox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.First_NameTextBox.Location = New System.Drawing.Point(267, 112)
         Me.First_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.First_NameTextBox.MaxLength = 30
         Me.First_NameTextBox.Name = "First_NameTextBox"
-        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.First_NameTextBox.Size = New System.Drawing.Size(209, 32)
         Me.First_NameTextBox.TabIndex = 2
-        Me.First_NameTextBox.Text = "PANGALAN"
         '
         'Last_NameTextBox
         '
-        Me.Last_NameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Last_NameTextBox.Location = New System.Drawing.Point(147, 129)
+        Me.Last_NameTextBox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Last_NameTextBox.Location = New System.Drawing.Point(21, 112)
         Me.Last_NameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.Last_NameTextBox.MaxLength = 30
         Me.Last_NameTextBox.Name = "Last_NameTextBox"
-        Me.Last_NameTextBox.Size = New System.Drawing.Size(209, 26)
+        Me.Last_NameTextBox.Size = New System.Drawing.Size(212, 32)
         Me.Last_NameTextBox.TabIndex = 1
-        Me.Last_NameTextBox.Text = "APILIDO"
         '
         'CheckIn
         '
@@ -321,7 +306,7 @@ Partial Class Add_Visitor
         Me.CheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CheckIn.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckIn.ForeColor = System.Drawing.Color.White
-        Me.CheckIn.Location = New System.Drawing.Point(925, 667)
+        Me.CheckIn.Location = New System.Drawing.Point(900, 680)
         Me.CheckIn.Name = "CheckIn"
         Me.CheckIn.Size = New System.Drawing.Size(168, 54)
         Me.CheckIn.TabIndex = 27
@@ -352,13 +337,13 @@ Partial Class Add_Visitor
         '
         Me.sexcbox.BackColor = System.Drawing.SystemColors.Window
         Me.sexcbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sexcbox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sexcbox.FormattingEnabled = True
         Me.sexcbox.Items.AddRange(New Object() {"Male", "Female", "Other/Unspecified"})
-        Me.sexcbox.Location = New System.Drawing.Point(442, 194)
+        Me.sexcbox.Location = New System.Drawing.Point(260, 200)
         Me.sexcbox.Name = "sexcbox"
-        Me.sexcbox.Size = New System.Drawing.Size(94, 28)
-        Me.sexcbox.TabIndex = 4
+        Me.sexcbox.Size = New System.Drawing.Size(94, 31)
+        Me.sexcbox.TabIndex = 5
         '
         'capportraitbtn
         '
@@ -380,18 +365,19 @@ Partial Class Add_Visitor
         '
         'surrenderedcbox
         '
+        Me.surrenderedcbox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.surrenderedcbox.FormattingEnabled = True
         Me.surrenderedcbox.Items.AddRange(New Object() {"Driver's License", "School ID", "UMID", "Company ID", "Voter's ID", "Postal ID"})
-        Me.surrenderedcbox.Location = New System.Drawing.Point(349, 537)
+        Me.surrenderedcbox.Location = New System.Drawing.Point(178, 487)
         Me.surrenderedcbox.MaxLength = 20
         Me.surrenderedcbox.Name = "surrenderedcbox"
-        Me.surrenderedcbox.Size = New System.Drawing.Size(121, 21)
-        Me.surrenderedcbox.TabIndex = 9
+        Me.surrenderedcbox.Size = New System.Drawing.Size(246, 31)
+        Me.surrenderedcbox.TabIndex = 8
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Security_Logbook.My.Resources.Resources.blankid
-        Me.PictureBox2.Location = New System.Drawing.Point(774, 340)
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 1)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox2.TabIndex = 51
@@ -426,6 +412,7 @@ Partial Class Add_Visitor
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Location = New System.Drawing.Point(773, 339)
         Me.Panel1.Name = "Panel1"
@@ -436,7 +423,7 @@ Partial Class Add_Visitor
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.InitialImage = CType(resources.GetObject("PictureBox3.InitialImage"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(4, 1)
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(320, 240)
         Me.PictureBox3.TabIndex = 51
@@ -458,16 +445,6 @@ Partial Class Add_Visitor
         'VisitorsTableAdapter
         '
         Me.VisitorsTableAdapter.ClearBeforeFill = True
-        '
-        'idtoggle
-        '
-        Me.idtoggle.Location = New System.Drawing.Point(677, 543)
-        Me.idtoggle.Name = "idtoggle"
-        Me.idtoggle.Size = New System.Drawing.Size(90, 37)
-        Me.idtoggle.TabIndex = 53
-        Me.idtoggle.Text = "Show Backside"
-        Me.idtoggle.UseVisualStyleBackColor = True
-        Me.idtoggle.Visible = False
         '
         'BadgesTableAdapter1
         '
@@ -503,23 +480,42 @@ Partial Class Add_Visitor
         Me.BadgeComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BadgesBindingSource1, "badge", True))
         Me.BadgeComboBox.DataSource = Me.BadgesBindingSource1
         Me.BadgeComboBox.DisplayMember = "badge"
+        Me.BadgeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BadgeComboBox.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BadgeComboBox.FormattingEnabled = True
-        Me.BadgeComboBox.Location = New System.Drawing.Point(377, 691)
+        Me.BadgeComboBox.Location = New System.Drawing.Point(178, 538)
         Me.BadgeComboBox.Name = "BadgeComboBox"
-        Me.BadgeComboBox.Size = New System.Drawing.Size(121, 21)
-        Me.BadgeComboBox.TabIndex = 62
+        Me.BadgeComboBox.Size = New System.Drawing.Size(99, 31)
+        Me.BadgeComboBox.TabIndex = 9
         Me.BadgeComboBox.ValueMember = "badge"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Black
+        Me.Panel4.Location = New System.Drawing.Point(3, 331)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1119, 1)
+        Me.Panel4.TabIndex = 62
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(870, 584)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(223, 13)
+        Me.Label2.TabIndex = 63
+        Me.Label2.Text = "Click on image to toggle Front/Back ID Image"
         '
         'Add_Visitor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(BadgeLabel)
         Me.Controls.Add(Me.BadgeComboBox)
         Me.Controls.Add(Me.v_id)
         Me.Controls.Add(Me.surrenderedcbox)
-        Me.Controls.Add(Me.idtoggle)
         Me.Controls.Add(Me.capidbtn)
         Me.Controls.Add(Me.capportraitbtn)
         Me.Controls.Add(Me.PictureBox1)
@@ -540,7 +536,6 @@ Partial Class Add_Visitor
         Me.Controls.Add(Last_NameLabel)
         Me.Controls.Add(Me.Last_NameTextBox)
         Me.Controls.Add(Label1)
-        Me.Controls.Add(Visitor_IDLabel)
         Me.Controls.Add(Me.CheckIn)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
@@ -591,7 +586,6 @@ Partial Class Add_Visitor
     Friend WithEvents Panel1 As Panel
     Friend WithEvents VisitorsTableAdapter As DB1DataSetTableAdapters.VisitorsTableAdapter
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents idtoggle As Button
     Friend WithEvents BadgesBindingSource As BindingSource
     Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
     Friend WithEvents FKVehiclesBadgesBindingSource As BindingSource
@@ -601,4 +595,6 @@ Partial Class Add_Visitor
     Friend WithEvents BadgeComboBox As ComboBox
     Friend WithEvents BadgesBindingSource1 As BindingSource
     Friend WithEvents DB1DataSet2 As DB1DataSet
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
 End Class

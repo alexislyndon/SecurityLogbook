@@ -24,7 +24,7 @@
         refresher()
     End Sub
 
-    Public Sub Button3_Click(sender As Object, e As EventArgs) Handles refreshbtn.Click
+    Public Sub Button3_Click(sender As Object, e As EventArgs) 
         'refresh
         refresher()
     End Sub

@@ -28,4 +28,8 @@
         'Label1.Text = Format(Now, "Long Date")
         Label3.Text = Date.Now.ToString(" HH:mm:ss")
     End Sub
+
+    Private Sub Add_Visitor1_Load(sender As Object, e As EventArgs) Handles Add_Visitor1.Load
+
+    End Sub
 End Class

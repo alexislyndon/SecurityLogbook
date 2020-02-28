@@ -117,7 +117,7 @@ Partial Class Dash
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Digital-7 Mono", 32.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label3.Location = New System.Drawing.Point(29, 102)
+        Me.Label3.Location = New System.Drawing.Point(8, 107)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(188, 44)

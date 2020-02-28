@@ -30,15 +30,6 @@ Partial Class View_Checked_in
         Me.filterbox = New System.Windows.Forms.TextBox()
         Me.checkoutbtn = New System.Windows.Forms.Button()
         Me.VisitorsDataGridView = New System.Windows.Forms.DataGridView()
-        Me.visit_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.entry = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.destination = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.purpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.time_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VisitorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
         Me.refreshbtn = New System.Windows.Forms.Button()
@@ -49,6 +40,15 @@ Partial Class View_Checked_in
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BadgesTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.BadgesTableAdapter()
+        Me.visit_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.phone = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sex = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.entry = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.destination = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.purpose = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.time_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2.SuspendLayout()
         CType(Me.VisitorsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VisitorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,6 +128,8 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.AllowUserToDeleteRows = False
         Me.VisitorsDataGridView.AllowUserToOrderColumns = True
         Me.VisitorsDataGridView.AutoGenerateColumns = False
+        Me.VisitorsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.VisitorsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.VisitorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VisitorsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.visit_ID, Me.DataGridViewTextBoxColumn15, Me.FullName, Me.phone, Me.sex, Me.entry, Me.destination, Me.purpose, Me.time_in})
         Me.VisitorsDataGridView.DataSource = Me.VisitorsBindingSource
@@ -137,80 +139,6 @@ Partial Class View_Checked_in
         Me.VisitorsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.VisitorsDataGridView.Size = New System.Drawing.Size(1048, 286)
         Me.VisitorsDataGridView.TabIndex = 21
-        '
-        'visit_ID
-        '
-        Me.visit_ID.DataPropertyName = "visit_ID"
-        Me.visit_ID.Frozen = True
-        Me.visit_ID.HeaderText = "Visit ID"
-        Me.visit_ID.Name = "visit_ID"
-        Me.visit_ID.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "badge_number"
-        Me.DataGridViewTextBoxColumn15.Frozen = True
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Badge"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.ReadOnly = True
-        Me.DataGridViewTextBoxColumn15.Width = 63
-        '
-        'FullName
-        '
-        Me.FullName.DataPropertyName = "FullName"
-        Me.FullName.Frozen = True
-        Me.FullName.HeaderText = "Full Name"
-        Me.FullName.Name = "FullName"
-        Me.FullName.ReadOnly = True
-        '
-        'phone
-        '
-        Me.phone.DataPropertyName = "phone"
-        Me.phone.Frozen = True
-        Me.phone.HeaderText = "Phone"
-        Me.phone.Name = "phone"
-        Me.phone.ReadOnly = True
-        '
-        'sex
-        '
-        Me.sex.DataPropertyName = "sex"
-        Me.sex.Frozen = True
-        Me.sex.HeaderText = "Sex"
-        Me.sex.Name = "sex"
-        Me.sex.ReadOnly = True
-        '
-        'entry
-        '
-        Me.entry.DataPropertyName = "entry"
-        Me.entry.Frozen = True
-        Me.entry.HeaderText = "Entry"
-        Me.entry.Name = "entry"
-        Me.entry.ReadOnly = True
-        '
-        'destination
-        '
-        Me.destination.DataPropertyName = "destination"
-        Me.destination.Frozen = True
-        Me.destination.HeaderText = "Destination"
-        Me.destination.Name = "destination"
-        Me.destination.ReadOnly = True
-        '
-        'purpose
-        '
-        Me.purpose.DataPropertyName = "purpose"
-        Me.purpose.Frozen = True
-        Me.purpose.HeaderText = "Purpose"
-        Me.purpose.Name = "purpose"
-        Me.purpose.ReadOnly = True
-        '
-        'time_in
-        '
-        Me.time_in.DataPropertyName = "time_in"
-        Me.time_in.Frozen = True
-        Me.time_in.HeaderText = "Time in"
-        Me.time_in.Name = "time_in"
-        Me.time_in.ReadOnly = True
         '
         'VisitorsBindingSource
         '
@@ -271,6 +199,78 @@ Partial Class View_Checked_in
         '
         Me.BadgesTableAdapter1.ClearBeforeFill = True
         '
+        'visit_ID
+        '
+        Me.visit_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.visit_ID.DataPropertyName = "visit_ID"
+        Me.visit_ID.HeaderText = "Visit ID"
+        Me.visit_ID.Name = "visit_ID"
+        Me.visit_ID.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn15.DataPropertyName = "badge_number"
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Badge"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        '
+        'FullName
+        '
+        Me.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.FullName.DataPropertyName = "FullName"
+        Me.FullName.HeaderText = "Full Name"
+        Me.FullName.Name = "FullName"
+        Me.FullName.ReadOnly = True
+        '
+        'phone
+        '
+        Me.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.phone.DataPropertyName = "phone"
+        Me.phone.HeaderText = "Phone"
+        Me.phone.Name = "phone"
+        Me.phone.ReadOnly = True
+        '
+        'sex
+        '
+        Me.sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.sex.DataPropertyName = "sex"
+        Me.sex.HeaderText = "Sex"
+        Me.sex.Name = "sex"
+        Me.sex.ReadOnly = True
+        '
+        'entry
+        '
+        Me.entry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.entry.DataPropertyName = "entry"
+        Me.entry.HeaderText = "Entry"
+        Me.entry.Name = "entry"
+        Me.entry.ReadOnly = True
+        '
+        'destination
+        '
+        Me.destination.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.destination.DataPropertyName = "destination"
+        Me.destination.HeaderText = "Destination"
+        Me.destination.Name = "destination"
+        Me.destination.ReadOnly = True
+        '
+        'purpose
+        '
+        Me.purpose.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.purpose.DataPropertyName = "purpose"
+        Me.purpose.HeaderText = "Purpose"
+        Me.purpose.Name = "purpose"
+        Me.purpose.ReadOnly = True
+        '
+        'time_in
+        '
+        Me.time_in.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.time_in.DataPropertyName = "time_in"
+        Me.time_in.HeaderText = "Time in"
+        Me.time_in.Name = "time_in"
+        Me.time_in.ReadOnly = True
+        '
         'View_Checked_in
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,6 +323,7 @@ Partial Class View_Checked_in
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
     Friend WithEvents visit_ID As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents FullName As DataGridViewTextBoxColumn
@@ -332,5 +333,4 @@ Partial Class View_Checked_in
     Friend WithEvents destination As DataGridViewTextBoxColumn
     Friend WithEvents purpose As DataGridViewTextBoxColumn
     Friend WithEvents time_in As DataGridViewTextBoxColumn
-    Friend WithEvents BadgesTableAdapter1 As DB1DataSetTableAdapters.BadgesTableAdapter
 End Class

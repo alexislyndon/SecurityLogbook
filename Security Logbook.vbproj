@@ -109,6 +109,18 @@
       <DependentUpon>Dash.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddBadge.Designer.vb">
+      <DependentUpon>AddBadge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddBadge.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adduser.Designer.vb">
+      <DependentUpon>adduser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="adduser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Add_Vehicle.Designer.vb">
       <DependentUpon>Add_Vehicle.vb</DependentUpon>
     </Compile>
@@ -119,6 +131,12 @@
       <DependentUpon>Add_Visitor.vb</DependentUpon>
     </Compile>
     <Compile Include="Add_Visitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ADMIN_View_Visitors.Designer.vb">
+      <DependentUpon>ADMIN_View_Visitors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN_View_Visitors.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Dash.vb">
@@ -144,6 +162,12 @@
     <Compile Include="backForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PopView.Designer.vb">
       <DependentUpon>PopView.vb</DependentUpon>
     </Compile>
@@ -152,6 +176,12 @@
     </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="Session.vb" />
+    <Compile Include="UserControl1.Designer.vb">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ViewSelector.Designer.vb">
       <DependentUpon>ViewSelector.vb</DependentUpon>
     </Compile>
@@ -212,11 +242,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddBadge.resx">
+      <DependentUpon>AddBadge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adduser.resx">
+      <DependentUpon>adduser.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_Vehicle.resx">
       <DependentUpon>Add_Vehicle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Visitor.resx">
       <DependentUpon>Add_Visitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_View_Visitors.resx">
+      <DependentUpon>ADMIN_View_Visitors.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dash.resx">
       <DependentUpon>Dash.vb</DependentUpon>
@@ -227,8 +266,14 @@
     <EmbeddedResource Include="backForm.resx">
       <DependentUpon>backForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopView.resx">
       <DependentUpon>PopView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSelector.resx">
       <DependentUpon>ViewSelector.vb</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class backForm
+Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,28 +23,20 @@ Partial Class backForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Add_Visitor1 = New Security_Logbook.Add_Visitor()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LogOutBtn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.view_checkin_btn = New System.Windows.Forms.Button()
         Me.Add_visitor_btn = New System.Windows.Forms.Button()
-        Me.View_Checked_in1 = New Security_Logbook.View_Checked_in()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.Adduser1 = New Security_Logbook.adduser()
         Me.VisitorsTableAdapter1 = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
+        Me.DB1DataSet1 = New Security_Logbook.DB1DataSet()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.UserControl11 = New Security_Logbook.UserControl1()
         Me.Panel1.SuspendLayout()
         CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Add_Visitor1
-        '
-        Me.Add_Visitor1.Location = New System.Drawing.Point(253, 2)
-        Me.Add_Visitor1.Name = "Add_Visitor1"
-        Me.Add_Visitor1.Size = New System.Drawing.Size(1109, 763)
-        Me.Add_Visitor1.TabIndex = 0
         '
         'Panel1
         '
@@ -57,8 +49,8 @@ Partial Class backForm
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(252, 749)
-        Me.Panel1.TabIndex = 5
+        Me.Panel1.Size = New System.Drawing.Size(252, 768)
+        Me.Panel1.TabIndex = 6
         '
         'LogOutBtn
         '
@@ -117,68 +109,65 @@ Partial Class backForm
         Me.Add_visitor_btn.Name = "Add_visitor_btn"
         Me.Add_visitor_btn.Size = New System.Drawing.Size(252, 57)
         Me.Add_visitor_btn.TabIndex = 7
-        Me.Add_visitor_btn.Text = "Add Visitor"
+        Me.Add_visitor_btn.Text = "Add User"
         Me.Add_visitor_btn.UseVisualStyleBackColor = False
         '
-        'View_Checked_in1
+        'Adduser1
         '
-        Me.View_Checked_in1.Location = New System.Drawing.Point(252, -1)
-        Me.View_Checked_in1.Name = "View_Checked_in1"
-        Me.View_Checked_in1.Size = New System.Drawing.Size(1113, 763)
-        Me.View_Checked_in1.TabIndex = 6
+        Me.Adduser1.Location = New System.Drawing.Point(254, -1)
+        Me.Adduser1.Name = "Adduser1"
+        Me.Adduser1.Size = New System.Drawing.Size(1360, 750)
+        Me.Adduser1.TabIndex = 7
         '
-        'Label2
+        'VisitorsTableAdapter1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(1344, -1)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(21, 20)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "X"
-        '
-        'Timer1
-        '
+        Me.VisitorsTableAdapter1.ClearBeforeFill = True
         '
         'DB1DataSet1
         '
         Me.DB1DataSet1.DataSetName = "DB1DataSet"
         Me.DB1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'VisitorsTableAdapter1
+        'Timer1
         '
-        Me.VisitorsTableAdapter1.ClearBeforeFill = True
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
         '
-        'backForm
+        'UserControl11
+        '
+        Me.UserControl11.Location = New System.Drawing.Point(666, 399)
+        Me.UserControl11.Name = "UserControl11"
+        Me.UserControl11.Size = New System.Drawing.Size(1129, 763)
+        Me.UserControl11.TabIndex = 8
+        '
+        'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1366, 749)
-        Me.Controls.Add(Me.Label2)
+        Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.Controls.Add(Me.UserControl11)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Add_Visitor1)
-        Me.Controls.Add(Me.View_Checked_in1)
+        Me.Controls.Add(Me.Adduser1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "backForm"
+        Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.DB1DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Add_Visitor1 As Add_Visitor
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LogOutBtn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents view_checkin_btn As Button
     Friend WithEvents Add_visitor_btn As Button
-    Friend WithEvents View_Checked_in1 As View_Checked_in
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents DB1DataSet1 As DB1DataSet
+    Friend WithEvents Adduser1 As adduser
     Friend WithEvents VisitorsTableAdapter1 As DB1DataSetTableAdapters.VisitorsTableAdapter
+    Friend WithEvents DB1DataSet1 As DB1DataSet
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents UserControl11 As UserControl1
 End Class

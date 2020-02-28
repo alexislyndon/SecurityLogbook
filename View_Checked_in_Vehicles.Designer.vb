@@ -43,7 +43,6 @@ Partial Class View_Checked_in_Vehicles
         Me.VisitorsTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VisitorsTableAdapter()
         Me.TableAdapterManager = New Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager()
         Me.VehiclesTableAdapter = New Security_Logbook.DB1DataSetTableAdapters.VehiclesTableAdapter()
-        Me.refreshbtn = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.VehiclesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VehiclesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,10 +76,10 @@ Partial Class View_Checked_in_Vehicles
         Me.checkoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.checkoutbtn.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.checkoutbtn.ForeColor = System.Drawing.Color.White
-        Me.checkoutbtn.Location = New System.Drawing.Point(769, 699)
+        Me.checkoutbtn.Location = New System.Drawing.Point(934, 679)
         Me.checkoutbtn.Margin = New System.Windows.Forms.Padding(4)
         Me.checkoutbtn.Name = "checkoutbtn"
-        Me.checkoutbtn.Size = New System.Drawing.Size(324, 43)
+        Me.checkoutbtn.Size = New System.Drawing.Size(154, 52)
         Me.checkoutbtn.TabIndex = 22
         Me.checkoutbtn.Text = "Check out"
         Me.checkoutbtn.UseVisualStyleBackColor = False
@@ -123,10 +122,10 @@ Partial Class View_Checked_in_Vehicles
         Me.VehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VehiclesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
         Me.VehiclesDataGridView.DataSource = Me.VehiclesBindingSource
-        Me.VehiclesDataGridView.Location = New System.Drawing.Point(27, 226)
+        Me.VehiclesDataGridView.Location = New System.Drawing.Point(190, 255)
         Me.VehiclesDataGridView.Name = "VehiclesDataGridView"
         Me.VehiclesDataGridView.ReadOnly = True
-        Me.VehiclesDataGridView.Size = New System.Drawing.Size(1082, 233)
+        Me.VehiclesDataGridView.Size = New System.Drawing.Size(749, 229)
         Me.VehiclesDataGridView.TabIndex = 26
         '
         'DataGridViewTextBoxColumn1
@@ -202,6 +201,7 @@ Partial Class View_Checked_in_Vehicles
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -211,20 +211,10 @@ Partial Class View_Checked_in_Vehicles
         '
         Me.VehiclesTableAdapter.ClearBeforeFill = True
         '
-        'refreshbtn
-        '
-        Me.refreshbtn.Location = New System.Drawing.Point(27, 197)
-        Me.refreshbtn.Name = "refreshbtn"
-        Me.refreshbtn.Size = New System.Drawing.Size(75, 23)
-        Me.refreshbtn.TabIndex = 27
-        Me.refreshbtn.Text = "Refresh"
-        Me.refreshbtn.UseVisualStyleBackColor = True
-        '
         'View_Checked_in_Vehicles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.refreshbtn)
         Me.Controls.Add(Me.VehiclesDataGridView)
         Me.Controls.Add(Me.searchbtn)
         Me.Controls.Add(Me.Panel1)
@@ -263,5 +253,4 @@ Partial Class View_Checked_in_Vehicles
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents refreshbtn As Button
 End Class

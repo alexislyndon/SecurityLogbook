@@ -392,7 +392,7 @@ Partial Class PopView
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 488)
+        Me.Button1.Location = New System.Drawing.Point(762, 507)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(110, 42)
         Me.Button1.TabIndex = 91
@@ -406,6 +406,7 @@ Partial Class PopView
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BadgesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Security_Logbook.DB1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usersTableAdapter = Nothing
         Me.TableAdapterManager.VehiclesTableAdapter = Nothing
@@ -421,7 +422,7 @@ Partial Class PopView
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(540, 488)
+        Me.Button2.Location = New System.Drawing.Point(614, 507)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(110, 42)
         Me.Button2.TabIndex = 91
