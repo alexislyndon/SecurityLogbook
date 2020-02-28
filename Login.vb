@@ -33,7 +33,6 @@
             Me.Hide()
             startsession(id)
         End If
-
         Me.Hide()
     End Sub
 

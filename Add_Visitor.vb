@@ -82,18 +82,22 @@ Public Class Add_Visitor 'checks in visitor
 
 
         If gtg Then
+            Try
+                VisitorsTableAdapter.CheckIn(First_NameTextBox.Text.Trim, Middle_NameTextBox.Text.Trim, Last_NameTextBox.Text.Trim,
+            sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
+                                         imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, imgtobyte(PictureBox3.Image, hadcapback), Phone_NumberTextBox.Text, getsessionid())
+                MsgBox("Successfully Checked in visitor!")
+                hadcapid = False
+                hadcappor = False
+                hadcapback = False
+                maxid = VisitorsTableAdapter.MaxID() + 1
+                v_id.Text = maxid
+                refreshAll()
+                clear(Me)
 
-            VisitorsTableAdapter.CheckIn(First_NameTextBox.Text.Trim, Middle_NameTextBox.Text.Trim, Last_NameTextBox.Text.Trim,
-                                         sextoDB, "m", destinationcbox.Text, purposebox.Text, badgecbox.Text,
-                                         imgtobyte(PictureBox1.Image, hadcappor), imgtobyte(PictureBox2.Image, hadcapid), surrenderedcbox.Text, Phone_NumberTextBox.Text, )
-            MsgBox("Successfully Checked in visitor!")
-            hadcapid = False
-            hadcappor = False
-            hadcapback = False
-            maxid = VisitorsTableAdapter.MaxID() + 1
-            v_id.Text = maxid
-            refreshAll()
-            clear(Me)
+            Catch ex As Exception
+                MsgBox(ex)
+            End Try
         Else
             MsgBox("Please fill out the form completely.")
         End If

@@ -9,5 +9,8 @@
         s_uid = Nothing
     End Sub
 
+    Public Function getsessionid()
+        Return s_uid
+    End Function
 
 End Module
